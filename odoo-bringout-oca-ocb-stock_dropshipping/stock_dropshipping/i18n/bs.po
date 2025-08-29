@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_dropshipping
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-06 13:32+0000\n"
+"PO-Revision-Date: 2024-02-06 13:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_res_company
+msgid "Companies"
+msgstr "Tvrtke"
+
+#. module: stock_dropshipping
+#: model:stock.route,name:stock_dropshipping.route_drop_shipping
+#: model_terms:ir.ui.view,arch_db:stock_dropshipping.purchase_order_form_inherit_stock_dropshipping
+#: model_terms:ir.ui.view,arch_db:stock_dropshipping.view_order_form_inherit_sale_stock
+msgid "Dropship"
+msgstr "Isporuka na odredište"
+
+#. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_purchase_order__dropship_picking_count
+#: model:ir.model.fields,field_description:stock_dropshipping.field_sale_order__dropship_picking_count
+msgid "Dropship Count"
+msgstr "Broj direktnih isporuka"
+
+#. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_stock_picking__is_dropship
+msgid "Is a Dropship"
+msgstr "Je direktna isporuka"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_stock_lot
+msgid "Lot/Serial"
+msgstr "Lot/Serija"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Vrsta dokumenta"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_procurement_group
+msgid "Procurement Group"
+msgstr "Grupa nabave"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_purchase_order
+msgid "Purchase Order"
+msgstr "Nalog za nabavu"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Stavka nabavne narudžbe"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_sale_order
+msgid "Sales Order"
+msgstr "Prodajni nalog"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Stavka prodajne narudžbe"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_stock_rule
+msgid "Stock Rule"
+msgstr "Skladišno pravilo"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_stock_picking
+msgid "Transfer"
+msgstr "Prijenos"
