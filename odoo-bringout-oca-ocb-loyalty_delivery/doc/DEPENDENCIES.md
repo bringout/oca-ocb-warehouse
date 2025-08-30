@@ -2,5 +2,5 @@
 
 This addon depends on:
 
-- [loyalty](https://github.com/bringout/oca-ocb-core/tree/9d67cf00c06114fd0d5a87a06a485b3dabf57e2b/odoo-bringout-oca-ocb-loyalty)
-- [delivery](https://github.com/bringout/oca-ocb-warehouse/tree/1135de9279731def9c756b5192f8860b5a0e7e59/odoo-bringout-oca-ocb-delivery)
+- [loyalty](https://github.com/bringout/oca-ocb-core/tree/5d1ce43101a4d83b4ac660942e4a7a462823262f/odoo-bringout-oca-ocb-loyalty)
+- [delivery](https://github.com/bringout/oca-ocb-warehouse/tree/81e6496fce389797413505803016d3ac487ede13/odoo-bringout-oca-ocb-delivery)
