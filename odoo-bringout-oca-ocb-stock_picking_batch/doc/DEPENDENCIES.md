@@ -2,4 +2,4 @@
 
 This addon depends on:
 
-- [stock](../../../../odoo-bringout-oca-ocb-stock)
+- [stock](https://github.com/bringout/oca-ocb-warehouse)

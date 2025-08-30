@@ -2,5 +2,5 @@
 
 This addon depends on:
 
-- [spreadsheet_dashboard](../../../../../oca-ocb-report/odoo-bringout-oca-ocb-spreadsheet_dashboard)
-- [purchase_stock](../../../../odoo-bringout-oca-ocb-purchase_stock)
+- [spreadsheet_dashboard](https://github.com/bringout/oca-ocb-report)
+- [purchase_stock](https://github.com/bringout/oca-ocb-warehouse)

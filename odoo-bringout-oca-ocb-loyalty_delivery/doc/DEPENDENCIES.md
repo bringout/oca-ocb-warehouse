@@ -2,5 +2,5 @@
 
 This addon depends on:
 
-- [loyalty](../../../../../oca-ocb-core/odoo-bringout-oca-ocb-loyalty)
-- [delivery](../../../../odoo-bringout-oca-ocb-delivery)
+- [loyalty](https://github.com/bringout/oca-ocb-core)
+- [delivery](https://github.com/bringout/oca-ocb-warehouse)

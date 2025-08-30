@@ -2,5 +2,5 @@
 
 This addon depends on:
 
-- [purchase_requisition](../../../../../oca-ocb-core/odoo-bringout-oca-ocb-purchase_requisition)
-- [purchase_stock](../../../../odoo-bringout-oca-ocb-purchase_stock)
+- [purchase_requisition](https://github.com/bringout/oca-ocb-core)
+- [purchase_stock](https://github.com/bringout/oca-ocb-warehouse)
