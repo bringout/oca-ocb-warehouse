@@ -2,6 +2,6 @@
 
 This addon depends on:
 
-- [product](https://github.com/bringout/oca-ocb-sale/tree/b79cef0fc454482466e93989011360a14a738822/odoo-bringout-oca-ocb-product)
-- [barcodes_gs1_nomenclature](https://github.com/bringout/oca-ocb-technical/tree/823c95bfc5f4d48617544ec3cb80ffb889f07f55/odoo-bringout-oca-ocb-barcodes_gs1_nomenclature)
-- [digest](https://github.com/bringout/oca-ocb-core/tree/e9ca19c0c154b94934ea86258814c560c4e016f4/odoo-bringout-oca-ocb-digest)
+- [product](https://github.com/bringout/oca-ocb-sale/tree/3531a720906f8e17d5fa4dafe32471b2aada3721/odoo-bringout-oca-ocb-product)
+- [barcodes_gs1_nomenclature](https://github.com/bringout/oca-ocb-technical/tree/f67f0f1f77e860a61a0c3d3eccbc049dbedb9347/odoo-bringout-oca-ocb-barcodes_gs1_nomenclature)
+- [digest](https://github.com/bringout/oca-ocb-core/tree/11a704b400b8bf0763643e267bf123858a85c9e6/odoo-bringout-oca-ocb-digest)
