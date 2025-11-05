@@ -17,23 +17,24 @@ msgstr ""
 
 #. module: loyalty_delivery
 #. odoo-python
-#: code:addons/loyalty_delivery/models/loyalty_reward.py:0
+#: code:addons/loyalty_delivery/models/loyalty_reward.py
 #, python-format
 msgid " (Max %s)"
-msgstr " (Max %s)"
+msgstr " (Maks %s)"
 
 #. module: loyalty_delivery
 #: model_terms:ir.ui.view,arch_db:loyalty_delivery.loyalty_reward_view_kanban_inherit_loyalty_delivery
 msgid "( Max"
-msgstr "( Max"
+msgstr "( Maks"
 
 #. module: loyalty_delivery
 #. odoo-python
-#: code:addons/loyalty_delivery/models/loyalty_program.py:0
+#: code:addons/loyalty_delivery/models/loyalty_program.py
 #, python-format
 msgid "Automatic promotion: free shipping on orders higher than $50"
 msgstr "Automatska promocija: besplatna dostava za narudžbe veće od 50 KM"
 
+# taken from hr.po
 #. module: loyalty_delivery
 #: model:ir.model.fields.selection,name:loyalty_delivery.selection__loyalty_reward__reward_type__shipping
 msgid "Free Shipping"
@@ -41,18 +42,18 @@ msgstr "Besplatna dostava"
 
 #. module: loyalty_delivery
 #. odoo-python
-#: code:addons/loyalty_delivery/models/loyalty_reward.py:0
-#: model_terms:ir.ui.view,arch_db:loyalty_delivery.loyalty_reward_view_form_inherit_loyalty_delivery
-#: model_terms:ir.ui.view,arch_db:loyalty_delivery.loyalty_reward_view_kanban_inherit_loyalty_delivery
+#: code:addons/loyalty_delivery/models/loyalty_reward.py
 #, python-format
 msgid "Free shipping"
 msgstr "Besplatna dostava"
 
+# taken from hr.po
 #. module: loyalty_delivery
 #: model:ir.model,name:loyalty_delivery.model_loyalty_program
 msgid "Loyalty Program"
 msgstr "Program lojalnosti"
 
+# taken from hr.po
 #. module: loyalty_delivery
 #: model:ir.model,name:loyalty_delivery.model_loyalty_reward
 msgid "Loyalty Reward"
@@ -63,6 +64,7 @@ msgstr "Nagrada za odanost"
 msgid "Reward Type"
 msgstr "Vrsta nagrade"
 
+# taken from hr.po
 #. module: loyalty_delivery
 #: model:ir.model,name:loyalty_delivery.model_sale_order
 msgid "Sales Order"

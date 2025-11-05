@@ -20,6 +20,7 @@ msgstr ""
 msgid "Downstream Move"
 msgstr "Naredno kretanje"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_stock_warehouse_orderpoint
 msgid "Minimum Inventory Rule"
@@ -27,30 +28,34 @@ msgstr "Pravilo minimalne zalihe"
 
 #. module: purchase_requisition_stock
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order__on_time_rate_perc
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order_line__on_time_rate_perc
 msgid "OTD"
 msgstr "OTD (Pravovremena isporuka)"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition__picking_type_id
 msgid "Operation Type"
 msgstr "Vrsta operacije"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_order
 msgid "Purchase Order"
 msgstr "Nalog za nabavu"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_order_line
 msgid "Purchase Order Line"
 msgstr "Stavka naloga nabave"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_requisition
 msgid "Purchase Requisition"
 msgstr "Zahtjev za nabavom"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_requisition_line
 msgid "Purchase Requisition Line"
@@ -61,16 +66,19 @@ msgstr "Poziv za tender"
 msgid "Requisition Line"
 msgstr "Stavka trebovanja"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_stock_move
 msgid "Stock Move"
 msgstr "Skladišni prijenos"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_stock_rule
 msgid "Stock Rule"
 msgstr "Skladišno pravilo"
 
+# taken from hr.po
 #. module: purchase_requisition_stock
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition__warehouse_id
 msgid "Warehouse"
@@ -79,4 +87,5 @@ msgstr "Skladište"
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_requisition_create_alternative
 msgid "Wizard to preset values for alternative PO"
-msgstr "Čarobnjak za postavljanje zadanih vrijednosti za alternativnu narudžbenicu"
+msgstr ""
+"Čarobnjak za postavljanje zadanih vrijednosti za alternativnu narudžbenicu"

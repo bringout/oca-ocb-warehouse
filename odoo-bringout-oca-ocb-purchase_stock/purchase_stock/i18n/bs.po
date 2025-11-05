@@ -15,27 +15,31 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "% On-Time Delivery"
 msgstr "% dostave na vrijeme"
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_rule.py:0
-#: code:addons/purchase_stock/models/stock_rule.py:0
-#: code:addons/purchase_stock/models/stock_rule.py:0
+#: code:addons/purchase_stock/models/stock_rule.py
 #, python-format
 msgid "+ %d day(s)"
 msgstr "+ %d dan(a)"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid ""
 "<span attrs=\"{'invisible': [('on_time_rate', '&gt;=', 0)]}\">No On-time "
 "Delivery Data</span>"
 msgstr ""
+"<span attrs=\"{'invisible': [('on_time_rate', '&gt;=', 0)]}\">Nema on-time "
+"podataka o dostavi</span>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid ""
@@ -43,19 +47,27 @@ msgid ""
 "specific.\" aria-label=\"Values set here are company-specific.\" "
 "groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Ove vrijednosti su specifične"
+" za tvrtku\" aria-label=\"Ove vrijednosti su specifične za tvrtku\" "
+"groups=\"base.group_multi_company\"/>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
 "specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Vrijednosti postavljene ovdje"
+" su specifične za kompaniju.\" groups=\"base.group_multi_company\"/>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_partner_view_purchase_buttons_inherit
 msgid "<span class=\"o_stat_text\">On-time Rate</span>"
 msgstr "<span class=\"o_stat_text\">Točnost isporuke</span>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.stock_production_lot_view_form
 msgid "<span class=\"o_stat_text\">Purchases</span>"
@@ -66,18 +78,19 @@ msgstr "<span class=\"o_stat_text\">Nabave</span>"
 msgid "<span class=\"o_stat_value\">%</span>"
 msgstr "<span class=\"o_stat_value\">%</span>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.report_purchaseorder_document
-#: model_terms:ir.ui.view,arch_db:purchase_stock.report_purchasequotation_document
 msgid "<strong>Incoterm:</strong>"
 msgstr "<strong>Inkoterm:</strong>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.report_purchaseorder_document
-#: model_terms:ir.ui.view,arch_db:purchase_stock.report_purchasequotation_document
 msgid "<strong>Shipping address:</strong>"
 msgstr "<strong>Adresa za isporuku:</strong>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order_line__qty_received_method
 msgid ""
@@ -85,7 +98,11 @@ msgid ""
 "  - Manual: the quantity is set manually on the line\n"
 "  - Stock Moves: the quantity comes from confirmed pickings\n"
 msgstr ""
+"S obzirom na postavke artikla primljena količina može se automatski izračunati sljedećim mehanizmima:\n"
+"  - Ručno: količina se postavlja ručno na stavci\n"
+"  - Prijenos zaliha: količina dolazi iz potvrđenih preuzimanja\n"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_rule__action
 msgid "Action"
@@ -99,37 +116,44 @@ msgid ""
 "average value, therefore only use this as an aggregated value with "
 "group_operator=avg"
 msgstr ""
+"Vremenski period između očekivanog i stvarnog datuma prijema. Zbog tehničkog"
+" rješenja potrebnog za izračunavanje ovoga, svaki zapis će prikazati istu "
+"prosječnu vrijednost, stoga koristite ovo samo kao agregiranu vrijednost sa "
+"group_operator=avg"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__effective_date
 msgid "Arrival"
 msgstr "Dolazak"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_report__avg_receipt_delay
 msgid "Average Receipt Delay"
 msgstr "Prosječno kašnjenje u dolasku"
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock.py:0
-#: model:ir.model.fields.selection,name:purchase_stock.selection__stock_rule__action__buy
-#: model:stock.route,name:purchase_stock.route_warehouse0_buy
-#: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_report_stock_rule
+#: code:addons/purchase_stock/models/stock.py
 #, python-format
 msgid "Buy"
 msgstr "Kupi"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_warehouse__buy_pull_id
 msgid "Buy rule"
 msgstr "Pravilo kupovine"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_warehouse__buy_to_resupply
 msgid "Buy to Resupply"
 msgstr "Za ospskrbu kupi"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_company
 msgid "Companies"
@@ -140,19 +164,22 @@ msgstr "Tvrtke"
 msgid "Completion date of the first receipt order."
 msgstr "Datum završetka prvog naloga za prijem."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_config_settings
 msgid "Config Settings"
 msgstr "Postavke"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_partner
 msgid "Contact"
 msgstr "Kontakt"
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid "Corresponding receipt not found."
 msgstr "Odgovarajuća primka nije pronađena."
@@ -162,19 +189,21 @@ msgstr "Odgovarajuća primka nije pronađena."
 msgid "Created Purchase Order Line"
 msgstr "Kreirana stavka narudžbenice"
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_move.py:0
-#: code:addons/purchase_stock/models/stock_move.py:0
+#: code:addons/purchase_stock/models/stock_move.py
 #, python-format
 msgid "Currency exchange rate difference"
 msgstr "<span class=\"o_stat_text\">Narudžbe nabavke</span>"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order_line__product_description_variants
 msgid "Custom Description"
 msgstr "Prilagođeni opis"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid "Days needed to confirm a PO"
@@ -182,46 +211,51 @@ msgstr "Dani potrebni za potvrdu narudžbenice"
 
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_res_company__days_to_purchase
-#: model:ir.model.fields,help:purchase_stock.field_res_config_settings__days_to_purchase
 msgid "Days needed to confirm a PO, define when a PO should be validated"
-msgstr "Dani potrebni za potvrdu narudžbenice, definiraju kada bi narudžbenica trebala biti validirana"
+msgstr ""
+"Dani potrebni za potvrdu narudžbenice, definiraju kada bi narudžbenica "
+"trebala biti validirana"
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_rule.py:0
-#: model:ir.model.fields,field_description:purchase_stock.field_res_company__days_to_purchase
-#: model:ir.model.fields,field_description:purchase_stock.field_res_config_settings__days_to_purchase
+#: code:addons/purchase_stock/models/stock_rule.py
 #, python-format
 msgid "Days to Purchase"
 msgstr "Dani do kupnje"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__picking_type_id
 msgid "Deliver To"
 msgstr "Isporuči na"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_product_product__route_ids
-#: model:ir.model.fields,help:purchase_stock.field_product_template__route_ids
 msgid ""
 "Depending on the modules installed, this will allow you to define the route "
 "of the product: whether it will be bought, manufactured, replenished on "
 "order, etc."
 msgstr ""
+"Ovisno o instaliranim modulima ovo će omogućiti definiranje rute proizvoda: "
+"hoće li se kupiti, proizvoditi, nadopunjavati po narudžbi i sl."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__default_location_dest_id_usage
 msgid "Destination Location Type"
 msgstr "Tip odredišne lokacije"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__display_name
 msgid "Display Name"
 msgstr "Naziv"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_purchase
-#: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid "Documentation"
 msgstr "Dokumentacija"
 
@@ -235,14 +269,15 @@ msgstr "Sljedeća kretanja"
 msgid "Dropship Address"
 msgstr "Adresa za direktnu isporuku (Dropship)"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_res_config_settings__module_stock_dropshipping
 msgid "Dropshipping"
 msgstr "Dropshipping"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_report__effective_date
-#: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__date
 msgid "Effective Date"
 msgstr "Efektivni datum"
 
@@ -256,6 +291,7 @@ msgstr "Datum stupanja na snagu prošle godine"
 msgid "Exception(s) occurred on the purchase order(s):"
 msgstr "Došlo je do izuzetaka na narudžbenici(ama):"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "Exception(s):"
@@ -263,14 +299,18 @@ msgstr "Iznimka(e):"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid ""
 "For the product %s, the warehouse of the operation type (%s) is inconsistent"
 " with the location (%s) of the reordering rule (%s). Change the operation "
 "type or cancel the request for quotation."
 msgstr ""
+"Za proizvod %s, skladište vrste operacije (%s) nije u skladu s lokacijom "
+"(%s) pravila za ponovno naručivanje (%s). Promijenite vrstu operacije ili "
+"otkažite zahtjev za ponudu."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "Forecast Report"
@@ -281,6 +321,7 @@ msgstr "Projekcija zaliha"
 msgid "Forecasted Issue"
 msgstr "Predviđeni problem"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order__receipt_status__full
 msgid "Fully Received"
@@ -288,14 +329,14 @@ msgstr "Potpuno zaprimljeno"
 
 #. module: purchase_stock
 #. odoo-javascript
-#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
+#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js
 #, python-format
 msgid "Generate the draft vendor bill."
 msgstr "Generiši nacrt računa dobavljača."
 
 #. module: purchase_stock
 #. odoo-javascript
-#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
+#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js
 #, python-format
 msgid "Go back to the purchase order to generate the vendor bill."
 msgstr "Vratite se na narudžbenicu da generišete račun dobavljača."
@@ -305,11 +346,13 @@ msgstr "Vratite se na narudžbenicu da generišete račun dobavljača."
 msgid "ID"
 msgstr "ID"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__incoming_picking_count
 msgid "Incoming Shipment count"
 msgstr "Broj dolaznih pošiljki"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "Incoming Shipments"
@@ -320,63 +363,77 @@ msgstr "Dolazeće isporuke"
 msgid "Incoterm"
 msgstr "Incoterm"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__incoterm_location
 msgid "Incoterm Location"
 msgstr "Incoterm lokacija"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__incoterm_id
 msgid ""
 "International Commercial Terms are a series of predefined commercial terms "
 "used in international transactions."
 msgstr ""
+"Internacionalni komercijalni uslovi su niz predefiniranih komercijalnih "
+"uslova koji se koriste za inostrane transakcije."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__is_shipped
 msgid "Is Shipped"
 msgstr "Je poslano"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_res_config_settings__is_installed_sale
 msgid "Is the Sale Module Installed"
 msgstr "Instaliran modul Prodaje"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_account_move
 msgid "Journal Entry"
 msgstr "Temeljnica"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_account_move_line
 msgid "Journal Item"
 msgstr "Stavka dnevnika"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report____last_update
 msgid "Last Modified on"
 msgstr "Zadnja promjena"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_product_supplierinfo__last_purchase_date
 msgid "Last Purchase"
 msgstr "Zadnja nabava"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_purchase
 msgid "Logistics"
 msgstr "Logistika"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_lot
 msgid "Lot/Serial"
 msgstr "Lot/Serijski"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "Manual actions may be needed."
 msgstr "Moglo bi biti potrebno manualno dopuniti."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid ""
@@ -384,7 +441,11 @@ msgid ""
 "Orders for reordering products,they will be scheduled that many days earlier"
 " to cope with unexpected vendor delays."
 msgstr ""
+"Dopuštena pogreška za dobavljača. Kada sustav generira narudžbu za "
+"preuređivanje proizvoda, oni će biti raspoređeni toliko dana ranije da se "
+"nose s neočekivanim kašnjenjima dobavljača."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_warehouse_orderpoint
 msgid "Minimum Inventory Rule"
@@ -395,16 +456,19 @@ msgstr "Pravilo minimalne zalihe"
 msgid "Move forward expected request creation date by"
 msgstr "Pomjeri očekivani datum kreiranja zahtjeva za"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "Next transfer(s) impacted:"
 msgstr "Utiče na slijedeće prijenose:"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_partner_view_purchase_buttons_inherit
 msgid "No data yet"
 msgstr "Još nema podataka"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order__receipt_status__pending
 msgid "Not Received"
@@ -412,26 +476,28 @@ msgstr "Nije primljeno"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_move.py:0
+#: code:addons/purchase_stock/models/stock_move.py
 #, python-format
 msgid ""
 "Odoo is not able to generate the anglo saxon entries. The total valuation of"
 " %s is zero."
 msgstr ""
+"Odoo is not able to generate the anglo saxon entries. The total valuation of"
+" %s is zero."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.vendor_delay_report_view_graph
 msgid "On-Time Delivery"
 msgstr "Dostava na vrijeme"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__on_time_rate
-#: model:ir.model.fields,field_description:purchase_stock.field_res_partner__on_time_rate
-#: model:ir.model.fields,field_description:purchase_stock.field_res_users__on_time_rate
-#: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__on_time_rate
 msgid "On-Time Delivery Rate"
 msgstr "Točnost isporuke"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__qty_on_time
 msgid "On-Time Quantity"
@@ -439,15 +505,16 @@ msgstr "Točnost isporuke - količine"
 
 #. module: purchase_stock
 #: model:ir.actions.act_window,name:purchase_stock.action_purchase_vendor_delay_report
-#: model_terms:ir.ui.view,arch_db:purchase_stock.vendor_delay_report_filter
 msgid "On-time Delivery"
 msgstr "Pravovremena isporuka"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_partner_view_purchase_buttons_inherit
 msgid "On-time Rate"
 msgstr "Točnost isporuke"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order_line__orderpoint_id
 msgid "Orderpoint"
@@ -455,19 +522,21 @@ msgstr "Točka narudžbe"
 
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__on_time_rate
-#: model:ir.model.fields,help:purchase_stock.field_res_partner__on_time_rate
-#: model:ir.model.fields,help:purchase_stock.field_res_users__on_time_rate
 msgid ""
 "Over the past x days; the number of products received on time divided by the"
 " number of ordered products.x is either the System Parameter "
 "purchase_stock.on_time_delivery_days or the default 365"
 msgstr ""
+"U proteklih x dana; broj proizvoda primljenih na vrijeme podijeljen s brojem"
+" naručenih proizvoda. x je ili sistemski parametar "
+"purchase_stock.on_time_delivery_days ili zadana vrijednost 365"
 
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_product_product__purchase_order_line_ids
 msgid "PO Lines"
 msgstr "Stavke narudžbenice"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order__receipt_status__partial
 msgid "Partially Received"
@@ -475,34 +544,36 @@ msgstr "Djelomično zaprimljeno"
 
 #. module: purchase_stock
 #. odoo-javascript
-#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
+#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js
 #, python-format
 msgid "Process all the receipt quantities."
 msgstr "Obradi sve količine prijema."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_procurement_group
-#: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__group_id
 msgid "Procurement Group"
 msgstr "Grupa naručivanja"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_product_template
-#: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__product_id
 msgid "Product"
 msgstr "Proizvod"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__category_id
 msgid "Product Category"
 msgstr "Kategorija proizvoda"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_replenishment_info__supplierinfo_id
-#: model:ir.model.fields,field_description:purchase_stock.field_stock_warehouse_orderpoint__supplier_id
 msgid "Product Supplier"
 msgstr "Dobavljač proizvoda"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_product_product
 msgid "Product Variant"
@@ -513,38 +584,39 @@ msgstr "Varijanta proizvoda"
 msgid "Propagate cancellation"
 msgstr "Proširi otkazivanje"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_res_partner__purchase_line_ids
-#: model:ir.model.fields,field_description:purchase_stock.field_res_users__purchase_line_ids
 msgid "Purchase Lines"
 msgstr "Linije nabave"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_purchase_order
 msgid "Purchase Order"
 msgstr "Narudžbenica"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_purchase_order_line
-#: model:ir.model.fields,field_description:purchase_stock.field_stock_move__purchase_line_id
 msgid "Purchase Order Line"
 msgstr "Stavka narudžbenice"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_lot__purchase_order_ids
-#: model:ir.model.fields,field_description:purchase_stock.field_stock_picking__purchase_id
-#: model_terms:ir.ui.view,arch_db:purchase_stock.stock_production_lot_view_form
 msgid "Purchase Orders"
-msgstr "Nabavne narudžbe"
+msgstr "Narudžbenice"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_purchase_report
 msgid "Purchase Report"
-msgstr "Izvještaj nabave"
+msgstr "Izvještaj o nabavkama"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_rule.py:0
+#: code:addons/purchase_stock/models/stock_rule.py
 #, python-format
 msgid "Purchase Security Lead Time"
 msgstr "Sigurnosno vrijeme isporuke nabavke"
@@ -554,28 +626,35 @@ msgstr "Sigurnosno vrijeme isporuke nabavke"
 msgid "Purchase Visibility Days"
 msgstr "Dani vidljivosti nabavke"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_lot__purchase_order_count
 msgid "Purchase order count"
 msgstr "Broj naružbenica"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__dest_address_id
 msgid ""
 "Put an address if you want to deliver directly from the vendor to the "
 "customer. Otherwise, keep empty to deliver to your own company."
 msgstr ""
+"Navedite adresu ako želite da dobavljač izvrši dostavu direktno kupcu, inače"
+" ostavite prazno polje za isporuku u Vašu tvrtku."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "Receipt"
 msgstr "Prijem"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__receipt_status
 msgid "Receipt Status"
 msgstr "Status zaprimanja"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "Receive Products"
@@ -583,21 +662,24 @@ msgstr "Prijem artikala"
 
 #. module: purchase_stock
 #. odoo-javascript
-#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
+#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js
 #, python-format
 msgid "Receive the ordered products."
 msgstr "Primi naručene proizvode."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order_line__qty_received_method
 msgid "Received Qty Method"
 msgstr "Metoda zaprimljene kol."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__picking_ids
 msgid "Receptions"
 msgstr "Prijemi"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_purchase
 msgid "Request your vendors to deliver to your customers"
@@ -610,63 +692,73 @@ msgstr "Zatražite od svojih dobavljača da isporuče izravno vašim kupcima."
 msgid "Requests for quotation"
 msgstr "Zahtjevi za ponudu (RFQ-ovi)"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order_line__move_ids
 msgid "Reservation"
-msgstr "Broj picking-a"
+msgstr "Rezervacija"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_return_picking
 msgid "Return Picking"
 msgstr "Prikupljanje proizvoda povrata"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_product_product__route_ids
-#: model:ir.model.fields,field_description:purchase_stock.field_product_template__route_ids
 msgid "Routes"
 msgstr "Rute"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid "Schedule request for quotations earlier to avoid delays"
 msgstr "Zatražite ponude ranije kako biste izbjegli kašnjenja."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.product_supplierinfo_replenishment_tree_view
 msgid "Set as Supplier"
 msgstr "Postavi kao dobavljača"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_product_supplierinfo__show_set_supplier_button
 msgid "Show Set Supplier Button"
 msgstr "Prikaži gumb Postavi za dobavljača"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_warehouse_orderpoint__show_supplier
 msgid "Show supplier column"
 msgstr "Prikaži kolonu dobavljača"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_move
 msgid "Stock Move"
 msgstr "Kretanje zalihe"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order_line__qty_received_method__stock_moves
-#: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_line_view_form_inherit
 msgid "Stock Moves"
 msgstr "Kretanje zaliha"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_report_stock_report_product_product_replenishment
 msgid "Stock Replenishment Report"
 msgstr "Izvještaj o nadopuni skladišta"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_rule
 msgid "Stock Rule"
 msgstr "Skladišno pravilo"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_report_stock_report_stock_rule
 msgid "Stock rule report"
@@ -677,6 +769,7 @@ msgstr "Izvještaj skladišnih pravila"
 msgid "Stock supplier replenishment information"
 msgstr "Informacije o dopuni zaliha od dobavljača"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_product_supplierinfo
 msgid "Supplier Pricelist"
@@ -687,6 +780,7 @@ msgstr "Cjenik dobavljača"
 msgid "Supplierinfo"
 msgstr "Dobavljač"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__default_location_dest_id_usage
 msgid "Technical field used to display the Drop Ship Address"
@@ -694,29 +788,36 @@ msgstr "Tehničko polje korišteno za prikaz Drop Ship adrese"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock.py:0
+#: code:addons/purchase_stock/models/stock.py
 #, python-format
 msgid "The following replenishment order has been generated"
 msgstr "Generisan je sljedeći nalog za dopunu"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid ""
 "The quantities on your purchase order indicate less than billed. You should "
 "ask for a refund."
 msgstr ""
+"Količine na vašoj narudžbenici su manje od fakturisanih. Trebali biste "
+"zatražiti povrat novca."
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_rule.py:0
+#: code:addons/purchase_stock/models/stock_rule.py
 #, python-format
 msgid ""
 "There is no matching vendor price to generate the purchase order for product"
 " %s (no vendor defined, minimum quantity not reached, dates not valid, ...)."
 " Go on the product form and complete the list of vendors."
 msgstr ""
+"Nema definisane cijene dobavljača za generaciju narudžbenice za artikal %s "
+"(dobavljač nije definisan, minimum zaliha nije dostignut, datumi nisu "
+"validni, ...). Otiđite na formu za unos artikla i kompletirajte listu "
+"dobavljača."
 
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_purchase
@@ -727,58 +828,72 @@ msgid ""
 "on-demand flow. The requested delivery address will be the customer delivery"
 " address and not your warehouse."
 msgstr ""
+"Ovo dodaje rutu za direktnu isporuku (dropshipping) koja se primjenjuje na "
+"proizvode kako biste zatražili od svojih dobavljača da isporuče vašim "
+"kupcima. Proizvod za direktnu isporuku će generisati zahtjev za ponudu nakon"
+" potvrde prodajne narudžbe. Ovo je tok na zahtjev. Tražena adresa isporuke "
+"će biti adresa isporuke kupca, a ne vaše skladište."
 
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__picking_type_id
 msgid "This will determine operation type of incoming shipment"
-msgstr "Ovisno o instaliranim modulima, ovo će vam omogućiti da definirate rutu proizvoda: da li će biti kupljen, proizveden, MTO, itd."
+msgstr ""
+"Ovisno o instaliranim modulima, ovo će vam omogućiti da definirate rutu "
+"proizvoda: da li će biti kupljen, proizveden, MTO, itd."
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid ""
 "Those dates couldn’t be modified accordingly on the receipt %s which had "
 "already been validated."
 msgstr ""
+"Ti datumi se nisu mogli odgovarajuće izmijeniti na prijemnici %s koja je već"
+" bila validirana."
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid "Those dates have been updated accordingly on the receipt %s."
 msgstr "Ti datumi su odgovarajuće ažurirani na prijemnici %s."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__qty_total
 msgid "Total Quantity"
 msgstr "Uk. količina"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_picking
 msgid "Transfer"
 msgstr "Prenos"
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid ""
 "Unable to cancel purchase order %s as some receptions have already been "
 "done."
 msgstr ""
+"Nabavni nalog %s ne može se otkazati, jer su se neka primanja već obavila."
 
 #. module: purchase_stock
 #. odoo-javascript
-#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
+#: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js
 #, python-format
 msgid "Validate the receipt of all ordered products."
-msgstr "Količine na vašoj narudžbi nabavke pokazuju manje nego što je fakturisano. Trebali biste zatražiti povraćaj sredstava."
+msgstr ""
+"Količine na vašoj narudžbi nabavke pokazuju manje nego što je fakturisano. "
+"Trebali biste zatražiti povraćaj sredstava."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_warehouse_orderpoint__vendor_id
-#: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__partner_id
-#: model_terms:ir.ui.view,arch_db:purchase_stock.view_warehouse_orderpoint_tree_editable_inherited_mrp
 msgid "Vendor"
 msgstr "Dobavljač"
 
@@ -789,16 +904,18 @@ msgstr "Izvještaj o kašnjenju dobavljača"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_rule.py:0
+#: code:addons/purchase_stock/models/stock_rule.py
 #, python-format
 msgid "Vendor Lead Time"
 msgstr "Vrijeme isporuke dobavljača"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.actions.act_window,help:purchase_stock.action_purchase_vendor_delay_report
 msgid "Vendor On-time Delivery analysis"
 msgstr "Analiza točnosti isporuke dobavljača"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.view_stock_replenishment_info_stock_purchase_inherit
 msgid "Vendors"
@@ -809,12 +926,13 @@ msgstr "Dobavljači"
 msgid "Visibility Days applied on the purchase routes."
 msgstr "Dani vidljivosti primijenjeni na rute nabavke."
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_warehouse
-#: model:ir.model.fields,field_description:purchase_stock.field_purchase_report__picking_type_id
 msgid "Warehouse"
 msgstr "Skladište"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_stock_warehouse__buy_to_resupply
 msgid "When products are bought, they can be delivered to this warehouse"
@@ -822,13 +940,16 @@ msgstr "Kada se proizvodi kupuju, mogu se dostaviti na ovo skladište"
 
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/stock_rule.py:0
+#: code:addons/purchase_stock/models/stock_rule.py
 #, python-format
 msgid ""
 "When products are needed in <b>%s</b>, <br/> a request for quotation is "
 "created to fulfill the need.<br/>Note: This rule will be used in combination"
 " with the rules<br/>of the reception route(s)"
 msgstr ""
+"Kada su proizvodi potrebni u <b>%s</b>, <br/> kreira se zahtjev za ponudu "
+"kako bi se zadovoljila potreba.<br/>Napomena: Ovo pravilo će se koristiti u "
+"kombinaciji s pravilima<br/>prijemne rute(a)"
 
 #. module: purchase_stock
 #. odoo-python
@@ -839,24 +960,30 @@ msgid ""
 "Create a return first."
 msgstr ""
 
+# taken from hr.po
 #. module: purchase_stock
 #. odoo-python
-#: code:addons/purchase_stock/models/purchase.py:0
+#: code:addons/purchase_stock/models/purchase.py
 #, python-format
 msgid "You must set a Vendor Location for this partner %s"
 msgstr "Morate postaviti lokaciju dobavljača za ovog partnera %s"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_config_settings_view_form_stock
 msgid "days"
 msgstr "Dani"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "of"
 msgstr "od"
 
+# taken from hr.po
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "ordered instead of"
-msgstr "Kada su potrebni proizvodi u <b>%s</b>, <br/> kreira se zahtjev za ponudu da bi se ispunila potreba."
+msgstr ""
+"Kada su potrebni proizvodi u <b>%s</b>, <br/> kreira se zahtjev za ponudu da"
+" bi se ispunila potreba."

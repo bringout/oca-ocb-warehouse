@@ -17,15 +17,16 @@ msgstr ""
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__mondialrelay_brand
-#: model:ir.model.fields,field_description:delivery_mondialrelay.field_delivery_carrier__mondialrelay_brand
 msgid "Brand Code"
 msgstr "Kod brenda"
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #: model:ir.model,name:delivery_mondialrelay.model_res_partner
 msgid "Contact"
 msgstr "Kontakt"
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__shipping_country_code
 msgid "Country Code"
@@ -38,9 +39,6 @@ msgstr "Čarobnjak za odabir prevozioca isporuke"
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__is_mondialrelay
-#: model:ir.model.fields,field_description:delivery_mondialrelay.field_delivery_carrier__is_mondialrelay
-#: model:ir.model.fields,field_description:delivery_mondialrelay.field_res_partner__is_mondialrelay
-#: model:ir.model.fields,field_description:delivery_mondialrelay.field_res_users__is_mondialrelay
 msgid "Is Mondialrelay"
 msgstr "Je Mondialrelay"
 
@@ -51,19 +49,17 @@ msgstr "Poslednji odabrani relay"
 
 #. module: delivery_mondialrelay
 #: model:delivery.carrier,name:delivery_mondialrelay.delivery_carrier_mondialrelay_be_lu
-#: model:delivery.carrier,name:delivery_mondialrelay.delivery_carrier_mondialrelay_es
-#: model:delivery.carrier,name:delivery_mondialrelay.delivery_carrier_mondialrelay_fr_nl
-#: model:product.template,name:delivery_mondialrelay.product_product_delivery_mondialrelay_product_template
 msgid "Mondial Relay"
-msgstr "${object.company_id.name} Delivery Order (Ref ${object.name or 'n/a' })"
+msgstr ""
+"${object.company_id.name} Delivery Order (Ref ${object.name or 'n/a' })"
 
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/models/sale_order.py:0
+#: code:addons/delivery_mondialrelay/models/sale_order.py
 #, python-format
 msgid ""
 "Mondial Relay mismatching between delivery method and shipping address."
-msgstr ""
+msgstr "Mondial Relay nepodudaranje između metoda isporuke i adrese dostave."
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__mondialrelay_allowed_countries
@@ -77,41 +73,69 @@ msgstr "Mondialrelay poslednji odabrani"
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__mondialrelay_colLivMod
-#: model:ir.model.fields,field_description:delivery_mondialrelay.field_delivery_carrier__mondialrelay_packagetype
 msgid "Mondialrelay Packagetype"
 msgstr "Mondialrelay tip paketa"
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/models/delivery_carrier.py:0
+#: code:addons/delivery_mondialrelay/models/delivery_carrier.py
 #, python-format
 msgid "Operation not supported"
 msgstr "Operacija nije podržana"
 
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/wizard/choose_delivery_carrier.py:0
+#: code:addons/delivery_mondialrelay/wizard/choose_delivery_carrier.py
 #, python-format
 msgid "Please, choose a Parcel Point"
-msgstr "<div style=\"margin: 0px; padding: 0px;\">\n    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n        Hello ${object.partner_id.name},<br/><br/>\n        We are glad to inform you that your order has been shipped.\n        %if object.carrier_tracking_ref:\n            Your tracking reference is\n            <strong>\n            %if object.carrier_tracking_url:\n                <a href=\"${object.carrier_tracking_url}\" target=\"_blank\">${object.carrier_tracking_ref}</a>.\n            %else:\n                ${object.carrier_tracking_ref}.\n            %endif\n            </strong>\n        %endif\n        <br/><br/>\n        Please find your delivery order attached for more details.<br/><br/>\n        Thank you,<br/>\n        % if user and user.signature:\n          ${user.signature | safe}\n        % endif\n    </p>\n</div>"
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Hello ${object.partner_id.name},<br/><br/>\n"
+"        We are glad to inform you that your order has been shipped.\n"
+"        %if object.carrier_tracking_ref:\n"
+"            Your tracking reference is\n"
+"            <strong>\n"
+"            %if object.carrier_tracking_url:\n"
+"                <a href=\"${object.carrier_tracking_url}\" target=\"_blank\">${object.carrier_tracking_ref}</a>.\n"
+"            %else:\n"
+"                ${object.carrier_tracking_ref}.\n"
+"            %endif\n"
+"            </strong>\n"
+"        %endif\n"
+"        <br/><br/>\n"
+"        Please find your delivery order attached for more details.<br/><br/>\n"
+"        Thank you,<br/>\n"
+"        % if user and user.signature:\n"
+"          ${user.signature | safe}\n"
+"        % endif\n"
+"    </p>\n"
+"</div>"
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #: model:ir.model,name:delivery_mondialrelay.model_sale_order
 msgid "Sales Order"
 msgstr "Prodajni nalog"
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #: model:ir.model,name:delivery_mondialrelay.model_delivery_carrier
 msgid "Shipping Methods"
 msgstr "Načini dostave"
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,help:delivery_mondialrelay.field_choose_delivery_carrier__shipping_country_code
 msgid ""
 "The ISO country code in two chars. \n"
 "You can use this field for quick search."
 msgstr ""
+"ISO oznaka zemlje u dva znaka. \n"
+"Ovo polje možete koristiti za brzu pretragu."
 
+# taken from hr.po
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__shipping_zip
 msgid "Zip"

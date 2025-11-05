@@ -15,43 +15,53 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model.fields,help:delivery_stock_picking_batch.field_stock_picking_type__batch_max_weight
 msgid ""
 "A transfer will not be automatically added to batches that will exceed this weight if the transfer is added to it.\n"
 "Leave this value as '0' if no weight limit."
 msgstr ""
+"Prijenos neće automatski biti dodan u grupe koje prekoračuju ovu težinu sa uračunatim dodanim prijenosom.\n"
+"Ostavite ovu vrijednost na '0' ako nema ograničenja težine."
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model.fields,help:delivery_stock_picking_batch.field_stock_picking_type__batch_group_by_carrier
 msgid "Automatically group batches by carriers"
 msgstr "Automatski grupiraj po prevoznicima"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model,name:delivery_stock_picking_batch.model_stock_picking_batch
 msgid "Batch Transfer"
 msgstr "Skupni prijenos"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking_type__batch_group_by_carrier
 msgid "Carrier"
 msgstr "Prijevoznik"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking_type__batch_max_weight
 msgid "Maximum weight per batch"
 msgstr "Maksimalna težina po grupi"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model,name:delivery_stock_picking_batch.model_stock_picking_type
 msgid "Picking Type"
 msgstr "Vrsta dokumenta"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model,name:delivery_stock_picking_batch.model_stock_picking
 msgid "Transfer"
 msgstr "Prijenos"
 
+# taken from hr.po
 #. module: delivery_stock_picking_batch
 #: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking_type__weight_uom_name
 msgid "Weight unit of measure label"

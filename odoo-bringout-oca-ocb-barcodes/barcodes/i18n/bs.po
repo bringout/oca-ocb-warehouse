@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * barcodes
-# 
+#
 # Translators:
 # Martin Trigaux, 2018
 # Boško Stojaković <bluesoft83@gmail.com>, 2018
@@ -14,17 +14,18 @@ msgstr ""
 "PO-Revision-Date: 2018-09-21 13:17+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>, 2018\n"
 "Language-Team: Bosnian (https://www.transifex.com/odoo/teams/41243/bs/)\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+# taken from hr.po
 #. module: barcodes
-#: code:addons/barcodes/models/barcodes.py:204
+#: code:addons/barcodes/models/barcode_rule.py
 #, python-format
 msgid " '*' is not a valid Regex Barcode Pattern. Did you mean '.*' ?"
-msgstr ""
+msgstr " '*' nije ispravan regex barkod uzorak. Jeste li mislili '.*'?"
 
 #. module: barcodes
 #: code:addons/barcodes/models/barcodes.py:202
@@ -52,6 +53,10 @@ msgid ""
 "                                pattern. The pattern syntax is that of regular expression, and a barcode is matched\n"
 "                                if the regular expression matches a prefix of the barcode."
 msgstr ""
+"<i>Nomenklature barkodova</i> definišu kako se barkodovi prepoznaju i kategorizuju.\n"
+"                                Kada se barkod skenira, povezuje se sa <i>prvim</i> pravilom sa odgovarajućim\n"
+"                                obrascem. Sintaksa obrasca je regularni izraz, a barkod se poklapa\n"
+"                                ako regularni izraz odgovara prefiksu barkoda."
 
 #. module: barcodes
 #: model_terms:ir.actions.act_window,help:barcodes.action_barcode_nomenclature_form
@@ -59,11 +64,14 @@ msgid ""
 "A barcode nomenclature defines how the point of sale identify and interprets"
 " barcodes"
 msgstr ""
+"Nomenklatura barkoda definiše kako prodajno mjesto identifikuje i tumači "
+"barkodove"
 
+# taken from hr.po
 #. module: barcodes
 #: model_terms:ir.actions.act_window,help:barcodes.action_barcode_nomenclature_form
 msgid "Add a new barcode nomenclature"
-msgstr ""
+msgstr "Dodavanje nove barkod nomenklature"
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
@@ -71,60 +79,63 @@ msgstr ""
 msgid "Alias"
 msgstr "Alias"
 
+# taken from hr.po
 #. module: barcodes
-#: selection:barcode.nomenclature,upc_ean_conv:0
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_nomenclature__upc_ean_conv__always
 msgid "Always"
 msgstr "Uvijek"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule__name
 msgid "An internal identification for this barcode nomenclature rule"
-msgstr ""
+msgstr "Interna identifikacija za ovo pravilo nomenklature barkoda"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_nomenclature__name
 msgid "An internal identification of the barcode nomenclature"
-msgstr ""
+msgstr "Interni identifikator barkod nomenklature"
 
+# taken from hr.po
 #. module: barcodes
-#: selection:barcode.rule,encoding:0
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_rule__encoding__any
 msgid "Any"
 msgstr "Bilo koji"
 
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_barcodes_barcode_events_mixin
 msgid "Barcode Event Mixin"
-msgstr ""
+msgstr "Mixin događaja barkoda"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_barcode_nomenclature
-#: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__name
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__barcode_nomenclature_id
-#: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_nomenclature_form
 msgid "Barcode Nomenclature"
 msgstr "Nomenklatura bakodova"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.actions.act_window,name:barcodes.action_barcode_nomenclature_form
-#: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_nomenclature_tree
 msgid "Barcode Nomenclatures"
 msgstr "Nomenklature barkodova"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__pattern
 msgid "Barcode Pattern"
-msgstr ""
+msgstr "Barkod uzorak"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_barcode_rule
-#: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_rule_form
 msgid "Barcode Rule"
-msgstr ""
+msgstr "Barkod pravilo"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcodes_barcode_events_mixin___barcode_scanned
 msgid "Barcode Scanned"
-msgstr ""
+msgstr "Barkod čitač"
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
@@ -136,20 +147,21 @@ msgstr "Kaser"
 msgid "Client"
 msgstr "Klijent"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_res_company
 msgid "Companies"
 msgstr "Kompanije"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__create_uid
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__create_uid
 msgid "Created by"
 msgstr "Kreirao"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__create_date
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__create_date
 msgid "Created on"
 msgstr "Kreirano"
 
@@ -170,32 +182,33 @@ msgstr "Odbaci"
 msgid "Discounted Product"
 msgstr "Sniženi proizvod"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__display_name
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__display_name
-#: model:ir.model.fields,field_description:barcodes.field_barcodes_barcode_events_mixin__display_name
 msgid "Display Name"
 msgstr "Prikazani naziv"
 
 #. module: barcodes
-#: selection:barcode.rule,encoding:0
+#: selection:barcode.rule,encoding
 msgid "EAN-13"
-msgstr ""
+msgstr "EAN-13"
 
+# taken from hr.po
 #. module: barcodes
-#: selection:barcode.nomenclature,upc_ean_conv:0
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_nomenclature__upc_ean_conv__ean2upc
 msgid "EAN-13 to UPC-A"
-msgstr ""
+msgstr "EAN-13 u UPC-A"
 
 #. module: barcodes
-#: selection:barcode.rule,encoding:0
+#: selection:barcode.rule,encoding
 msgid "EAN-8"
-msgstr ""
+msgstr "EAN-8"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__encoding
 msgid "Encoding"
-msgstr ""
+msgstr "Kodna stranica:"
 
 #. module: barcodes
 #. openerp-web
@@ -228,10 +241,11 @@ msgstr ""
 msgid "Error: Pager not available"
 msgstr ""
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_ir_http
 msgid "HTTP Routing"
-msgstr ""
+msgstr "HTTP usmjeravanje"
 
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__id
@@ -240,22 +254,21 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature____last_update
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule____last_update
-#: model:ir.model.fields,field_description:barcodes.field_barcodes_barcode_events_mixin____last_update
 msgid "Last Modified on"
 msgstr "Zadnje mijenjano"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__write_uid
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__write_uid
 msgid "Last Updated by"
 msgstr "Zadnji ažurirao"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__write_date
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__write_date
 msgid "Last Updated on"
 msgstr "Zadnje ažurirano"
 
@@ -269,15 +282,17 @@ msgstr "Lokacija"
 msgid "Lot"
 msgstr "Lot"
 
+# taken from hr.po
 #. module: barcodes
-#: selection:barcode.nomenclature,upc_ean_conv:0
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_nomenclature__upc_ean_conv__none
 msgid "Never"
 msgstr "Nikada"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_res_company__nomenclature_id
 msgid "Nomenclature"
-msgstr ""
+msgstr "Nomenklatrua"
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
@@ -294,17 +309,25 @@ msgid ""
 "                                the barcode field on the associated records <i>must</i> show these digits as \n"
 "                                zeroes."
 msgstr ""
+"Obrasci također mogu definisati kako numeričke vrijednosti, kao što su težina ili cijena, mogu biti\n"
+"                                kodirane u barkod. Označavaju se sa <code>{NNN}</code> gdje N-ovi\n"
+"                                definišu gdje su cifre broja kodirane. Decimalni brojevi su također podržani sa \n"
+"                                decimalama označenim sa D-ovima, kao što je <code>{NNNDD}</code>. U tim slučajevima, \n"
+"                                polje barkoda na povezanim zapisima <i>mora</i> prikazati te cifre kao \n"
+"                                nule."
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
 msgid "Priced Product"
 msgstr ""
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__name
 msgid "Rule Name"
 msgstr "Naziv pravila"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__rule_ids
 msgid "Rules"
@@ -317,6 +340,7 @@ msgstr "Pravila"
 msgid "Select"
 msgstr "Odaberi"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__sequence
 msgid "Sequence"
@@ -329,25 +353,28 @@ msgstr "Sekvenca"
 msgid "Set quantity"
 msgstr ""
 
+# taken from hr.po
 #. module: barcodes
 #: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_nomenclature_form
 msgid "Tables"
 msgstr "Stolovi"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule__pattern
 msgid "The barcode matching pattern"
-msgstr ""
+msgstr "Uzorak barkoda za validaciju"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_nomenclature__rule_ids
 msgid "The list of barcode rules"
-msgstr ""
+msgstr "Popis pravila barkodova"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule__alias
 msgid "The matched pattern will alias to this barcode"
-msgstr ""
+msgstr "Poklopljeni uzorak će biti alias za ovaj barkod"
 
 #. module: barcodes
 #: code:addons/barcodes/models/barcodes.py:198
@@ -357,12 +384,14 @@ msgstr ""
 msgid "There is a syntax error in the barcode pattern "
 msgstr ""
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule__encoding
 msgid ""
 "This rule will apply only if the barcode is encoded with the specified "
 "encoding"
 msgstr ""
+"Ovo pravilo će se primjeniti jedino ako je barcod u specifičnom formatu"
 
 #. module: barcodes
 #. openerp-web
@@ -378,6 +407,7 @@ msgstr ""
 msgid "To set the quantity please scan a barcode first."
 msgstr ""
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__type
 msgid "Type"
@@ -390,39 +420,107 @@ msgid ""
 "setting determines if a UPC/EAN barcode should be automatically converted in"
 " one way or another when trying to match a rule with the other encoding."
 msgstr ""
+"UPC šifre se mogu konvertovati u EAN dodavanjem nule na početak. Ova "
+"postavka određuje da li UPC/EAN barkod treba biti automatski konvertovan na "
+"jedan ili drugi način pri pokušaju poklapanja pravila sa drugim kodiranjem."
 
 #. module: barcodes
-#: selection:barcode.rule,encoding:0
+#: selection:barcode.rule,encoding
 msgid "UPC-A"
-msgstr ""
+msgstr "UPC-A"
 
+# taken from hr.po
 #. module: barcodes
-#: selection:barcode.nomenclature,upc_ean_conv:0
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_nomenclature__upc_ean_conv__upc2ean
 msgid "UPC-A to EAN-13"
-msgstr ""
+msgstr "UPC-A u EAN-13"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__upc_ean_conv
 msgid "UPC/EAN Conversion"
-msgstr ""
+msgstr "UPC/EAN Konverzija"
 
+# taken from hr.po
 #. module: barcodes
-#: selection:barcode.rule,type:0
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_rule__type__product
 msgid "Unit Product"
-msgstr ""
+msgstr "Jedinica proizvoda"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule__sequence
 msgid ""
 "Used to order rules such that rules with a smaller sequence match first"
 msgstr ""
+"Koristi se za redoslijed pravila tako da pravilo s manjom sekvencom primjeni"
+" prije"
 
+# taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcodes_barcode_events_mixin___barcode_scanned
 msgid "Value of the last barcode scanned."
-msgstr ""
+msgstr "Vrijednost posljednjeg skeniranog barkoda."
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
 msgid "Weighted Product"
 msgstr "Proizvod za vaganje"
+
+# taken from hr.po
+#. module: barcodes
+#: code:addons/barcodes/static/src/barcode_handlers.js
+#, python-format
+msgid "Barcode: "
+msgstr "Barkod: "
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_events_mixin.py
+#, python-format
+msgid ""
+"In order to use barcodes.barcode_events_mixin, method on_barcode_scanned "
+"must be implemented"
+msgstr ""
+"Da bi se koristio barcodes.barcode_events_mixin, metoda on_barcode_scanned "
+"mora biti implementirana"
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_rule.py
+#, python-format
+msgid ""
+"The barcode pattern %(pattern)s does not lead to a valid regular expression."
+msgstr "Obrazac barkoda %(pattern)s ne vodi do validnog regularnog izraza."
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_rule.py
+#, python-format
+msgid ""
+"There is a syntax error in the barcode pattern %(pattern)s: a rule can only "
+"contain one pair of braces."
+msgstr ""
+"Postoji sintaksna greška u obrascu barkoda %(pattern)s: pravilo može samo "
+"sadržati jedan par zagrada."
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_rule.py
+#, python-format
+msgid ""
+"There is a syntax error in the barcode pattern %(pattern)s: braces can only "
+"contain N's followed by D's."
+msgstr ""
+"Postoji sintaksna greška u obrascu barkoda %(pattern)s: zagrade mogu samo "
+"sadržati N-ove praćene sa D-ovima."
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_rule.py
+#, python-format
+msgid ""
+"There is a syntax error in the barcode pattern %(pattern)s: empty braces."
+msgstr ""
+"Postoji sintaksna greška u obrascu barkoda %(pattern)s: prazne zagrade."
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/barcode_handlers.js
+#, python-format
+msgid "Unknown barcode command"
+msgstr "Nepoznata komanda barkoda"
