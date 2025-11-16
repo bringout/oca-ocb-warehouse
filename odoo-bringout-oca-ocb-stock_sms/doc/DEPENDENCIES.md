@@ -2,5 +2,5 @@
 
 This addon depends on:
 
-- [stock](https://github.com/bringout/oca-ocb-warehouse/tree/81e6496fce389797413505803016d3ac487ede13/odoo-bringout-oca-ocb-stock)
-- [sms](https://github.com/bringout/oca-ocb-mail/tree/d3df84d6ee90679ea68ea2f315eb8c8fdb7224da/odoo-bringout-oca-ocb-sms)
+- [stock](https://github.com/bringout/oca-ocb-warehouse/tree/c945b84263caf64889385d3735546b1fd94a8271/odoo-bringout-oca-ocb-stock)
+- [sms](https://github.com/bringout/oca-ocb-mail/tree/73bca97800f93e6def3723de72b3a1d6fb3db6d6/odoo-bringout-oca-ocb-sms)
