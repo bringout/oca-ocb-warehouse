@@ -615,7 +615,7 @@ msgstr "Dohvati omjer i kreiraj isporuku"
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
 msgid "Group By"
-msgstr "Grupiši po..."
+msgstr "Grupiši po"
 
 # taken from hr.po
 #. module: delivery
@@ -686,19 +686,19 @@ msgstr "Je isporuka"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena na"
+msgstr "Zadnje mijenjano"
 
 # taken from hr.po
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__write_uid
 msgid "Last Updated by"
-msgstr "Zadnje ažuriranje izvršio"
+msgstr "Zadnji ažurirao"
 
 # taken from hr.po
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažuriranje na"
+msgstr "Zadnje ažurirano"
 
 # taken from hr.po
 #. module: delivery
@@ -1099,7 +1099,7 @@ msgstr "Status"
 #. module: delivery
 #: model:ir.model,name:delivery.model_stock_move
 msgid "Stock Move"
-msgstr "Skladišno kretanje"
+msgstr "Kretanje zalihe"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_stock_package_type

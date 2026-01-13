@@ -835,7 +835,7 @@ msgstr "Akcija"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_needaction
 msgid "Action Needed"
-msgstr "Potrebna radnja"
+msgstr "Potrebna akcija"
 
 # taken from hr.po
 #. module: stock
@@ -863,7 +863,7 @@ msgstr "Aktivnosti"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Dekoracija izuzetka aktivnosti"
+msgstr "Dekoracija iznimke aktivnosti"
 
 # taken from hr.po
 #. module: stock
@@ -1226,7 +1226,7 @@ msgstr "Prilikom potvrde"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_attachment_count
 msgid "Attachment Count"
-msgstr "Broj priloga"
+msgstr "Broj zakački"
 
 # taken from hr.po
 #. module: stock
@@ -1477,7 +1477,7 @@ msgstr "Otkaži naredno pomjeranje"
 #. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__stock_move__state__cancel
 msgid "Cancelled"
-msgstr "Otkazano"
+msgstr "Otkazan"
 
 # taken from hr.po
 #. module: stock
@@ -1790,7 +1790,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model,name:stock.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke konfiguracije"
+msgstr "Konfiguracija postavki"
 
 # taken from hr.po
 #. module: stock
@@ -2742,7 +2742,7 @@ msgstr "Dokumentacija"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__qty_done
 msgid "Done"
-msgstr "Dovršeno"
+msgstr "Preuzeto"
 
 # taken from hr.po
 #. module: stock
@@ -3010,19 +3010,21 @@ msgstr "Skupi"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_follower_ids
 msgid "Followers"
-msgstr "Pratitelji"
+msgstr "Pratioci"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Pratitelji (partneri)"
+msgstr "Pratioci (Partneri)"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_lot__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Font awesome ikona npr. fa-tasks"
+msgstr ""
+"Kada je označena, ruta će biti izborna na kategoriji proizvoda. Imaće "
+"prioritet nad rutom skladišta."
 
 # taken from hr.po
 #. module: stock
@@ -3289,7 +3291,7 @@ msgstr "Dani globalne vidljivosti"
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.search_product_lot_filter
 msgid "Group By"
-msgstr "Grupiši po..."
+msgstr "Grupiši po"
 
 # taken from hr.po
 #. module: stock
@@ -3456,7 +3458,15 @@ msgstr "Ikona"
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_lot__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Ikona za prikaz iznimki."
+msgstr ""
+"* Lokacija dobavljača: Virtuelna lokacija koja predstavlja izvornu lokaciju za proizvode koji dolaze od vaših dobavljača\n"
+"* View: Virtuelna lokacija korištena za kreiranje hijerarhijskih struktura za vaše skladište, agregiranje njegovih child lokacija ; ne može direktno sadržavati proizvode\n"
+"* Interna lokacija: Fizičke lokacije unutar vaših vlastitih skladišta,\n"
+"* Lokacija klijenta: Virtuelna lokacija koja predstavlja odredišnu lokaciju za proizvode poslane vašim klijentima\n"
+"* Gubitak inventara: Virtuelna lokacija koja služi kao counterpart za inventarne operacije korištene za korekciju stock nivoa (Fizički inventari)\n"
+"* Nabavka: Virtuelna lokacija koja služi kao privremeni counterpart za nabavne operacije kada izvor (dobavljač ili proizvodnja) još nije poznat. Ova lokacija treba biti prazna kada scheduler nabavke završi sa radom.\n"
+"* Proizvodnja: Virtuelna counterpart lokacija za proizvođačke operacije: ova lokacija troši sirovi materijal i proizvodi gotove proizvode\n"
+"* Transit lokacija: Counterpart lokacija koja se treba koristiti u inter-company ili inter-warehouse operacijama"
 
 #. module: stock
 #: model_terms:res.company,invoice_terms_html:stock.res_company_1
@@ -3483,7 +3493,9 @@ msgstr "Ako je zakačeno, nove poruke će zahtjevati vašu pažnju"
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_lot__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Ako je označeno neke poruke mogu imati grešku u dostavi."
+msgstr ""
+"Kada je označena, ruta će biti izborna u Inventory tab-u forme proizvoda. "
+"Imaće prioritet nad rutom skladišta."
 
 # taken from hr.po
 #. module: stock
@@ -3982,7 +3994,7 @@ msgstr "Inventura na datum"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_is_follower
 msgid "Is Follower"
-msgstr "Pratilac"
+msgstr "Je pratilac"
 
 # taken from hr.po
 #. module: stock
@@ -4206,19 +4218,19 @@ msgstr "Zadnja inventura"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena na"
+msgstr "Zadnje mijenjano"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout__write_uid
 msgid "Last Updated by"
-msgstr "Zadnje ažuriranje izvršio"
+msgstr "Zadnji ažurirao"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažuriranje na"
+msgstr "Zadnje ažurirano"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_quant__last_count_date
@@ -4686,7 +4698,7 @@ msgstr "Moruka za prikupljanje proizvoda sa zalihe"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_ids
 msgid "Messages"
-msgstr "Nepročitane poruke"
+msgstr "Poruke"
 
 # taken from hr.po
 #. module: stock
@@ -5153,7 +5165,11 @@ msgstr "Broj poruka koje zahtijevaju aktivnost"
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_lot__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "Broj poruka sa greškama pri isporuci"
+msgstr ""
+"Kada je skladište odabrano za ovu rutu, ova ruta treba biti viđena kao "
+"defaultna ruta kada proizvodi prolaze kroz ovo skladište. Ovo ponašanje može"
+" biti prevazlađeno rutama na proizvodu/kategorijama proizvoda ili "
+"preferiranim rutama na nabavci"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_product_product__nbr_moves_out
@@ -5743,7 +5759,7 @@ msgstr "Tip preuzimanja"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout__picking_ids
 msgid "Picking"
-msgstr "Skladišnice"
+msgstr "Preuzimanje"
 
 # taken from hr.po
 #. module: stock
@@ -5761,7 +5777,7 @@ msgstr "Prijemna lista"
 #. module: stock
 #: model:ir.model,name:stock.model_stock_picking_type
 msgid "Picking Type"
-msgstr "Vrsta dokumenta"
+msgstr "Tip prikupljanja"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_rule__picking_type_code_domain
@@ -5937,7 +5953,7 @@ msgstr "Procesiraj transfere u grupi po radniku"
 #. module: stock
 #: model:ir.model,name:stock.model_procurement_group
 msgid "Procurement Group"
-msgstr "Nalog za nabavu"
+msgstr "Grupa naručivanja"
 
 # taken from hr.po
 #. module: stock
@@ -5994,7 +6010,7 @@ msgstr "Kategorije artikala"
 #. module: stock
 #: model:ir.model,name:stock.model_product_category
 msgid "Product Category"
-msgstr "Kategorija proizvoda"
+msgstr "Kategorija artikla"
 
 #. module: stock
 #: model:ir.actions.report,name:stock.label_product_product
@@ -6026,7 +6042,7 @@ msgstr "Kretanja artikala"
 #. module: stock
 #: model:ir.model,name:stock.model_stock_move_line
 msgid "Product Moves (Stock Move Line)"
-msgstr "Skladišna kretanja proizvoda(stavke)"
+msgstr "Kretanja artikala (stavka kretanja zalihe)"
 
 # taken from hr.po
 #. module: stock
@@ -6168,7 +6184,7 @@ msgstr "Proizvodne lokacije"
 #: code:addons/stock/wizard/stock_quantity_history.py
 #, python-format
 msgid "Products"
-msgstr "Proizvodi"
+msgstr "Artikli"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking__products_availability_state
@@ -7764,13 +7780,13 @@ msgstr "Lokacije"
 #. module: stock
 #: model:ir.model,name:stock.model_stock_move
 msgid "Stock Move"
-msgstr "Skladišno kretanje"
+msgstr "Promjena"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.actions.act_window,name:stock.stock_move_action
 msgid "Stock Moves"
-msgstr "Kretanje zaliha"
+msgstr "Promjene"
 
 # taken from hr.po
 #. module: stock
@@ -9045,7 +9061,7 @@ msgstr "Unsafe unit of measure"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move__product_uom
 msgid "UoM"
-msgstr "JMJ"
+msgstr "JM"
 
 # taken from hr.po
 #. module: stock
@@ -9391,7 +9407,7 @@ msgstr "Prikaži lotove i serijske brojeve"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__website_message_ids
 msgid "Website Messages"
-msgstr "Nepročitane poruke"
+msgstr "Poruke sa website-a"
 
 # taken from hr.po
 #. module: stock
@@ -9594,7 +9610,7 @@ msgstr "Širina mora biti pozitivna"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_return_picking_line__wizard_id
 msgid "Wizard"
-msgstr "ID čarobnjaka"
+msgstr "Čarobnjak"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_move_line_operation_tree

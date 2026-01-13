@@ -56,7 +56,7 @@ msgstr "Nalog za knjiženje računa"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_needaction
 msgid "Action Needed"
-msgstr "Potrebna radnja"
+msgstr "Potrebna akcija"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -68,7 +68,7 @@ msgstr "Aktivnosti"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Dekoracija izuzetka aktivnosti"
+msgstr "Dekoracija iznimke aktivnosti"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -103,7 +103,7 @@ msgstr "Primjeni na"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_attachment_count
 msgid "Attachment Count"
-msgstr "Broj priloga"
+msgstr "Broj zakački"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -139,7 +139,7 @@ msgstr "Otkaži"
 #. module: stock_landed_costs
 #: model:ir.model.fields.selection,name:stock_landed_costs.selection__stock_landed_cost__state__cancel
 msgid "Cancelled"
-msgstr "Otkazano"
+msgstr "Otkazan"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -151,7 +151,7 @@ msgstr "Tvrtke"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__company_id
 msgid "Company"
-msgstr "Kompanija"
+msgstr "Preduzeće"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -169,7 +169,7 @@ msgstr "Izračunaj"
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke konfiguracije"
+msgstr "Tipovi Landed cost-a"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -268,7 +268,7 @@ msgstr "Prikazani naziv"
 #. module: stock_landed_costs
 #: model:mail.message.subtype,name:stock_landed_costs.mt_stock_landed_cost_open
 msgid "Done"
-msgstr "Dovršeno"
+msgstr "Gotovo"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -302,19 +302,19 @@ msgstr ""
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_follower_ids
 msgid "Followers"
-msgstr "Pratitelji"
+msgstr "Pratioci"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Pratitelji (partneri)"
+msgstr "Pratioci (Partneri)"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,help:stock_landed_costs.field_stock_landed_cost__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Font awesome ikona npr. fa-tasks"
+msgstr "Označava da li je proizvod landed cost."
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -326,7 +326,7 @@ msgstr "Buduće aktivnosti"
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_search
 msgid "Group By"
-msgstr "Grupiši po..."
+msgstr "Grupiši po"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -378,7 +378,7 @@ msgstr ""
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_is_follower
 msgid "Is Follower"
-msgstr "Pratilac"
+msgstr "Je pratilac"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_account_move_line__is_landed_costs_line
@@ -443,19 +443,19 @@ msgstr "Zavisni troškovi obračunati"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena na"
+msgstr "Zadnje mijenjano"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__write_uid
 msgid "Last Updated by"
-msgstr "Zadnje ažuriranje izvršio"
+msgstr "Zadnji ažurirao"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažuriranje na"
+msgstr "Zadnje ažurirano"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -484,7 +484,7 @@ msgstr "Greška pri isporuci poruke"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_ids
 msgid "Messages"
-msgstr "Nepročitane poruke"
+msgstr "Poruke"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -521,13 +521,13 @@ msgstr "Događaj sljedećeg kalendara aktivnosti"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Krajnji rok za sljedeću aktivnost"
+msgstr "Krajnji rok slijedeće aktivnosti"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_summary
 msgid "Next Activity Summary"
-msgstr "Pregled sljedeće aktivnosti"
+msgstr "Sažetak sljedeće aktivnosti"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -577,7 +577,7 @@ msgstr "Originalna vrijednost"
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_search
 msgid "Picking"
-msgstr "Skladišnice"
+msgstr "Tip Landed cost-a"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -604,7 +604,10 @@ msgstr "Proknjižen"
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_product_template
 msgid "Product"
-msgstr "Proizvod"
+msgstr ""
+"Ne možete primijeniti landed cost-ove na odabrane transfere. Landed cost-ovi"
+" se mogu primijeniti samo za proizvode sa automatiziranom valuacijom "
+"inventara i FIFO metodom kalkulacije troškova."
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -616,19 +619,19 @@ msgstr "Tip artikla"
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr "Stavka zahtjeva za nabavu"
+msgstr "Stavka naloga nabave"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_valuation_adjustment_lines__quantity
 msgid "Quantity"
-msgstr "Količina"
+msgstr "Konačni trošak"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_user_id
 msgid "Responsible User"
-msgstr "Odgovorni korisnik"
+msgstr "Odgovorna osoba"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -657,7 +660,9 @@ msgstr "Status"
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_search
 msgid "Status"
-msgstr "Status"
+msgstr ""
+"Nema linija prilagođavanja valuacije. Trebali biste možda preračunati landed"
+" cost-ove."
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -688,7 +693,7 @@ msgstr "Stavka zavisnih troškova"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_valuation_adjustment_lines__move_id
 msgid "Stock Move"
-msgstr "Skladišno kretanje"
+msgstr "Kretanje zalihe"
 
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_stock_valuation_layer
@@ -770,7 +775,7 @@ msgstr "Volumen"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__website_message_ids
 msgid "Website Messages"
-msgstr "Nepročitane poruke"
+msgstr "Poruke sa website-a"
 
 # taken from hr.po
 #. module: stock_landed_costs
