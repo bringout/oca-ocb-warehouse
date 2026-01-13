@@ -168,7 +168,7 @@ msgstr "Datum završetka prvog naloga za prijem."
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -251,7 +251,7 @@ msgstr "Tip odredišne lokacije"
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report__display_name
 msgid "Display Name"
-msgstr "Naziv"
+msgstr "Prikazani naziv"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -407,7 +407,7 @@ msgstr "Stavka dnevnika"
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report____last_update
 msgid "Last Modified on"
-msgstr "Zadnja promjena"
+msgstr "Zadnja izmjena na"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -553,7 +553,7 @@ msgstr "Obradi sve količine prijema."
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_procurement_group
 msgid "Procurement Group"
-msgstr "Grupa naručivanja"
+msgstr "Nalog za nabavu"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -594,19 +594,19 @@ msgstr "Linije nabave"
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_purchase_order
 msgid "Purchase Order"
-msgstr "Narudžbenica"
+msgstr "Zahtjevi za nabavom"
 
 # taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr "Stavka narudžbenice"
+msgstr "Stavka zahtjeva za nabavu"
 
 # taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_lot__purchase_order_ids
 msgid "Purchase Orders"
-msgstr "Narudžbenice"
+msgstr "Zahtjevi za nabavom"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -738,7 +738,7 @@ msgstr "Prikaži kolonu dobavljača"
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_move
 msgid "Stock Move"
-msgstr "Kretanje zalihe"
+msgstr "Skladišno kretanje"
 
 # taken from hr.po
 #. module: purchase_stock

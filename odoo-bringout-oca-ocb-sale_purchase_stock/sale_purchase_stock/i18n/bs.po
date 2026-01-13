@@ -18,7 +18,7 @@ msgstr ""
 #. module: sale_purchase_stock
 #: model:ir.model,name:sale_purchase_stock.model_purchase_order
 msgid "Purchase Order"
-msgstr "Nalog za nabavu"
+msgstr "Zahtjevi za nabavom"
 
 #. module: sale_purchase_stock
 #: model:ir.model,name:sale_purchase_stock.model_sale_order

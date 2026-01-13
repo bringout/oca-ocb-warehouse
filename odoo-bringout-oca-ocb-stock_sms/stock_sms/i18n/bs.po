@@ -29,7 +29,7 @@ msgstr ""
 #. module: stock_sms
 #: model_terms:ir.ui.view,arch_db:stock_sms.view_confirm_stock_sms
 msgid "Cancel"
-msgstr "Odustani"
+msgstr "Otkaži"
 
 # taken from hr.po
 #. module: stock_sms
@@ -41,7 +41,7 @@ msgstr "Tvrtke"
 #. module: stock_sms
 #: model:ir.model,name:stock_sms.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: stock_sms
@@ -81,7 +81,7 @@ msgstr "Onemogući SMS"
 #. module: stock_sms
 #: model:ir.model.fields,field_description:stock_sms.field_confirm_stock_sms__display_name
 msgid "Display Name"
-msgstr "Naziv"
+msgstr "Prikazani naziv"
 
 #. module: stock_sms
 #: model:ir.model.fields,field_description:stock_sms.field_res_company__has_received_warning_stock_sms
@@ -97,19 +97,19 @@ msgstr "ID"
 #. module: stock_sms
 #: model:ir.model.fields,field_description:stock_sms.field_confirm_stock_sms____last_update
 msgid "Last Modified on"
-msgstr "Zadnja promjena"
+msgstr "Zadnja izmjena na"
 
 # taken from hr.po
 #. module: stock_sms
 #: model:ir.model.fields,field_description:stock_sms.field_confirm_stock_sms__write_uid
 msgid "Last Updated by"
-msgstr "Promijenio"
+msgstr "Zadnje ažuriranje izvršio"
 
 # taken from hr.po
 #. module: stock_sms
 #: model:ir.model.fields,field_description:stock_sms.field_confirm_stock_sms__write_date
 msgid "Last Updated on"
-msgstr "Vrijeme promjene"
+msgstr "Zadnje ažuriranje na"
 
 # taken from hr.po
 #. module: stock_sms
