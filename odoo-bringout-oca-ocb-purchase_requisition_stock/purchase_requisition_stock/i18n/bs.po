@@ -41,7 +41,7 @@ msgstr "Vrsta operacije"
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_order
 msgid "Purchase Order"
-msgstr "Nalog za nabavu"
+msgstr "Nalog za nabavku"
 
 # taken from hr.po
 #. module: purchase_requisition_stock
@@ -53,7 +53,7 @@ msgstr "Stavka naloga nabave"
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_requisition
 msgid "Purchase Requisition"
-msgstr "Zahtjev za nabavom"
+msgstr "Zahtjev za nabavkom"
 
 # taken from hr.po
 #. module: purchase_requisition_stock

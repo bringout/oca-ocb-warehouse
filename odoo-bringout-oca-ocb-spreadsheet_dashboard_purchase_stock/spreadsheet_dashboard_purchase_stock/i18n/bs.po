@@ -254,7 +254,7 @@ msgstr "Naručena količina"
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json
 #, python-format
 msgid "RFQ"
-msgstr "ZZP (RFQ)"
+msgstr "RFQ"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
