@@ -5061,9 +5061,7 @@ msgstr ""
 #: code:addons/stock/models/stock_rule.py
 #, python-format
 msgid "No source location defined on stock rule: %s!"
-msgstr ""
-"Nabavno pravilo nije pronađeno na lokaciji \"%s\" za proizvod \"%s\".\n"
-" Proverite konfiguraciju ruta."
+msgstr "No source location defined on stock rule: %s!"
 
 # taken from hr.po
 #. module: stock
@@ -7036,7 +7034,7 @@ msgstr ""
 #: code:addons/stock/models/stock_location.py
 #, python-format
 msgid "Rule %s belongs to %s while the route belongs to %s."
-msgstr "Dohvati količine inventara"
+msgstr "Rule %s belongs to %s while the route belongs to %s."
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_rule__rule_message
@@ -8160,9 +8158,7 @@ msgstr "Tehnička veza da vidi koja linija je proizvedena sa ovim."
 #: code:addons/stock/static/src/widgets/json_widget.xml
 #, python-format
 msgid "The forecasted stock on the"
-msgstr ""
-"Back order <a href=# data-oe-model=stock.picking data-oe-id=%d>%s</a> je "
-"kreiran."
+msgstr "The forecasted stock on the"
 
 #. module: stock
 #. odoo-python
@@ -8581,9 +8577,7 @@ msgstr ""
 #: code:addons/stock/report/report_stock_reception.py
 #, python-format
 msgid "This report cannot be used for done and not done %s at the same time"
-msgstr ""
-"Ova bilješka će se pojaviti na narudžbama za prijem (npr. gdje skladištiti "
-"proizvod u skladištu)."
+msgstr "This report cannot be used for done and not done %s at the same time"
 
 #. module: stock
 #. odoo-python
@@ -9533,7 +9527,7 @@ msgid ""
 "Quantity."
 msgstr ""
 "Kada se virtualna zaliha spusti ispod minimalne količine koja je određena za"
-" ovo polje, Odoo stvara nabavu kako bi predviđenu količinu doveo do "
+" ovo polje, Odoo stvara nabavku kako bi predviđenu količinu doveo do "
 "maksimalne količine. "
 
 # taken from hr.po
@@ -9544,9 +9538,9 @@ msgid ""
 "procurement to bring the forecasted quantity to the Quantity specified as "
 "Max Quantity."
 msgstr ""
-"Kada se virtualna zaliha spusti ispod minimalne količine, Odoo stvara nabavu"
-" kako bi predviđenu količinu doveo do količine koja je definirana kao "
-"maksimalna količina."
+"Kada se virtualna zaliha spusti ispod minimalne količine, Odoo stvara "
+"nabavku kako bi predviđenu količinu doveo do količine koja je definirana kao"
+" maksimalna količina."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_rule__propagate_carrier
@@ -9787,7 +9781,7 @@ msgstr ""
 #: code:addons/stock/models/stock_location.py
 #, python-format
 msgid "You cannot archive the location %s as it is used by your warehouse %s"
-msgstr "Možete prilagoditi samo proizvode koji se mogu skladištiti."
+msgstr "You cannot archive the location %s as it is used by your warehouse %s"
 
 #. module: stock
 #. odoo-python

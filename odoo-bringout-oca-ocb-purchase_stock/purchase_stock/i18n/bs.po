@@ -413,7 +413,7 @@ msgstr "Zadnja promjena"
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_product_supplierinfo__last_purchase_date
 msgid "Last Purchase"
-msgstr "Zadnja nabava"
+msgstr "Zadnja nabavka"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -984,6 +984,4 @@ msgstr "od"
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "ordered instead of"
-msgstr ""
-"Kada su potrebni proizvodi u <b>%s</b>, <br/> kreira se zahtjev za ponudu da"
-" bi se ispunila potreba."
+msgstr "ordered instead of"
