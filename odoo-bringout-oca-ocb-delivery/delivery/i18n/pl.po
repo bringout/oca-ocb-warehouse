@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* delivery
-# 
+# * delivery
+#
 # Translators:
 # Zdzisław Krajewski <zdzichucb@gmail.com>, 2022
 # Marcin Młynarczyk <mlynarczyk@gmail.com>, 2022
@@ -10,7 +10,6 @@
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2022
 # Piotr Szlązak <szlazakpiotr@gmail.com>, 2022
 # Annunnaky <doublemiu@gmail.com>, 2022
-# Piotr Strebski <strebski@gmail.com>, 2022
 # Dariusz Żbikowski <darek@krokus.com.pl>, 2022
 # Judyta Kaźmierczak <judyta.kazmierczak@openglobe.pl>, 2022
 # Mariusz, 2022
@@ -19,71 +18,83 @@
 # Maksym <ms@myodoo.pl>, 2022
 # Martin Trigaux, 2022
 # Piotr Cierkosz <piotr.w.cierkosz@gmail.com>, 2022
+# Piotr Strębski <strebski@gmail.com>, 2022
 # Tomasz Leppich <t.leppich@gmail.com>, 2022
-# Tadeusz Karpiński, 2023
-# Krystian Harkot <kharkot@trilab.pl>, 2023
-# Tadeusz Karpiński <tadeusz.karpinski@braintec.com>, 2023
 # Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023
-# Wil Odoo, 2025
-# Marta Wacławek, 2025
-# 
+# "Dylan Kiss (dyki)" <dyki@odoo.com>, 2025.
+# "Marta (wacm)" <wacm@odoo.com>, 2025, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 08:27+0000\n"
-"PO-Revision-Date: 2022-09-22 05:45+0000\n"
-"Last-Translator: Marta Wacławek, 2025\n"
-"Language-Team: Polish (https://app.transifex.com/odoo/teams/41243/pl/)\n"
+"POT-Creation-Date: 2026-01-25 18:36+0000\n"
+"PO-Revision-Date: 2026-01-13 15:31+0000\n"
+"Last-Translator: \"Marta (wacm)\" <wacm@odoo.com>\n"
+"Language-Team: Polish <https://translate.odoo.com/projects/odoo-19/delivery/"
+"pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Generator: Weblate 5.14.3\n"
+
+#. module: delivery
+#. odoo-python
+#: code:addons/delivery/wizard/choose_delivery_carrier.py:0
+msgid "%(carrier)s Error"
+msgstr "%(carrier)s Błąd"
 
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/sale_order.py:0
-#, python-format
-msgid " (Estimated Cost: %s )"
-msgstr "(Szacowany koszt: %s )"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_quant_package_weight_form
-msgid "(computed:"
-msgstr "(obliczono:"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_carrier_view_form
-msgid "<i class=\"fa fa-arrow-right me-1\"/>Get rate"
-msgstr "<i class=\"fa fa-arrow-right me-1\"/> Uzyskaj stawkę"
+msgid ""
+"%s\n"
+"Free Shipping"
+msgstr ""
+"%s\n"
+"Darmowa dostawa"
 
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/delivery_carrier.py:0
-#, python-format
+msgid "%s (copy)"
+msgstr "%s (kopia)"
+
+#. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_carrier_view_form
+msgid "<i class=\"oi oi-arrow-right me-1\"/>Get rate"
+msgstr "<i class=\"oi oi-arrow-right me-1\"/>Uzyskaj stawkę"
+
+#. module: delivery
+#. odoo-python
+#: code:addons/delivery/models/delivery_carrier.py:0
 msgid ""
 "<p class=\"o_view_nocontent\">\n"
 "                    Buy Odoo Enterprise now to get more providers.\n"
 "                </p>"
 msgstr ""
 "<p class=\"o_view_nocontent\">\n"
-"                   Kup Odoo Enterprise teraz aby skorzystać z wiekszej liczby dostawców.\n"
+"                   Kup Odoo Enterprise teraz aby skorzystać z większej "
+"liczby dostawców.\n"
 "                </p>"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid ""
-"<span class=\"o_warning_text\">Test</span>\n"
-"                                    <span class=\"o_stat_text\">Environment</span>"
+"<span class=\"o_stat_text o_warning_text fw-bold\">Test</span>\n"
+"                                <span class=\"o_stat_text\">Environment</"
+"span>"
 msgstr ""
-"<span class=\"o_warning_text\">Środowisko</span>\n"
-"                                    <span class=\"o_stat_text\">Testowe</span>"
+"<span class=\"o_stat_text o_warning_text fw-bold\">Środowisko</span>\n"
+"                                <span class=\"o_stat_text\">Testowe</span>"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
-msgid "<span class=\"text-danger\">No debug</span>"
-msgstr "<span class=\"text-danger\">brak debugowania</span>"
+msgid "<span class=\"o_stat_text text-danger\">No debug</span>"
+msgstr "<span class=\"o_stat_text text-danger\">Bez debugowania</span>"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
@@ -94,84 +105,17 @@ msgstr "<span class=\"text-success\">Żądania debugowania</span>"
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid ""
 "<span class=\"text-success\">Production</span>\n"
-"                                    <span class=\"o_stat_text\">Environment</span>"
+"                                <span class=\"o_stat_text\">Environment</"
+"span>"
 msgstr ""
 "<span class=\"text-success\">Środowisko</span>\n"
-"<span class=\"o_stat_text\">Produkcji</span>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.stock_report_delivery_package_section_line_inherit_delivery
-msgid "<span> - Weight (estimated): </span>"
-msgstr "<span> - Waga (szacunkowa): </span>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.delivery_stock_report_delivery_no_package_section_line
-#: model_terms:ir.ui.view,arch_db:delivery.stock_report_delivery_package_section_line_inherit_delivery
-msgid "<span> - Weight: </span>"
-msgstr "<span> - Waga: </span>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_package_barcode_small_delivery
-msgid "<span>Shipping Weight: </span>"
-msgstr "<span>Waga Przesyłki: </span>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_delivery_document2
-#: model_terms:ir.ui.view,arch_db:delivery.report_shipping2
-msgid "<strong>Carrier:</strong>"
-msgstr "<strong>Kariera: </strong>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_delivery_document2
-msgid "<strong>HS Code</strong>"
-msgstr "<strong>Kod Hs</strong>"
+"                                <span class=\"o_stat_text\">Produkcyjne</"
+"span>"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.delivery_report_saleorder_document
-msgid "<strong>Shipping Description:</strong>"
-msgstr "<strong>Opis przesyłki: </strong>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_package_barcode_delivery
-msgid "<strong>Shipping Weight: </strong>"
-msgstr "<strong>Waga przesyłki: </strong>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_package_barcode_delivery
-msgid ""
-"<strong>Shipping Weight:</strong>\n"
-"                    <br/>"
-msgstr ""
-"<strong>Waga przesyłki:</strong>\n"
-"<br/>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_delivery_document2
-msgid ""
-"<strong>Total Weight:</strong>\n"
-"                <br/>"
-msgstr ""
-"<strong>Waga całkowita</strong>\n"
-"<br/>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_delivery_document2
-msgid "<strong>Tracking Number:</strong>"
-msgstr "<strong>Numer Śledzenia:</strong>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_package_barcode_delivery
-msgid "<strong>Weight: </strong>"
-msgstr "<strong>Waga:</strong>"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_shipping2
-msgid ""
-"<strong>Weight:</strong>\n"
-"                <br/>"
-msgstr ""
-"<strong>Waga:</strong>\n"
-"<br/>"
+msgid "<strong>Shipping Description</strong>"
+msgstr "<strong>Opis wysyłki</strong>"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__carrier_description
@@ -181,8 +125,8 @@ msgid ""
 "for customers to follow."
 msgstr ""
 "Opis metody dostawy, który chcesz zakomunikować klientom w zamówieniu "
-"sprzedaży i wiadomości e-mail z potwierdzeniem sprzedaży, np. instrukcje dla"
-" klientów, których mają przestrzegać."
+"sprzedaży i wiadomości e-mail z potwierdzeniem sprzedaży, np. instrukcje dla "
+"klientów."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__integration_level
@@ -203,14 +147,24 @@ msgstr "Dodaj"
 #. odoo-python
 #: code:addons/delivery/models/sale_order.py:0
 #: code:addons/delivery/wizard/choose_delivery_carrier.py:0
-#, python-format
 msgid "Add a shipping method"
-msgstr "Dodaj metodę  wysyłki"
+msgstr "Dodaj metodę wysyłki"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_order_form_with_carrier
 msgid "Add shipping"
-msgstr "Dodaj Wysyłkę "
+msgstr "Dodaj wysyłkę"
+
+#. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid "Additional margin"
+msgstr "Dodatkowa marża"
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__allow_cash_on_delivery
+msgid "Allow customers to choose Cash on Delivery as their payment method."
+msgstr ""
+"Pozwól klientom wybrać płatność za pobraniem, jako swoją metodę płatności."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__amount
@@ -223,14 +177,27 @@ msgid ""
 "Amount of the order to benefit from a free shipping, expressed in the "
 "company currency"
 msgstr ""
-"Kwota zamówienia uprawniająca do bezpłatnej dostawy wyrażona w walucie "
-"firmy."
+"Kwota zamówienia uprawniająca do bezpłatnej dostawy wyrażona w walucie firmy."
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
 msgid "Archived"
 msgstr "Zarchiwizowane"
+
+#. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_carrier_view_form
+msgid ""
+"Are you sure you want the delivery to be free for this order? You might have "
+"forgotten to compute the rates."
+msgstr ""
+"Czy na pewno chcesz, aby wysyłka była darmowa dla tego zamówienia? Być może "
+"zapomniałeś obliczyć stawki."
+
+#. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid "Availability"
+msgstr "Dostępność"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__available_carrier_ids
@@ -243,33 +210,12 @@ msgid "Based on Rules"
 msgstr "Na podstawie reguł"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__weight_bulk
-msgid "Bulk Weight"
-msgstr "Waga zestawu"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__can_generate_return
 msgid "Can Generate Return"
 msgstr "Może generować zwrot"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid "Cancel"
-msgstr "Anuluj"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid ""
-"Cancelling a delivery may not be undoable. Are you sure you want to "
-"continue?"
-msgstr "Anulowanie dostawy może być niewykonalne. Czy chcesz kontynuować?"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__carrier_id
-#: model:ir.model.fields,field_description:delivery.field_stock_move_line__carrier_id
-#: model:ir.model.fields,field_description:delivery.field_stock_package_type__package_carrier_type
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__carrier_id
-#: model_terms:ir.ui.view,arch_db:delivery.stock_move_line_view_search_delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_tree
@@ -277,28 +223,52 @@ msgid "Carrier"
 msgstr "Przewoźnik"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_package_type__shipper_package_code
-msgid "Carrier Code"
-msgstr "Kod Przewoźnika"
+#. odoo-python
+#: code:addons/delivery/models/delivery_carrier.py:0
+msgid ""
+"Carrier %s cannot have the same tag in both Must Have Tags and Excluded Tags."
+msgstr ""
+"Przewoźnik %s nie może mieć tego samego tagu w Wymagane Tagi i Wykluczone "
+"Tagi."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__carrier_description
 msgid "Carrier Description"
-msgstr "Opis Przewoźnika"
+msgstr "Opis przewoźnika"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_move_line__carrier_name
-msgid "Carrier Name"
-msgstr "Nazwa przewoźnika"
+#: model:ir.model.fields.selection,name:delivery.selection__payment_provider__custom_mode__cash_on_delivery
+msgid "Cash On Delivery"
+msgstr "Płatność a pobraniem"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.stock_move_line_view_search_delivery
-msgid "Carrier name"
-msgstr "Nazwa przewoźnika"
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__allow_cash_on_delivery
+#: model:payment.method,name:delivery.payment_method_cash_on_delivery
+#: model:payment.provider,name:delivery.payment_provider_cod
+msgid "Cash on Delivery"
+msgstr "Płatność za pobraniem"
+
+#. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "Choose a pick-up point"
+msgstr "Wybierz punkt odbioru"
+
+#. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+#: code:addons/delivery/static/src/js/location_selector/map_container/map_container.js:0
+msgid "Choose this location"
+msgstr "Wybierz tę lokację"
+
+#. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_schedule/location_schedule.js:0
+msgid "Closed"
+msgstr "Zamknięte"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__company_id
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__company_id
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__company_id
 msgid "Company"
 msgstr "Firma"
@@ -314,6 +284,11 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid "Content"
+msgstr "Zawartość"
+
+#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__display_price
 msgid "Cost"
 msgstr "Koszt"
@@ -324,8 +299,12 @@ msgid "Countries"
 msgstr "Kraje"
 
 #. module: delivery
+#: model:ir.model,website_form_label:delivery.model_res_partner
+msgid "Create a Customer"
+msgstr "Utwórz klienta"
+
+#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__create_uid
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__create_uid
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__create_uid
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__create_uid
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__create_uid
@@ -334,7 +313,6 @@ msgstr "Utworzone przez"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__create_date
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__create_date
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__create_date
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__create_date
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__create_date
@@ -343,8 +321,15 @@ msgstr "Data utworzenia"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__currency_id
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__currency_id
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__currency_id
 msgid "Currency"
 msgstr "Waluta"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_payment_provider__custom_mode
+msgid "Custom Mode"
+msgstr "Tryb własny"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__partner_id
@@ -355,12 +340,6 @@ msgstr "Klient"
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__debug_logging
 msgid "Debug logging"
 msgstr "Dziennik debugowania"
-
-#. module: delivery
-#: model:ir.model.fields,help:delivery.field_res_partner__property_delivery_carrier_id
-#: model:ir.model.fields,help:delivery.field_res_users__property_delivery_carrier_id
-msgid "Default delivery method used in sales orders."
-msgstr "Domyślna metoda dostawy używana w zamówieniach sprzedaży."
 
 #. module: delivery
 #: model_terms:ir.actions.act_window,help:delivery.action_delivery_carrier_form
@@ -375,7 +354,7 @@ msgstr "Przewoźnik"
 #. module: delivery
 #: model:ir.model,name:delivery.model_choose_delivery_carrier
 msgid "Delivery Carrier Selection Wizard"
-msgstr "Kreator wyboru przewoźnika dostawy"
+msgstr "Kreator wyboru przewoźnika"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_price_rule_form
@@ -393,23 +372,21 @@ msgstr "Wiadomość o dostawie"
 #: model:ir.model.fields,field_description:delivery.field_res_partner__property_delivery_carrier_id
 #: model:ir.model.fields,field_description:delivery.field_res_users__property_delivery_carrier_id
 #: model:ir.model.fields,field_description:delivery.field_sale_order__carrier_id
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "Delivery Method"
 msgstr "Metoda dostawy"
 
 #. module: delivery
-#: model:ir.model,name:delivery.model_choose_delivery_package
-msgid "Delivery Package Selection Wizard"
-msgstr "Kreator wyboru dostawy paczki"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__delivery_package_type_id
-msgid "Delivery Package Type"
-msgstr "Rodzaj opakowania"
+#: model:ir.actions.act_window,name:delivery.action_delivery_carrier_form
+#: model:ir.ui.menu,name:delivery.sale_menu_action_delivery_carrier_form
+#: model_terms:ir.ui.view,arch_db:delivery.delivery_provider_module_kanban
+msgid "Delivery Methods"
+msgstr "Metody dostaw"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__delivery_price
 msgid "Delivery Price"
-msgstr "Koszt Dostawy"
+msgstr "Koszt dostawy"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_delivery_price_rule
@@ -419,22 +396,17 @@ msgstr "Reguły cen dostawy"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__product_id
 msgid "Delivery Product"
-msgstr "Dostawa jako produkt"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_sale_order__delivery_rating_success
-msgid "Delivery Rating Success"
-msgstr "Ocena Dostawy Udana"
+msgstr "Produkt dostawy"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_sale_order__delivery_set
 msgid "Delivery Set"
-msgstr "Zestaw dostawczy"
+msgstr "Zestaw dostawy"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_delivery_zip_prefix
 msgid "Delivery Zip Prefix"
-msgstr "Prefiks kodu pocztowego przesyłki"
+msgstr "Prefix kodu pocztowego przesyłki"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_sale_order__recompute_delivery_price
@@ -446,10 +418,11 @@ msgstr "Koszt dostawy powinien zostać przeliczony ponownie"
 #: model_terms:ir.actions.act_window,help:delivery.action_delivery_zip_prefix_list
 msgid ""
 "Delivery zip prefixes are assigned to delivery carriers to restrict\n"
-"                which zips it is available to."
+"            which zips it is available to."
 msgstr ""
-"Prefiksy zip dostawy są przypisane do przewoźników dostawy, aby ograniczyć\n"
-"dla których stref jest on dostępny."
+"Prefiksy kodów kreskowych dostawy są przypisane do przewoźników dostawy, aby "
+"ograniczyć\n"
+"            dla których stref jest on dostępny."
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
@@ -457,20 +430,9 @@ msgid "Description"
 msgstr "Opis"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.vpicktree_view_tree
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "Destination"
 msgstr "Miejsce docelowe"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
-msgid "Destination Availability"
-msgstr "Dostępność miejsca docelowego"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_move_line__destination_country_code
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__destination_country_code
-msgid "Destination Country"
-msgstr "Kraj docelowy"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__sequence
@@ -479,33 +441,35 @@ msgstr "Określa kolejność wyświetlania"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_carrier_view_form
-#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_package_view_form
 msgid "Discard"
 msgstr "Odrzuć"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__display_name
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__display_name
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__display_name
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__display_name
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__display_name
+#: model:ir.model.fields,field_description:delivery.field_ir_http__display_name
+#: model:ir.model.fields,field_description:delivery.field_ir_module_module__display_name
+#: model:ir.model.fields,field_description:delivery.field_payment_provider__display_name
+#: model:ir.model.fields,field_description:delivery.field_payment_transaction__display_name
+#: model:ir.model.fields,field_description:delivery.field_product_category__display_name
+#: model:ir.model.fields,field_description:delivery.field_res_partner__display_name
+#: model:ir.model.fields,field_description:delivery.field_sale_order__display_name
+#: model:ir.model.fields,field_description:delivery.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr "Nazwa wyświetlana"
-
-#. module: delivery
-#: model:ir.actions.act_window,name:delivery.act_delivery_trackers_url
-msgid "Display tracking links"
-msgstr "Wyświetl hiperłącza do śledzenia przesyłek"
 
 #. module: delivery
 #: model_terms:ir.actions.act_window,help:delivery.action_delivery_carrier_form
 msgid ""
 "Each carrier (e.g. UPS) can have several delivery methods (e.g.\n"
-"                UPS Express, UPS Standard) with a set of pricing rules attached\n"
-"                to each method."
+"            UPS Express, UPS Standard) with a set of pricing rules attached\n"
+"            to each method."
 msgstr ""
-"Każdy przewoźnik (np. UPS) może mieć kilka metod dostawy (np..\n"
-"            UPS Express, UPS Standard) z zestawem reguł cenowych dołączonych\n"
+"Każdy przewoźnik (np. UPS) może mieć kilka metod dostawy (np.\n"
+"            UPS Express, UPS Standard) z zestawem reguł cenowych "
+"dołączonych\n"
 "             do każdej metody."
 
 #. module: delivery
@@ -516,54 +480,58 @@ msgstr "Środowisko"
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/delivery_carrier.py:0
-#: code:addons/delivery/models/delivery_grid.py:0
-#, python-format
 msgid "Error: this delivery method is not available for this address."
 msgstr "Błąd: ta metoda wysyłki nie jest dostępna dla wybranego adresu."
 
 #. module: delivery
+#. odoo-python
+#: code:addons/delivery/models/delivery_carrier.py:0
+msgid "Error: this delivery method is not available."
+msgstr "Błąd: ta metoda wysyłki nie jest dostępna."
+
+#. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__invoice_policy
 msgid ""
-"Estimated Cost: the customer will be invoiced the estimated cost of the shipping.\n"
-"Real Cost: the customer will be invoiced the real cost of the shipping, the cost of the shipping will be updated on the SO after the delivery."
+"Estimated Cost: the customer will be invoiced the estimated cost of the "
+"shipping.\n"
+"Real Cost: the customer will be invoiced the real cost of the shipping, the "
+"cost of theshipping will be updated on the SO after the delivery."
 msgstr ""
-"Szacunkowy koszt: klient zostanie obciążony szacunkowym kosztem wysyłki.\n"
-"Rzeczywisty koszt: klient zostanie obciążony rzeczywistym kosztem wysyłki, koszt wysyłki zostanie zaktualizowany w SO po dostawie."
+"Szacowany koszt: klientowi zostanie zafakturowany szacowany koszt wysyłki.\n"
+"Rzeczywisty koszt: klientowi zostanie zafakturowany rzeczywisty koszt "
+"wysyłki, Koszt wysyłki zostanie zaktualizowany w Zamówieniu Sprzedaży po "
+"dostawie."
 
 #. module: delivery
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_carrier__invoice_policy__estimated
 msgid "Estimated cost"
-msgstr "Szacunkowy koszt"
+msgstr "Szacowany koszt"
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid "Exception occurred with respect to carrier on the transfer"
-msgstr ""
-
-#. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid "Exception:"
-msgstr "Wyjątek:"
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__excluded_tag_ids
+msgid "Excluded Tags"
+msgstr "Wykluczone tagi"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_sale_order__carrier_id
 msgid "Fill this field if you plan to invoice the shipping based on picking."
 msgstr ""
-"Wypełnij to pole jeżeli planujesz zafakturować przesyłkę na podstawie "
+"Wypełnij to pole, jeżeli planujesz zafakturować przesyłkę na podstawie "
 "kompletacji."
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid ""
-"Filling this form allows you to filter delivery carriers according to the "
-"delivery address of your customer."
+"Filling this form allows you to make the shipping method available according "
+"to the content of the order or its destination."
 msgstr ""
-"Wypełnienie tego formularza pozwoli Ci na wybór przewoźników zależnie od "
-"adresu klienta"
+"Wypełnienie tego formularza pozwala na udostępnianie metody wysyłki według "
+"zawartości wysyłki lub jej adresu dostawy."
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__fixed_margin
+msgid "Fixed Margin"
+msgstr "Stała marża"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__fixed_price
@@ -572,22 +540,9 @@ msgid "Fixed Price"
 msgstr "Cena stała"
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/sale_order.py:0
-#, python-format
-msgid "Free Shipping"
-msgstr "Darmowa dostawa"
-
-#. module: delivery
-#: model:delivery.carrier,name:delivery.free_delivery_carrier
-#: model:product.template,name:delivery.product_product_delivery_product_template
-msgid "Free delivery charges"
-msgstr "Darmowa wysyłka"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__free_over
 msgid "Free if order amount is above"
-msgstr "Darmowa dostawa jeśli kwota zamówienia powyżej"
+msgstr "Bezpłatnie, jeśli kwota zamówienia przekracza"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__return_label_on_delivery
@@ -605,23 +560,23 @@ msgid "Get Rate and Create Shipment"
 msgstr "Uzyskaj stawkę i utwórz przesyłkę"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
-msgid "Group By"
-msgstr "Grupuj wg"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_product_product__hs_code
-#: model:ir.model.fields,field_description:delivery.field_product_template__hs_code
-#: model_terms:ir.ui.view,arch_db:delivery.product_template_hs_code
-msgid "HS Code"
-msgstr "HS kod"
+#: model:ir.model,name:delivery.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP routing"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__id
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__id
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__id
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__id
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__id
+#: model:ir.model.fields,field_description:delivery.field_ir_http__id
+#: model:ir.model.fields,field_description:delivery.field_ir_module_module__id
+#: model:ir.model.fields,field_description:delivery.field_payment_provider__id
+#: model:ir.model.fields,field_description:delivery.field_payment_transaction__id
+#: model:ir.model.fields,field_description:delivery.field_product_category__id
+#: model:ir.model.fields,field_description:delivery.field_res_partner__id
+#: model:ir.model.fields,field_description:delivery.field_sale_order__id
+#: model:ir.model.fields,field_description:delivery.field_sale_order_line__id
 msgid "ID"
 msgstr "ID"
 
@@ -633,6 +588,24 @@ msgid ""
 msgstr ""
 "Jeśli całkowita kwota zamówienia (z wyłączeniem wysyłki) jest wyższa lub "
 "równa tej wartości, klient korzysta z bezpłatnej wysyłki."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__max_volume
+msgid ""
+"If the total volume of the order is over this volume, the method won't be "
+"available."
+msgstr ""
+"Jeśli całkowita objętość zamówienia przekracza tę objętość, metoda nie "
+"będzie dostępna."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__max_weight
+msgid ""
+"If the total weight of the order is over this weight, the method won't be "
+"available."
+msgstr ""
+"Jeśli całkowita waga przesyłki przekracza tę wagę, ta metoda nie będzie "
+"dostępna."
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
@@ -647,7 +620,13 @@ msgstr "Procent ubezpieczenia"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__integration_level
 msgid "Integration Level"
-msgstr "Poziom Integracji"
+msgstr "Poziom integracji"
+
+#. module: delivery
+#. odoo-python
+#: code:addons/delivery/models/delivery_carrier.py:0
+msgid "Invalid source document type"
+msgstr "Nieprawidłowe źródło typu dokumentu"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__invoicing_message
@@ -660,9 +639,10 @@ msgid "Invoicing Policy"
 msgstr "Zasady fakturowania"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__is_return_picking
-msgid "Is Return Picking"
-msgstr "Czy kompletowanie zwrotów"
+#: model:ir.model.fields,field_description:delivery.field_res_partner__is_pickup_location
+#: model:ir.model.fields,field_description:delivery.field_res_users__is_pickup_location
+msgid "Is Pickup Location"
+msgstr "Jest lokacją odbioru"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_sale_order_line__is_delivery
@@ -670,17 +650,7 @@ msgid "Is a Delivery"
 msgstr "Jest opłatą za dostawę"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier____last_update
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package____last_update
-#: model:ir.model.fields,field_description:delivery.field_delivery_carrier____last_update
-#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule____last_update
-#: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix____last_update
-msgid "Last Modified on"
-msgstr "Data ostatniej modyfikacji"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__write_uid
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__write_uid
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__write_uid
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__write_uid
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__write_uid
@@ -689,7 +659,6 @@ msgstr "Ostatnio aktualizowane przez"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__write_date
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__write_date
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__write_date
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__write_date
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__write_date
@@ -697,8 +666,19 @@ msgid "Last Updated on"
 msgstr "Data ostatniej aktualizacji"
 
 #. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "List view"
+msgstr "Widok listy"
+
+#. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "Loading..."
+msgstr "Pobieranie..."
+
+#. module: delivery
 #: model:delivery.carrier,name:delivery.delivery_local_delivery
-#: model:product.template,name:delivery.product_product_local_delivery_product_template
 msgid "Local Delivery"
 msgstr "Przesyłka lokalna"
 
@@ -713,11 +693,10 @@ msgid "Manage delivery zip prefixes"
 msgstr "Zarządzaj prefiksami kodu pocztowego przesyłki"
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid "Manual actions might be needed."
-msgstr "Mogą być konieczne ręczne działania."
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "Map view"
+msgstr "Widok mapy"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__margin
@@ -735,9 +714,29 @@ msgid "Margin on Rate"
 msgstr "Marża na stawce"
 
 #. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__max_volume
+msgid "Max Volume"
+msgstr "Maksymalna objętość"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__max_weight
+msgid "Max Weight"
+msgstr "Maksymalna waga"
+
+#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__max_value
 msgid "Maximum Value"
 msgstr "Wartość maksymalna"
+
+#. module: delivery
+#: model:ir.model,name:delivery.model_ir_module_module
+msgid "Module"
+msgstr "Moduł"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__must_have_tag_ids
+msgid "Must Have Tags"
+msgstr "Konieczne Tagi"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__name
@@ -747,28 +746,33 @@ msgstr "Nazwa"
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/delivery_carrier.py:0
-#, python-format
 msgid "New Providers"
 msgstr "Nowi Przewoźnicy"
 
 #. module: delivery
-#: model:ir.model.fields.selection,name:delivery.selection__stock_package_type__package_carrier_type__none
-msgid "No carrier integration"
-msgstr "Brak integracji z przewoźnikiem"
+#. odoo-python
+#: code:addons/delivery/models/sale_order.py:0
+msgid "No pick-up points are available for this delivery address."
+msgstr "Brak dostępnych punktów odbioru dla tego adresu dostawy."
+
+#. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "No result"
+msgstr "Brak wyników"
 
 #. module: delivery
 #. odoo-python
-#: code:addons/delivery/models/delivery_grid.py:0
-#, python-format
-msgid "No price rule matching this order; delivery cost cannot be computed."
-msgstr ""
-"Brak reguły cenowej pasującej do tego zamówienia; nie można obliczyć kosztu "
-"dostawy."
+#: code:addons/delivery/models/delivery_carrier.py:0
+msgid "Not available for current order"
+msgstr "Niedostępne dla aktualnego zamówienia"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.delivery_tracking_url_warning_form
-msgid "OK"
-msgstr "OK"
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location/location.js:0
+#: code:addons/delivery/static/src/js/location_selector/map_container/map_container.js:0
+msgid "Opening hours"
+msgstr "Godziny otwarcia"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__operator
@@ -781,40 +785,30 @@ msgid "Order"
 msgstr "Zamówienie"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_product_product__country_of_origin
-#: model:ir.model.fields,field_description:delivery.field_product_template__country_of_origin
-msgid "Origin of Goods"
-msgstr "Pochodzenie towarów"
+#: model:ir.model,name:delivery.model_payment_provider
+msgid "Payment Provider"
+msgstr "Operator płatności"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_package_view_form
-msgid "Package"
-msgstr "Opakowanie"
+#: model:ir.model,name:delivery.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Transakcja płatnicza"
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid "Package Details"
-msgstr "Szczegóły paczki"
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "Pickup Location"
+msgstr "Lokalizacja odbioru"
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/wizard/choose_delivery_package.py:0
-#, python-format
-msgid "Package too heavy!"
-msgstr "Paczka jest zbyt ciężka!"
+#: model:ir.model.fields,field_description:delivery.field_sale_order__pickup_location_data
+msgid "Pickup Location Data"
+msgstr "Dane lokacji odbioru"
 
 #. module: delivery
-#: model:ir.model,name:delivery.model_stock_quant_package
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__package_ids
-msgid "Packages"
-msgstr "Paczki"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__picking_id
-msgid "Picking"
-msgstr "Pobranie"
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid "Please select a country before choosing a state or a zip prefix."
+msgstr "Najpierw wybierz kraj, a następnie stan lub prefiks kodu pocztowego."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_zip_prefix__name
@@ -834,11 +828,11 @@ msgid ""
 "i.e. '$' can be added to end of prefix to match the exact zip (e.g. '100$' "
 "will only match '100' and not '1000')"
 msgstr ""
-"Prefiksy kodów pocztowych, których dotyczy ten przewoźnik. Należy pamiętać, "
-"że wyrażenia regularne mogą być używane do obsługi krajów o różnych "
-"długościach kodów pocztowych, tj. znak \"$\" można dodać na końcu prefiksu, "
-"aby dopasować dokładny kod pocztowy (np. \"100 $\" będzie pasować tylko do "
-"\"100\", a nie do \"1000\")."
+"Prefiksy kodów pocztowych, które są obsługiwane przez tego przewoźnika. "
+"Należy pamiętać, że wyrażenia regularne mogą być używane do obsługi krajów o "
+"różnych długościach kodów pocztowych, tj. znak \"$\" można dodać na końcu "
+"prefiksu, aby dopasować dokładny kod pocztowy (np. \"100 $\" będzie pasować "
+"tylko do \"100\", a nie do \"1000\")."
 
 #. module: delivery
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable__price
@@ -863,25 +857,9 @@ msgid "Pricing Rules"
 msgstr "Reguły cen"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.sale_order_portal_content_inherit_sale_stock_inherit_website_sale_delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid "Print Return Label"
-msgstr "Wydrukuj etykietę zwrotną"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_product_template
-msgid "Product"
-msgstr "Produkt"
-
-#. module: delivery
 #: model:ir.model,name:delivery.model_product_category
 msgid "Product Category"
 msgstr "Kategoria produktu"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_stock_move_line
-msgid "Product Moves (Stock Move Line)"
-msgstr "Przesunięcia produktu (pozycja przesunięcia zasobów)"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_sale_order_line__product_qty
@@ -891,7 +869,6 @@ msgstr "Ilość produktu"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__delivery_type
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__delivery_type
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__delivery_type
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
 msgid "Provider"
 msgstr "Dostawca"
@@ -903,34 +880,9 @@ msgid "Quantity"
 msgstr "Ilość"
 
 #. module: delivery
-#: model:ir.model.fields.selection,name:delivery.selection__delivery_carrier__invoice_policy__real
-msgid "Real cost"
-msgstr "Realny koszt"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__return_label_ids
-msgid "Return Label"
-msgstr "Etykieta zwrotna"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__get_return_label_from_portal
 msgid "Return Label Accessible from Customer Portal"
-msgstr "Etykieta zwrotna dostępna przez portal klienta"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_stock_return_picking
-msgid "Return Picking"
-msgstr "Pobranie zwrotne"
-
-#. module: delivery
-#: model:ir.model.fields,help:delivery.field_product_product__country_of_origin
-#: model:ir.model.fields,help:delivery.field_product_template__country_of_origin
-msgid ""
-"Rules of origin determine where goods originate, i.e. not where they have been shipped from, but where they have been produced or manufactured.\n"
-"As such, the ‘origin’ is the 'economic nationality' of goods traded in commerce."
-msgstr ""
-"Reguły pochodzenia określają, skąd pochodzą towary, tj. nie skąd zostały wysłane, ale gdzie zostały wyprodukowane lub wytworzone.\n"
-"W związku z tym \"pochodzenie\" jest \"narodowością gospodarczą\" towarów będących przedmiotem handlu."
+msgstr "Etykieta zwrotna jest dostępna w portalu klienta"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__list_base_price
@@ -939,7 +891,6 @@ msgstr "Cena bazowa sprzedaży"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__list_price
-#: model:ir.model.fields,field_description:delivery.field_stock_move_line__sale_price
 msgid "Sale Price"
 msgstr "Cena sprzedaży"
 
@@ -954,14 +905,10 @@ msgid "Sales Order Line"
 msgstr "Pozycja zamówienia sprzedaży"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_package_view_form
-msgid "Save"
-msgstr "Zapisz"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid "Send to Shipper"
-msgstr "Wyślij do przewoźnika"
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
+msgid "Search"
+msgstr "Szukaj"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__sequence
@@ -980,50 +927,19 @@ msgid "Set to True if your credentials are certified for production."
 msgstr "Ustaw na True, jeśli poświadczenia są certyfikowane dla produkcji."
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid ""
-"Shipment sent to carrier %(carrier_name)s for shipping with tracking number "
-"%(ref)s<br/>Cost: %(price).2f %(currency)s"
-msgstr ""
-"Przesyłka wysłana do przewoźnika %(carrier_name)s w celu wysyłki z numerem "
-"śledzenia %(ref)s<br/> Koszt:%(price).2f%(currency)s"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__carrier_price
-msgid "Shipping Cost"
-msgstr "Koszt wysyłki"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid "Shipping Information"
-msgstr "Informacje o przesyłce"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__carrier_id
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "Shipping Method"
-msgstr "Metoda wysyłki"
+msgstr "Metoda dostawy"
 
 #. module: delivery
-#: model:ir.actions.act_window,name:delivery.action_delivery_carrier_form
 #: model:ir.model,name:delivery.model_delivery_carrier
-#: model:ir.ui.menu,name:delivery.menu_action_delivery_carrier_form
-#: model:ir.ui.menu,name:delivery.sale_menu_action_delivery_carrier_form
 #: model_terms:ir.ui.view,arch_db:delivery.res_config_settings_view_form
 msgid "Shipping Methods"
 msgstr "Sposoby dostawy"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__shipping_weight
-#: model:ir.model.fields,field_description:delivery.field_stock_quant_package__shipping_weight
+#: model:ir.model.fields,field_description:delivery.field_sale_order__shipping_weight
 msgid "Shipping Weight"
-msgstr "Waga dostawy"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_package_barcode_small_delivery
-msgid "Shipping Weight:"
 msgstr "Waga dostawy"
 
 #. module: delivery
@@ -1045,12 +961,10 @@ msgstr ""
 "sprzedaży i ich e-mailach potwierdzających. Np. instrukcje dla klientów."
 
 #. module: delivery
-#: model:ir.model.fields,help:delivery.field_product_product__hs_code
-#: model:ir.model.fields,help:delivery.field_product_template__hs_code
-msgid ""
-"Standardized code for international shipping and goods declaration. At the "
-"moment, only used for FedEx and USPS shipping providers."
-msgstr ""
+#: model:delivery.carrier,name:delivery.free_delivery_carrier
+#: model:product.template,name:delivery.product_product_delivery_product_template
+msgid "Standard delivery"
+msgstr "Standardowa dostawa"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__state_ids
@@ -1058,40 +972,9 @@ msgid "States"
 msgstr "Stany"
 
 #. module: delivery
-#: model:ir.model,name:delivery.model_stock_move
-msgid "Stock Move"
-msgstr "Przesunięcie"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_stock_package_type
-msgid "Stock package type"
-msgstr "Typ pakietu magazynowego"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__supports_shipping_insurance
 msgid "Supports Shipping Insurance"
 msgstr "Wspiera Ubezpieczenie Przesyłki"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_quant_package__weight_uom_rounding
-msgid "Technical field indicating weight's number of decimal places"
-msgstr "Pole techniczne wskazujące liczbę miejsc dziesiętnych wagi"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_quant_package__weight_is_kg
-msgid "Technical field indicating whether weight uom is kg or not (i.e. lb)"
-msgstr ""
-"Pole techniczne wskazujące, czy jednostka wagi to kg czy nie (tj. lb)."
-
-#. module: delivery
-#: model:ir.model.fields,help:delivery.field_stock_move_line__destination_country_code
-#: model:ir.model.fields,help:delivery.field_stock_picking__destination_country_code
-msgid ""
-"The ISO country code in two chars. \n"
-"You can use this field for quick search."
-msgstr ""
-"Kod kraju ISO w dwóch znakach. \n"
-"Możesz użyć tego pola do szybkiego wyszukiwania."
 
 #. module: delivery
 #: model:delivery.carrier,name:delivery.delivery_carrier
@@ -1100,76 +983,83 @@ msgid "The Poste"
 msgstr "Poczta"
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/delivery_carrier.py:0
-#: code:addons/delivery/models/delivery_carrier.py:0
-#, python-format
+#: model_terms:payment.provider,pending_msg:delivery.payment_provider_cod
+msgid "The delivery staff will collect payment upon delivery."
+msgstr "Pracownik firmy kurierskiej pobierze płatność przy dostawie."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__excluded_tag_ids
 msgid ""
-"The package cannot be created because the total weight of the products in "
-"the picking is 0.0 %s"
+"The method is NOT available if at least one product of the order has one of "
+"these tags."
 msgstr ""
-"Paczka nie może zostać utworzona ponieważ waga produktów wynosi 0.0 %s"
+"Ta metoda NIE jest dostępna, jeśli przynajmniej jeden produkt z zamówienia "
+"ma jeden z poniższych tagów."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__must_have_tag_ids
+msgid ""
+"The method is available only if at least one product of the order has one of "
+"these tags."
+msgstr ""
+"Ta metoda jest dostępna, jedynie jeśli przynajmniej jeden produkt z "
+"zamówienia ma jeden z poniższych tagów."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__get_return_label_from_portal
 msgid ""
 "The return label can be downloaded by the customer from the customer portal."
-msgstr "Etykieta Zwrotna może zostać pobrana przez klienta z portalu klienta."
+msgstr "Etykieta zwrotna może zostać pobrana przez klienta z portalu klienta."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__return_label_on_delivery
 msgid "The return label is automatically generated at the delivery."
-msgstr "Etykieta Zwrotna jest generowana automatycznie podczas wysyłki."
+msgstr "Etykieta zwrotna jest generowana automatycznie podczas wysyłki."
 
 #. module: delivery
 #: model:ir.model.constraint,message:delivery.constraint_delivery_carrier_shipping_insurance_is_percentage
 msgid "The shipping insurance must be a percentage between 0 and 100."
 msgstr ""
-"Ubezpieczenie przesyłki musi być wartością procentową w zakresie od 0 do "
-"100."
+"Ubezpieczenie przesyłki musi być wartością procentową w zakresie od 0 do 100."
 
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/delivery_carrier.py:0
-#, python-format
 msgid "The shipping is free since the order amount exceeds %.2f."
-msgstr "Wysyłka jest darmowa jeżeli suma zamówienia przekracza %.2f"
+msgstr "Wysyłka jest darmowa jeżeli suma zamówienia przekracza %.2f."
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/wizard/choose_delivery_carrier.py:0
-#, python-format
-msgid "The shipping price will be set once the delivery is done."
-msgstr "Cena wysyłki zostanie ustalona po zrealizowaniu dostawy."
-
-#. module: delivery
-#. odoo-python
-#: code:addons/delivery/wizard/choose_delivery_package.py:0
-#, python-format
-msgid ""
-"The weight of your package is higher than the maximum weight authorized for "
-"this package type. Please choose another package type."
-msgstr ""
-"Waga przesyłki jest wyższa niż maksymalna waga dopuszczalna dla przesyłki "
-"tego typu. Proszę wybrać inny typ przesyłki."
-
-#. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/delivery_grid.py:0
-#, python-format
-msgid "There is no matching delivery rule."
-msgstr "Nie ma pasującej reguły dostarczania."
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/map_container/map_container.js:0
+msgid "There was an error loading the map"
+msgstr "Podczas ładowania mapy wystąpił błąd"
 
 #. module: delivery
 #: model_terms:ir.actions.act_window,help:delivery.action_delivery_carrier_form
 msgid ""
 "These methods allow to automatically compute the delivery price\n"
-"                according to your settings; on the sales order (based on the\n"
-"                quotation) or the invoice (based on the delivery orders)."
+"            according to your settings; on the sales order (based on the\n"
+"            quotation) or the invoice (based on the delivery orders)."
 msgstr ""
-"Metody te pozwalają na automatyczne obliczenie ceny dostawy\n"
-"zgodnie z ustawieniami użytkownika; na zamówieniu sprzedaży (na podstawie\n"
-"oferty) lub na fakturze (na podstawie zamówień dostawy)."
+"Te metody pozwalają na automatyczne obliczenie ceny dostawy\n"
+"            zgodnie z Twoimi ustawieniami; na zamówieniu sprzedaży (na "
+"podstawie\n"
+"            wyceny) lub na fakturze (na podstawie zamówień dostawy)."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__fixed_margin
+msgid "This fixed amount will be added to the shipping price."
+msgstr "Ta stała kwota zostanie dodana do ceny wysyłki."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier__tracking_url
+msgid ""
+"This option adds a link for the customer in the portal to track their "
+"package easily. Use <shipmenttrackingnumber> as a placeholder in your URL."
+msgstr ""
+"Ta opcja dodaje link dla klienta w portalu, aby mógł z łatwością śledzić "
+"swoją paczkę. Użyj <shipmenttrackingnumber> jako znaku zamiennego w swoim "
+"URL."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__margin
@@ -1177,66 +1067,14 @@ msgid "This percentage will be added to the shipping price."
 msgstr "Ten odsetek zostanie dodany do ceny przesyłki."
 
 #. module: delivery
-#: model:ir.model.fields,help:delivery.field_stock_quant_package__weight
-msgid "Total weight of all the products contained in the package."
-msgstr "Waga całkowita produktów zawartych w przesyłce."
+#: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__total_weight
+msgid "Total Order Weight"
+msgstr "Całkowita waga zamówienia"
 
 #. module: delivery
-#: model:ir.model.fields,help:delivery.field_stock_picking__shipping_weight
-msgid ""
-"Total weight of packages and products not in a package. Packages with no "
-"shipping weight specified will default to their products' total weight. This"
-" is the weight used to compute the cost of the shipping."
-msgstr ""
-"Całkowita waga opakowań i produktów niebędących częścią opakowania. Pakiety,"
-" w których nie określono wagi wysyłki, będą miały domyślnie ustawioną "
-"całkowitą wagę swoich produktów. Jest to waga używana do obliczania kosztów "
-"wysyłki."
-
-#. module: delivery
-#: model:ir.model.fields,help:delivery.field_stock_picking__weight_bulk
-msgid "Total weight of products which are not in a package."
-msgstr "Waga całkowita produktów które nie znajdują się w paczce."
-
-#. module: delivery
-#: model:ir.model.fields,help:delivery.field_stock_quant_package__shipping_weight
-msgid "Total weight of the package."
-msgstr "Waga całkowita paczki."
-
-#. module: delivery
-#: model:ir.model.fields,help:delivery.field_stock_picking__weight
-msgid "Total weight of the products in the picking."
-msgstr "Całkowita waga produktów w kompletacji."
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.delivery_tracking_url_warning_form
-msgid "Trackers URL"
-msgstr "Śledzenie URL"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid "Tracking"
-msgstr "Śledzenie"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__carrier_tracking_ref
-msgid "Tracking Reference"
-msgstr "Odnośnik przesyłki"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__carrier_tracking_url
-msgid "Tracking URL"
-msgstr "link do śledzenia"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.sale_order_portal_content_inherit_sale_stock_inherit_website_sale_delivery
-msgid "Tracking:"
-msgstr "Śledzenie:"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_stock_picking
-msgid "Transfer"
-msgstr "Przekaz"
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__tracking_url
+msgid "Tracking Link"
+msgstr "Link do śledzenia"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_carrier_view_form
@@ -1247,9 +1085,14 @@ msgstr "Aktualizacja"
 #. odoo-python
 #: code:addons/delivery/models/sale_order.py:0
 #: model_terms:ir.ui.view,arch_db:delivery.view_order_form_with_carrier
-#, python-format
 msgid "Update shipping cost"
-msgstr "Aktualizuj koszt wysyłki."
+msgstr "Aktualizuj koszt wysyłki"
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_res_partner__property_delivery_carrier_id
+#: model:ir.model.fields,help:delivery.field_res_users__property_delivery_carrier_id
+msgid "Used in sales orders."
+msgstr "Używane w zamówieniach sprzedaży."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__variable
@@ -1259,7 +1102,12 @@ msgstr "Zmienna"
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__variable_factor
 msgid "Variable Factor"
-msgstr "Współczynnik zmienny"
+msgstr "Współczynnik zmiennej"
+
+#. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid "Visible to all"
+msgstr "Widoczne dla wszystkich"
 
 #. module: delivery
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable__volume
@@ -1268,12 +1116,13 @@ msgid "Volume"
 msgstr "Objętość"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_move__weight
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__weight
-#: model:ir.model.fields,field_description:delivery.field_stock_quant_package__weight
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__volume_uom_name
+msgid "Volume unit of measure label"
+msgstr "Etykieta jednostki miary objętości"
+
+#. module: delivery
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable__weight
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable_factor__weight
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
 msgid "Weight"
 msgstr "Waga"
 
@@ -1281,49 +1130,39 @@ msgstr "Waga"
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable__wv
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable_factor__wv
 msgid "Weight * Volume"
-msgstr "Waga * Objętość"
+msgstr "Waga * Ilość"
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__shipping_weight
-msgid "Weight for Shipping"
-msgstr "Waga dla przesyłki"
+#: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__weight_uom_name
+msgid "Weight Uom Name"
+msgstr "Nazwa JM wagowej"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
-msgid "Weight for shipping"
-msgstr "Waga dla przesyłki"
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_package__weight_uom_name
-#: model:ir.model.fields,field_description:delivery.field_stock_picking__weight_uom_name
-#: model:ir.model.fields,field_description:delivery.field_stock_quant_package__weight_uom_name
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__weight_uom_name
 msgid "Weight unit of measure label"
 msgstr "Etykieta jednostki miary wagi"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.report_package_barcode_small_delivery
-msgid "Weight:"
-msgstr "Waga:"
-
-#. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/sale_order.py:0
-#, python-format
 msgid ""
-"You can not update the shipping costs on an order where it was already invoiced!\n"
+"You can not update the shipping costs on an order where it was already "
+"invoiced!\n"
 "\n"
-"The following delivery lines (product, invoiced quantity and price) have already been processed:\n"
+"The following delivery lines (product, invoiced quantity and price) have "
+"already been processed:\n"
 "\n"
 msgstr ""
-"Nie możesz zaktualizować kosztu wysyłki w zamówieniu które zostało zafakturowane!\n"
+"Nie możesz zaktualizować kosztu wysyłki w zamówieniu które zostało "
+"zafakturowane!\n"
 "\n"
-"Następujące pozycje wysyłki (produkt, zafakturowana ilość i cena) zostały już przetworzone:\n"
+"Następujące pozycje wysyłki (produkt, zafakturowana ilość i cena) zostały "
+"już przetworzone:\n"
 "\n"
 
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/product_category.py:0
-#, python-format
 msgid ""
 "You cannot delete the deliveries product category as it is used on the "
 "delivery carriers products."
@@ -1332,34 +1171,28 @@ msgstr ""
 "produktach przewoźnika."
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid ""
-"You cannot pack products into the same package when they have different "
-"carriers (i.e. check that all of their transfers have a carrier assigned and"
-" are using the same carrier)."
-msgstr ""
+#: model_terms:payment.provider,auth_msg:delivery.payment_provider_cod
+msgid "Your payment has been authorized."
+msgstr "Twoja płatność została autoryzowana."
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.delivery_tracking_url_warning_form
-msgid "You have multiple tracker links, they are available in the chatter."
-msgstr "Masz wiele linków do trackerów, są one dostępne w czacie."
+#: model_terms:payment.provider,cancel_msg:delivery.payment_provider_cod
+msgid "Your payment has been cancelled."
+msgstr "Twoja płatność została anulowana."
 
 #. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/stock_picking.py:0
-#, python-format
-msgid ""
-"Your delivery method has no redirect on courier provider's website to track "
-"this order."
-msgstr ""
-"Twoja metoda dostawy nie ma przekierowania na stronie internetowej dostawcy "
-"usług kurierskich w celu śledzenia tego zamówienia."
+#: model_terms:payment.provider,done_msg:delivery.payment_provider_cod
+msgid "Your payment has been processed."
+msgstr "Płatność została przetworzona."
+
+#. module: delivery
+#. odoo-javascript
+#: code:addons/delivery/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.js:0
+msgid "Your postal code"
+msgstr "Twój kod pocztowy"
 
 #. module: delivery
 #: model:ir.actions.act_window,name:delivery.action_delivery_zip_prefix_list
-#: model:ir.ui.menu,name:delivery.menu_delivery_zip_prefix
 msgid "Zip Prefix"
 msgstr "Prefiks kodu pocztowego"
 
@@ -1369,26 +1202,43 @@ msgid "Zip Prefixes"
 msgstr "Prefiksy kodu pocztowego"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.label_package_template_view_delivery
-msgid "^A0N,44,33^FDShipping Weight:"
+#. odoo-python
+#: code:addons/delivery/models/payment_provider.py:0
+msgid "cash on delivery not allowed by selected delivery method"
 msgstr ""
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.label_package_template_view_delivery
-msgid "^A0N,44,33^FDWeight:"
-msgstr "^A0N,44,33^FDWeight:"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.label_package_template_view_delivery
-msgid "^FO310,200"
-msgstr "^FO310,200"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.label_package_template_view_delivery
-msgid "^FS"
-msgstr "^FS"
+"płatność za pobraniem nie jest dozwolona przy wybranej metodzie dostawy"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "e.g. UPS Express"
 msgstr "np. UPS Express"
+
+#. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid "i.e. https://ekartlogistics.com/shipmenttrack/<shipmenttrackingnumber>"
+msgstr "np. https://logipol.com/sledzenieprzesylki/<shipmenttrackingnumber>"
+
+#~ msgid "<strong>Shipping Description:</strong>"
+#~ msgstr "<strong>Opis przesyłki: </strong>"
+
+#~ msgid "Default delivery method used in sales orders."
+#~ msgstr "Domyśla metoda dostarczenia używana w zamówieniach sprzedaży."
+
+#~ msgid "Delivery Rating Success"
+#~ msgstr "Ocena Dostawy Udana"
+
+#~ msgid "Destination Availability"
+#~ msgstr "Dostępność miejsca docelowego"
+
+#~ msgid ""
+#~ "Filling this form allows you to filter delivery carriers according to the "
+#~ "delivery address of your customer."
+#~ msgstr ""
+#~ "Wypełnienie tego formularza pozwoli Ci na wybór przewoźników zależnie od "
+#~ "adresu klienta"
+
+#~ msgid "Free Shipping"
+#~ msgstr "Darmowa dostawa"
+
+#~ msgid "Group By"
+#~ msgstr "Grupuj wg."

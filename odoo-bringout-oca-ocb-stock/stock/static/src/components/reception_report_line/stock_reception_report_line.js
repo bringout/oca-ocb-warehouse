@@ -1,10 +1,17 @@
-/** @odoo-module **/
 import { useService } from "@web/core/utils/hooks";
 import { formatFloat } from "@web/views/fields/formatters";
-
-const { Component } = owl;
+import { Component } from "@odoo/owl";
 
 export class ReceptionReportLine extends Component {
+    static template = "stock.ReceptionReportLine";
+    static props = {
+        data: Object,
+        labelReport: Object,
+        parentIndex: String,
+        showUom: Boolean,
+        precision: Number,
+    };
+
     setup() {
         this.ormService = useService("orm");
         this.actionService = useService("action");
@@ -27,15 +34,13 @@ export class ReceptionReportLine extends Component {
         if (!this.data.move_out_id) {
             return;
         }
-        const reportFile = 'stock.report_reception_report_label';
         const modelIds = [this.data.move_out_id];
         const productQtys = [Math.ceil(this.data.quantity) || '1'];
 
         return this.actionService.doAction({
-            type: "ir.actions.report",
-            report_type: "qweb-pdf",
-            report_name: `${reportFile}?docids=${modelIds}&quantity=${productQtys}`,
-            report_file: reportFile,
+            ...this.props.labelReport,
+            context: { active_ids: modelIds },
+            data: { docids: modelIds, quantity: productQtys.join(",") },
         });
     }
 
@@ -65,11 +70,3 @@ export class ReceptionReportLine extends Component {
         return this.props.data;
     }
 }
-
-ReceptionReportLine.template = "stock.ReceptionReportLine";
-ReceptionReportLine.props = {
-    data: Object,
-    parentIndex: String,
-    showUom: Boolean,
-    precision: Number,
-};

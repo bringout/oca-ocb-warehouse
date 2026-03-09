@@ -1,22 +1,17 @@
-/** @odoo-module */
-
-import { FloatField } from "@web/views/fields/float/float_field";
+import { FloatField, floatField } from "@web/views/fields/float/float_field";
 import { formatDate } from "@web/core/l10n/dates";
 import { formatFloat } from "@web/views/fields/formatters";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 
 export class ForecastWidgetField extends FloatField {
+    static template = "stock.ForecastWidget";
     setup() {
-        const { data, fields } = this.props.record;
+        const { data, fields, resId } = this.props.record;
         this.actionService = useService("action");
         this.orm = useService("orm");
-        this.resId = data.id;
+        this.resId = resId;
 
-        this.reservedAvailability = formatFloat(data.reserved_availability, {
-            ...fields.reserved_availability,
-            ...this.nodeOptions,
-        });
         this.forecastExpectedDate = formatDate(
             data.forecast_expected_date,
             fields.forecast_expected_date
@@ -42,7 +37,7 @@ export class ForecastWidgetField extends FloatField {
     async _openReport(ev) {
         ev.preventDefault();
         ev.stopPropagation();
-        if (!this.resId) {
+        if (!this.resId || !this.props.record.data.is_storable) {
             return;
         }
         const action = await this.orm.call("stock.move", "action_product_forecast_report", [
@@ -50,7 +45,22 @@ export class ForecastWidgetField extends FloatField {
         ]);
         this.actionService.doAction(action);
     }
-}
-ForecastWidgetField.template = "stock.ForecastWidget";
 
-registry.category("fields").add("forecast_widget", ForecastWidgetField);
+    get decoration() {
+        if (!this.forecastExpectedDate && this.willBeFulfilled){
+            return "text-bg-success"
+        } else if (this.forecastExpectedDate && this.willBeFulfilled){
+            return this.forecastIsLate ? 'text-bg-danger' : 'text-bg-warning'
+        } else {
+            return 'text-bg-danger'
+        }
+
+    }
+}
+
+export const forecastWidgetField = {
+    ...floatField,
+    component: ForecastWidgetField,
+};
+
+registry.category("fields").add("forecast_widget", forecastWidgetField);

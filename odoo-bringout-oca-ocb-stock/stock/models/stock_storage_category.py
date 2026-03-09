@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
-class StorageCategory(models.Model):
+class StockStorageCategory(models.Model):
     _name = 'stock.storage.category'
     _description = "Storage Category"
     _order = "name"
@@ -22,9 +22,10 @@ class StorageCategory(models.Model):
     company_id = fields.Many2one('res.company', 'Company')
     weight_uom_name = fields.Char(string='Weight unit', compute='_compute_weight_uom_name')
 
-    _sql_constraints = [
-        ('positive_max_weight', 'CHECK(max_weight >= 0)', 'Max weight should be a positive number.'),
-    ]
+    _positive_max_weight = models.Constraint(
+        'CHECK(max_weight >= 0)',
+        'Max weight should be a positive number.',
+    )
 
     @api.depends('capacity_ids')
     def _compute_storage_capacity_ids(self):
@@ -39,38 +40,36 @@ class StorageCategory(models.Model):
         for storage_category in self:
             storage_category.capacity_ids = storage_category.product_capacity_ids | storage_category.package_capacity_ids
 
-    def copy(self, default=None):
-        default = dict(default or {})
-        default.update(name=_("%s (copy)") % self.name)
-        return super().copy(default)
+    def copy_data(self, default=None):
+        vals_list = super().copy_data(default=default)
+        return [dict(vals, name=self.env._("%s (copy)", category.name)) for category, vals in zip(self, vals_list)]
 
 
-class StorageCategoryProductCapacity(models.Model):
+class StockStorageCategoryCapacity(models.Model):
     _name = 'stock.storage.category.capacity'
     _description = "Storage Category Capacity"
     _check_company_auto = True
     _order = "storage_category_id"
 
-    @api.model
-    def _domain_product_id(self):
-        domain = "('type', '=', 'product')"
-        if self.env.context.get('active_model') == 'product.template':
-            product_template_id = self.env.context.get('active_id', False)
-            domain = f"('product_tmpl_id', '=', {product_template_id})"
-        elif self.env.context.get('default_product_id', False):
-            product_id = self.env.context.get('default_product_id', False)
-            domain = f"('id', '=', {product_id})"
-        return f"[{domain}, '|', ('company_id', '=', False), ('company_id', '=', company_id)]"
-
     storage_category_id = fields.Many2one('stock.storage.category', ondelete='cascade', required=True, index=True)
-    product_id = fields.Many2one('product.product', 'Product', domain=lambda self: self._domain_product_id(), ondelete='cascade', check_company=True)
-    package_type_id = fields.Many2one('stock.package.type', 'Package Type', ondelete='cascade', check_company=True)
+    product_id = fields.Many2one('product.product', 'Product', ondelete='cascade', check_company=True, index='btree_not_null',
+        domain=("[('product_tmpl_id', '=', context.get('active_id', False))] if context.get('active_model') == 'product.template' else"
+            " [('id', '=', context.get('default_product_id', False))] if context.get('default_product_id') else"
+            " [('is_storable', '=', True)]"))
+    package_type_id = fields.Many2one('stock.package.type', 'Package Type', ondelete='cascade', check_company=True, index='btree_not_null')
     quantity = fields.Float('Quantity', required=True)
     product_uom_id = fields.Many2one(related='product_id.uom_id')
     company_id = fields.Many2one('res.company', 'Company', related="storage_category_id.company_id")
 
-    _sql_constraints = [
-        ('positive_quantity', 'CHECK(quantity > 0)', 'Quantity should be a positive number.'),
-        ('unique_product', 'UNIQUE(product_id, storage_category_id)', 'Multiple capacity rules for one product.'),
-        ('unique_package_type', 'UNIQUE(package_type_id, storage_category_id)', 'Multiple capacity rules for one package type.'),
-    ]
+    _positive_quantity = models.Constraint(
+        'CHECK(quantity > 0)',
+        'Quantity should be a positive number.',
+    )
+    _unique_product = models.Constraint(
+        'UNIQUE(product_id, storage_category_id)',
+        'Multiple capacity rules for one product.',
+    )
+    _unique_package_type = models.Constraint(
+        'UNIQUE(package_type_id, storage_category_id)',
+        'Multiple capacity rules for one package type.',
+    )

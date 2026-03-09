@@ -4,16 +4,17 @@
     'summary': """ Let's choose a Point Relais® as shipping address """,
 
     'description': """
-        This module allow your customer to choose a Point Relais® and use it as shipping address.
-        This module doesn't implement the WebService. It is only the integration of the widget.
+This module allow your customer to choose a Point Relais® and use it as shipping address.
+This module doesn't implement the WebService. It is only the integration of the widget.
 
-        Delivery price pre-configured is an example, you need to adapt the pricing's rules.
+Delivery price pre-configured is an example, you need to adapt the pricing's rules.
     """,
-    'category': 'Inventory/Delivery',
+    'category': 'Shipping Connectors',
     'version': '0.1',
-    'depends': ['delivery'],
+    'depends': ['stock_delivery'],
     'data': [
         'data/data.xml',
+        'views/portal_address_templates.xml',
         'views/views.xml',
         'wizard/choose_delivery_carrier_views.xml',
     ],
@@ -23,5 +24,6 @@
             'delivery_mondialrelay/static/src/scss/mondialrelay.scss',
         ],
     },
+    'author': 'Odoo S.A.',
     'license': 'LGPL-3',
 }

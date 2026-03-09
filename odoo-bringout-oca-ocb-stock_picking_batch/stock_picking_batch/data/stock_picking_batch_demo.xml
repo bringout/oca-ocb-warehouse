@@ -29,6 +29,7 @@
         <field name="move_type">one</field>
         <field name="priority">1</field>
         <field name="user_id" eval="False"/>
+        <field name="state">draft</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
         <field name="location_dest_id" ref="stock.stock_location_customers"/>
@@ -38,6 +39,7 @@
         <field name="move_type">one</field>
         <field name="priority">0</field>
         <field name="user_id" eval="False"/>
+        <field name="state">draft</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
         <field name="location_dest_id" ref="stock.stock_location_customers"/>
@@ -47,6 +49,7 @@
         <field name="move_type">one</field>
         <field name="priority">0</field>
         <field name="user_id" eval="False"/>
+        <field name="state">draft</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
         <field name="location_dest_id" ref="stock.stock_location_customers"/>
@@ -56,6 +59,7 @@
         <field name="move_type">one</field>
         <field name="priority">1</field>
         <field name="user_id" eval="False"/>
+        <field name="state">draft</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
         <field name="location_dest_id" ref="stock.stock_location_customers"/>
@@ -76,7 +80,6 @@
 
     <!-- Add stock move -->
     <record id="stock_move1" model="stock.move">
-        <field name="name">A first stock move</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="picking_id" ref="Picking_A"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
@@ -86,7 +89,6 @@
         <field name="product_id" ref="product.consu_delivery_01"/>
     </record>
     <record id="stock_move2" model="stock.move">
-        <field name="name">A second stock move</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="picking_id" ref="Picking_A"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
@@ -96,7 +98,6 @@
         <field name="product_id" ref="product.consu_delivery_02"/>
     </record>
     <record id="stock_move3" model="stock.move">
-        <field name="name">A third stock move</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="picking_id" ref="Picking_B"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
@@ -106,7 +107,6 @@
         <field name="product_id" ref="product.consu_delivery_03"/>
     </record>
     <record id="stock_move4" model="stock.move">
-        <field name="name">A fourth stock move</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="picking_id" ref="Picking_C"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
@@ -116,7 +116,6 @@
         <field name="product_id" ref="product.consu_delivery_03"/>
     </record>
     <record id="stock_move5" model="stock.move">
-        <field name="name">A fifth stock move</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="picking_id" ref="Picking_D"/>
         <field name="location_id" ref="stock.stock_location_stock"/>
@@ -126,7 +125,6 @@
         <field name="product_id" ref="product.product_product_10"/>
     </record>
     <record id="stock_move6" model="stock.move">
-        <field name="name">A sixth stock move</field>
         <field name="picking_type_id" ref="stock.picking_type_out"/>
         <field name="picking_id" ref="Picking_D"/>
         <field name="location_id" ref="stock.stock_location_stock"/>

@@ -1,24 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* delivery_mondialrelay
-# 
-# Translators:
-# Martin Trigaux, 2022
-# a75f12d3d37ea5bf159c4b3e85eb30e7_0fa6927, 2023
-# 
+# * delivery_mondialrelay
+#
+# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
+# "Maitê Dietze (madi)" <madi@odoo.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 13:31+0000\n"
-"PO-Revision-Date: 2022-09-22 05:45+0000\n"
-"Last-Translator: a75f12d3d37ea5bf159c4b3e85eb30e7_0fa6927, 2023\n"
-"Language-Team: Portuguese (Brazil) (https://app.transifex.com/odoo/teams/41243/pt_BR/)\n"
+"POT-Creation-Date: 2026-01-25 18:36+0000\n"
+"PO-Revision-Date: 2025-11-10 14:29+0000\n"
+"Last-Translator: \"Maitê Dietze (madi)\" <madi@odoo.com>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.odoo.com/projects/"
+"odoo-19/delivery_mondialrelay/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__mondialrelay_brand
@@ -34,12 +34,33 @@ msgstr "Contato"
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__shipping_country_code
 msgid "Country Code"
-msgstr "Código do País"
+msgstr "Código do país"
+
+#. module: delivery_mondialrelay
+#: model:ir.model,website_form_label:delivery_mondialrelay.model_res_partner
+msgid "Create a Customer"
+msgstr "Criar um cliente"
 
 #. module: delivery_mondialrelay
 #: model:ir.model,name:delivery_mondialrelay.model_choose_delivery_carrier
 msgid "Delivery Carrier Selection Wizard"
-msgstr "Assistente de Seleção de Transportadora de Entrega"
+msgstr "Assistente de seleção de transportadora de entrega"
+
+#. module: delivery_mondialrelay
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__display_name
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_delivery_carrier__display_name
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_res_partner__display_name
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Exibir nome"
+
+#. module: delivery_mondialrelay
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__id
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_delivery_carrier__id
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_res_partner__id
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_sale_order__id
+msgid "ID"
+msgstr "ID"
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__is_mondialrelay
@@ -59,15 +80,14 @@ msgstr "Último relay selecionado"
 #: model:delivery.carrier,name:delivery_mondialrelay.delivery_carrier_mondialrelay_es
 #: model:delivery.carrier,name:delivery_mondialrelay.delivery_carrier_mondialrelay_fr_nl
 #: model:product.template,name:delivery_mondialrelay.product_product_delivery_mondialrelay_product_template
+#: model_terms:ir.ui.view,arch_db:delivery_mondialrelay.address_card
 msgid "Mondial Relay"
 msgstr "Mondial Relay"
 
 #. module: delivery_mondialrelay
 #. odoo-python
 #: code:addons/delivery_mondialrelay/models/sale_order.py:0
-#, python-format
-msgid ""
-"Mondial Relay mismatching between delivery method and shipping address."
+msgid "Mondial Relay mismatching between delivery method and shipping address."
 msgstr ""
 "Não houve correspondência entre o método de entrega e o endereço de entrega "
 "para a Mondial Relay."
@@ -90,15 +110,7 @@ msgstr "Tipo de pacote da Mondialrelay"
 
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/models/delivery_carrier.py:0
-#, python-format
-msgid "Operation not supported"
-msgstr "Operação não suportada."
-
-#. module: delivery_mondialrelay
-#. odoo-python
 #: code:addons/delivery_mondialrelay/wizard/choose_delivery_carrier.py:0
-#, python-format
 msgid "Please, choose a Parcel Point"
 msgstr "Escolha um ponto postal"
 
@@ -118,10 +130,13 @@ msgid ""
 "The ISO country code in two chars. \n"
 "You can use this field for quick search."
 msgstr ""
-"The ISO country code in two chars. \n"
-"You can use this field for quick search."
+"O código ISO do país de dois caracteres. \n"
+"Use este campo para fazer uma busca."
 
 #. module: delivery_mondialrelay
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__shipping_zip
 msgid "Zip"
 msgstr "CEP"
+
+#~ msgid "Operation not supported"
+#~ msgstr "Operação não compatível"

@@ -1,27 +1,30 @@
-odoo.define('stock.reports.setup.tour', function (require) {
-    "use strict";
+import { registry } from "@web/core/registry";
 
-    const tour = require('web_tour.tour');
-
-    tour.register('test_stock_route_diagram_report', {
-        test: true,
-    }, [
+registry.category("web_tour.tours").add("test_stock_route_diagram_report", {
+        steps: () => [
+        {
+            trigger: ".o_breadcrumb",
+        },
     {
         trigger: '.o_kanban_record',
-        extra_trigger:'.breadcrumb',
+        run: "click",
     },
     {
         trigger: '.nav-item > a:contains("Inventory")',
+        run: "click",
     },
     {
         trigger: '.btn[id="stock.view_diagram_button"]',
+        run: "click",
     },
     {
-        trigger: 'iframe .o_report_stock_rule',
+        trigger: ':iframe .o_report_stock_rule',
     },
-    ]);
+    ],
+});
 
-    tour.register("test_context_from_warehouse_filter", { test: true }, [
+registry.category("web_tour.tours").add("test_context_from_warehouse_filter", {
+    steps: () => [
         // Add "foo" to the warehouse context key
         {
             trigger: ".o_searchview_input",
@@ -29,10 +32,10 @@ odoo.define('stock.reports.setup.tour', function (require) {
         },
         {
             trigger: ".o_searchview_input",
-            run: "text foo",
+            run: "edit foo",
         },
         {
-            trigger: ".o_menu_item.dropdown-item:contains(Warehouse):contains(foo)",
+            trigger: ".o-dropdown-item:contains(Warehouse):contains(foo)",
             run: "click",
         },
         // Add warehouse A's id to the warehouse context key
@@ -42,33 +45,47 @@ odoo.define('stock.reports.setup.tour', function (require) {
         },
         {
             trigger: ".o_searchview_input",
-            run: "text warehouse",
+            run: "edit warehouse",
         },
         {
-            trigger: ".o_menu_item.dropdown-item:contains(Warehouse) a.o_expand > i",
+            trigger: ".o-dropdown-item:contains(Search Warehouse for:) a.o_expand > i",
             run: "click",
         },
         {
-            trigger: ".o_menu_item.dropdown-item.o_indent:contains(Warehouse A) a",
+            trigger: ".o-dropdown-item.o_indent:contains(Warehouse A) a",
             run: "click",
         },
         // Add warehouse B's id to the warehouse context key
         {
             trigger: ".o_searchview_input",
-            run: "text warehouse",
+            run: "edit warehouse",
         },
         {
-            trigger: ".o_menu_item.dropdown-item:contains(Warehouse) a.o_expand > i",
+            trigger: ".o-dropdown-item:contains(Search Warehouse for:) a.o_expand > i",
             run: "click",
         },
         {
-            trigger: ".o_menu_item.dropdown-item.o_indent:contains(Warehouse B) a",
+            trigger: ".o-dropdown-item.o_indent:contains(Warehouse B) a",
             run: "click",
         },
         {
             content: "Go to product page",
-            trigger: ".oe_kanban_card:has(.o_kanban_record_title span:contains(Lovely Product))",
+            trigger: ".o_kanban_record:has(span:contains(Lovely Product))",
             run: "click",
+        },
+        {
+            trigger: ".o_form_view",
+            run: () => {
+                if (!document.querySelector("button[name=action_product_tmpl_forecast_report]")) {
+                    const panelButtons = document.querySelectorAll(
+                        ".o_control_panel_actions button"
+                    );
+                    const moreButton = Array.from(panelButtons).find(
+                        (button) => button.textContent.trim() == "More"
+                    );
+                    moreButton.click();
+                }
+            },
         },
         {
             trigger: "button[name=action_product_tmpl_forecast_report]",
@@ -76,7 +93,45 @@ odoo.define('stock.reports.setup.tour', function (require) {
         },
         {
             trigger: ".o_graph_view",
-            isCheck: true,
         },
-    ]);
+    ],
+});
+
+registry.category("web_tour.tours").add("test_forecast_replenishment", {
+    steps: () => [
+        {
+            trigger: ".o_kanban_record:contains(Lovely product)",
+            run: "click",
+        },
+        {
+            trigger: "button[name=action_product_tmpl_forecast_report]",
+            run: "click",
+        },
+        {
+            trigger: "button.o_forecasted_replenish_btn",
+            run: "click",
+        },
+        {
+            trigger: ".modal-dialog .btn-close",
+            run: "click",
+        },
+        {
+            trigger: ".o_web_client:not(:has(.modal-dialog))",
+        },
+        {
+            trigger: "button.o_forecasted_replenish_btn",
+            run: "click",
+        },
+        {
+            trigger: "button[name=launch_replenishment]",
+            run: "click",
+        },
+        {
+            trigger: ".o_web_client:not(:has(.modal-dialog))",
+        },
+        {
+            trigger:
+                ".o_notification:contains(The following replenishment order have been generated)",
+        },
+    ],
 });

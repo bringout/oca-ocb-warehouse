@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form, TransactionCase
 from odoo.exceptions import AccessError, UserError
 
 
@@ -18,19 +18,16 @@ class TestEditableQuant(TransactionCase):
         Location = cls.env['stock.location']
         cls.product = Product.create({
             'name': 'Product A',
-            'type': 'product',
-            'categ_id': cls.env.ref('product.product_category_all').id,
+            'is_storable': True,
         })
         cls.product2 = Product.create({
             'name': 'Product B',
-            'type': 'product',
-            'categ_id': cls.env.ref('product.product_category_all').id,
+            'is_storable': True,
         })
         cls.product_tracked_sn = Product.create({
             'name': 'Product tracked by SN',
-            'type': 'product',
+            'is_storable': True,
             'tracking': 'serial',
-            'categ_id': cls.env.ref('product.product_category_all').id,
         })
         cls.warehouse = Location.create({
             'name': 'Warehouse',
@@ -243,9 +240,8 @@ class TestEditableQuant(TransactionCase):
         self.assertEqual(self.product.qty_available, 75)
         smls = self.env['stock.move.line'].search([('product_id', '=', self.product.id)])
         self.assertRecordValues(smls, [
-            {'qty_done': 100},
-            {'qty_done': 25},
-            {'qty_done': 0},
+            {'quantity': 100},
+            {'quantity': 25},
         ])
 
     def test_edit_quant_5(self):
@@ -273,7 +269,6 @@ class TestEditableQuant(TransactionCase):
         sn1 = self.env['stock.lot'].create({
             'name': 'serial1',
             'product_id': self.product_tracked_sn.id,
-            'company_id': self.env.company.id,
         })
 
         self.Quant.create({
@@ -328,3 +323,25 @@ class TestEditableQuant(TransactionCase):
         self.assertEqual(len(move_lines), 2, "Two inventory adjustment move lines should have been created")
         move_lines.action_revert_inventory()
         self.assertEqual(self.product.qty_available, 0, "After revert multi inventory adjustment qty is not zero")
+
+    def test_set_inventory_quant_to_zero(self):
+        """Try to set inventory quantity to zero and check that the quant is deleted after unlinking zero quants"""
+        default_wh = self.env['stock.warehouse'].search([('company_id', '=', self.env.company.id)], limit=1)
+        default_stock_location = default_wh.lot_stock_id
+        quant = self.Quant.create({
+            'product_id': self.product.id,
+            'location_id': default_stock_location.id,
+            'inventory_quantity': 100,
+        })
+        quant.action_apply_inventory()
+        self.assertEqual(quant.quantity, 100)
+        self.assertEqual(quant.user_id.id, False)
+        quant.with_context(inventory_report_mode=True).action_set_inventory_quantity_zero()
+        self.assertEqual(quant.inventory_quantity, 0)
+        self.assertEqual(quant.user_id.id, False)
+        self.assertEqual(quant.quantity, 0)
+        self.assertEqual(quant.reserved_quantity, 0)
+        # flush ORM state before raw SQL in _unlink_zero_quants
+        quant.flush_recordset()
+        quant._unlink_zero_quants()
+        self.assertFalse(quant.exists(), "After unlinking zero quants, the quant should be deleted")

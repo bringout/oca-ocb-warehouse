@@ -2,7 +2,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import api, fields, models
-from odoo.tools.float_utils import float_compare
 
 
 class StockBackorderConfirmationLine(models.TransientModel):
@@ -41,10 +40,9 @@ class StockBackorderConfirmation(models.TransientModel):
         for pick_id in pickings:
             moves_to_log = {}
             for move in pick_id.move_ids:
-                if float_compare(move.product_uom_qty,
-                                 move.quantity_done,
-                                 precision_rounding=move.product_uom.rounding) > 0:
-                    moves_to_log[move] = (move.quantity_done, move.product_uom_qty)
+                picked_qty = move._get_picked_quantity()
+                if move.product_uom.compare(move.product_uom_qty, picked_qty) > 0:
+                    moves_to_log[move] = (picked_qty, move.product_uom_qty)
             if moves_to_log:
                 pick_id._log_less_quantities_than_expected(moves_to_log)
 

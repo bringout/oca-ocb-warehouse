@@ -5,7 +5,7 @@ from odoo import api, models, _
 from odoo.exceptions import UserError
 
 
-class ReportStockRule(models.AbstractModel):
+class ReportStockReport_Stock_Rule(models.AbstractModel):
     _name = 'report.stock.report_stock_rule'
     _description = 'Stock rule report'
 
@@ -54,9 +54,7 @@ class ReportStockRule(models.AbstractModel):
                 color_index = color_index + 1
                 for rule in rules_to_display:
                     rule_loc = [r for r in rules_and_loc if r['rule'] == rule][0]
-                    res = []
-                    for x in range(len(locations_names)):
-                        res.append([])
+                    res = [[] for _loc in locations_names]
                     idx = locations_names.index(rule_loc['destination'].display_name)
                     tpl = (rule, 'destination', route_color, )
                     res[idx] = tpl
@@ -69,7 +67,7 @@ class ReportStockRule(models.AbstractModel):
             'locations': locations,
             'header_lines': header_lines,
             'route_lines': route_lines,
-            'is_rtl': self.env['res.lang']._lang_get_direction(self.env.user.lang) == 'rtl',
+            'is_rtl': self.env['res.lang']._lang_get(self.env.user.lang).direction == 'rtl',
         }
 
     @api.model
@@ -87,7 +85,8 @@ class ReportStockRule(models.AbstractModel):
     @api.model
     def _get_rule_loc(self, rule, product):
         rule.ensure_one()
-        return {'rule': rule, 'source': rule.location_src_id, 'destination': rule.location_dest_id}
+        destination = rule.location_dest_id if rule.action != "pull" else rule.picking_type_id.default_location_dest_id
+        return {'rule': rule, 'source': rule.location_src_id, 'destination': destination}
 
     @api.model
     def _sort_locations(self, rules_and_loc, warehouses):

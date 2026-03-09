@@ -2,7 +2,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import api, models, _
-from odoo.tools import config
 from odoo.tools import format_datetime
 from markupsafe import Markup
 
@@ -19,7 +18,7 @@ def autoIncrement():
     return rec
 
 
-class MrpStockReport(models.TransientModel):
+class StockTraceabilityReport(models.TransientModel):
     _name = 'stock.traceability.report'
     _description = 'Traceability Report'
 
@@ -35,7 +34,7 @@ class MrpStockReport(models.TransientModel):
                     lambda m: m.lot_id == move_line.lot_id and m.state == 'done'
                 ) - lines_seen
             # if MTS
-            elif move_line.location_id.usage == 'internal':
+            elif move_line.location_id.usage in ('internal', 'transit'):
                 lines = self.env['stock.move.line'].search([
                     ('product_id', '=', move_line.product_id.id),
                     ('lot_id', '=', move_line.lot_id.id),
@@ -94,17 +93,17 @@ class MrpStockReport(models.TransientModel):
             res_model = 'stock.move'
             res_id = move_line.move_id.id
             ref = 'Inventory Adjustment'
-        elif move_line.move_id.scrapped and move_line.move_id.scrap_ids:
+        elif move_line.move_id.location_dest_usage == 'inventory' and move_line.move_id.scrap_id:
             res_model = 'stock.scrap'
-            res_id = move_line.move_id.scrap_ids[0].id
-            ref = move_line.move_id.scrap_ids[0].name
+            res_id = move_line.move_id.scrap_id.id
+            ref = move_line.move_id.scrap_id.name
         return res_model, res_id, ref
 
     @api.model
     def _quantity_to_str(self, from_uom, to_uom, qty):
         """ workaround to apply the float rounding logic of t-esc on data prepared server side """
         qty = from_uom._compute_quantity(qty, to_uom, rounding_method='HALF-UP')
-        return self.env['ir.qweb.field.float'].value_to_html(qty, {'decimal_precision': 'Product Unit of Measure'})
+        return self.env['ir.qweb.field.float'].value_to_html(qty, {'decimal_precision': 'Product Unit'})
 
     def _get_usage(self, move_line):
         usage = ''
@@ -116,9 +115,25 @@ class MrpStockReport(models.TransientModel):
             usage = 'out'
         return usage
 
+    def _get_partner_names(self, move_line):
+        """ Return partner name instead of source or destination location based on
+            whether the product is incoming or outgoing.
+        """
+        partner_name = move_line.picking_partner_id.name
+        source_name = move_line.location_id.display_name
+        destination_name = move_line.location_dest_id.display_name
+
+        if (picking_code := move_line.picking_id.picking_type_code) == 'incoming':
+            return partner_name, destination_name
+        elif picking_code == 'outgoing':
+            return source_name, partner_name
+        else:
+            return source_name, destination_name
+
     def _make_dict_move(self, level, parent_id, move_line, unfoldable=False):
         res_model, res_id, ref = self._get_reference(move_line)
         dummy, is_used = self._get_linked_move_lines(move_line)
+        location_source, location_destination = self._get_partner_names(move_line)
         data = [{
             'level': level,
             'unfoldable': unfoldable,
@@ -129,11 +144,13 @@ class MrpStockReport(models.TransientModel):
             'model_id': move_line.id,
             'model': 'stock.move.line',
             'product_id': move_line.product_id.display_name,
-            'product_qty_uom': "%s %s" % (self._quantity_to_str(move_line.product_uom_id, move_line.product_id.uom_id, move_line.qty_done), move_line.product_id.uom_id.name),
+            'product_qty_uom': "%s %s" % (self._quantity_to_str(move_line.product_uom_id, move_line.product_id.uom_id, move_line.quantity), move_line.product_id.uom_id.name),
             'lot_name': move_line.lot_id.name,
             'lot_id': move_line.lot_id.id,
-            'location_source': move_line.location_id.name,
-            'location_destination': move_line.location_dest_id.name,
+            'location_source': location_source,
+            'location_destination': location_destination,
+            'partner_id': move_line.picking_partner_id.id,
+            'picking_type_code': move_line.picking_id.picking_type_code,
             'reference_id': ref,
             'res_id': res_id,
             'res_model': res_model}]
@@ -153,6 +170,10 @@ class MrpStockReport(models.TransientModel):
                 'lot_name': data.get('lot_name', False),
                 'lot_id': data.get('lot_id', False),
                 'reference': data.get('reference_id', False),
+                'location_source': data.get('location_source', False),
+                'location_destination': data.get('location_destination', False),
+                'partner_id': data.get('partner_id', False),
+                'picking_type_code': data.get('picking_type_code', False),
                 'res_id': data.get('res_id', False),
                 'res_model': data.get('res_model', False),
                 'columns': [data.get('reference_id', False),
@@ -211,8 +232,6 @@ class MrpStockReport(models.TransientModel):
         }
 
         context = dict(self.env.context)
-        if not config['test_enable']:
-            context['commit_assetsbundle'] = True
         if context.get('active_id') and context.get('active_model'):
             rcontext['reference'] = self.env[context.get('active_model')].browse(int(context.get('active_id'))).display_name
 
@@ -228,20 +247,16 @@ class MrpStockReport(models.TransientModel):
             [body],
             header=header.decode(),
             landscape=True,
-            specific_paperformat_args={'data-report-margin-top': 17, 'data-report-header-spacing': 12}
+            specific_paperformat_args={'data-report-margin-top': 30, 'data-report-header-spacing': 25}
         )
 
-    def _get_html(self):
-        result = {}
-        rcontext = {}
+    def _get_main_lines(self):
         context = dict(self.env.context)
-        rcontext['lines'] = self.with_context(context).get_lines()
-        result['html'] = self.env['ir.qweb']._render('stock.report_stock_inventory', rcontext)
-        return result
+        return self.with_context(context).get_lines()
 
     @api.model
-    def get_html(self, given_context=None):
+    def get_main_lines(self, given_context=None):
         res = self.search([('create_uid', '=', self.env.uid)], limit=1)
         if not res:
-            return self.create({}).with_context(given_context)._get_html()
-        return res.with_context(given_context)._get_html()
+            return self.create({}).with_context(given_context)._get_main_lines()
+        return res.with_context(given_context)._get_main_lines()

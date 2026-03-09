@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 from odoo import fields
 from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from odoo.addons.purchase_stock.models.purchase import PurchaseOrderLine
+from odoo.addons.purchase_stock.models.purchase_order_line import PurchaseOrderLine
 from odoo.tests.common import tagged
 
 from .common import PurchaseTestCommon
@@ -18,15 +18,16 @@ class TestUninstallPurchaseStock(PurchaseTestCommon):
             'partner_id': partner.id,
             'state': 'purchase',
             'order_line': [fields.Command.create({
-                'product_id': self.product_1.id,
+                'product_id': self.product.id,
             })],
         })
         order_line = purchase_order.order_line
         stock_move = order_line.move_ids
 
-        self.assertEqual(order_line.product_id.detailed_type, 'product')
+        self.assertEqual(order_line.product_id.is_storable, True)
 
-        stock_move.quantity_done = 1
+        stock_move.quantity = 1
+        stock_move.picked = True
         stock_move.picking_id.button_validate()
 
         self.assertEqual(purchase_order.order_line.qty_received, 1)
@@ -40,7 +41,7 @@ class TestUninstallPurchaseStock(PurchaseTestCommon):
         original_compute = PurchaseOrderLine._compute_qty_received
         def _compute_qty_received(records):
             records.read()
-            with self.assertQueryCount(0):
+            with self.assertQueryCount(5):
                 original_compute(records)
                 records.flush_recordset()
 
