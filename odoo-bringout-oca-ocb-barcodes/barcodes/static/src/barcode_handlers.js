@@ -1,8 +1,25 @@
-/** @odoo-module **/
-
+import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { getVisibleElements } from "@web/core/utils/ui";
-import { MacroEngine } from "@web/core/macro";
+import { Macro } from "@web/core/macro";
+
+const ACTION_HELPERS = {
+    click(el) {
+        el.dispatchEvent(new MouseEvent("mouseover"));
+        el.dispatchEvent(new MouseEvent("mouseenter"));
+        el.dispatchEvent(new MouseEvent("mousedown"));
+        el.dispatchEvent(new MouseEvent("mouseup"));
+        el.click();
+        el.dispatchEvent(new MouseEvent("mouseout"));
+        el.dispatchEvent(new MouseEvent("mouseleave"));
+    },
+    text(el, value) {
+        this.click(el);
+        el.value = value;
+        el.dispatchEvent(new InputEvent("input", { bubbles: true }));
+        el.dispatchEvent(new InputEvent("change", { bubbles: true }));
+    },
+};
 
 function clickOnButton(selector) {
     const button = document.body.querySelector(selector);
@@ -26,33 +43,34 @@ function updatePager(position) {
     if (current === next) {
         return;
     }
-    const engine = new MacroEngine();
-    engine.activate({
+    new Macro({
         name: "updating pager",
         timeout: 1000,
-        interval: 0,
         steps: [
             {
                 trigger: "span.o_pager_value",
-                action: "click"
+                async action(trigger) {
+                    ACTION_HELPERS.click(trigger);
+                },
             },
             {
                 trigger: "input.o_pager_value",
-                action: "text",
-                value: next
-            }
-        ]
-    });
+                async action(trigger) {
+                    ACTION_HELPERS.text(trigger, next);
+                },
+            },
+        ],
+    }).start();
 }
 
 export const COMMANDS = {
-    "O-CMD.EDIT": () => clickOnButton(".o_form_button_edit"),
-    "O-CMD.DISCARD": () => clickOnButton(".o_form_button_cancel"),
-    "O-CMD.SAVE": () => clickOnButton(".o_form_button_save"),
-    "O-CMD.PREV": () => clickOnButton(".o_pager_previous"),
-    "O-CMD.NEXT": () => clickOnButton(".o_pager_next"),
-    "O-CMD.PAGER-FIRST": () => updatePager("first"),
-    "O-CMD.PAGER-LAST": () => updatePager("last"),
+    "OCDEDIT": () => clickOnButton(".o_form_button_edit"),
+    "OCDDISC": () => clickOnButton(".o_form_button_cancel"),
+    "OCDSAVE": () => clickOnButton(".o_form_button_save"),
+    "OCDPREV": () => clickOnButton(".o_pager_previous"),
+    "OCDNEXT": () => clickOnButton(".o_pager_next"),
+    "OCDPAGERFIRST": () => updatePager("first"),
+    "OCDPAGERLAST": () => updatePager("last"),
 };
 
 export const barcodeGenericHandlers = {
@@ -61,26 +79,26 @@ export const barcodeGenericHandlers = {
 
         barcode.bus.addEventListener("barcode_scanned", (ev) => {
             const barcode = ev.detail.barcode;
-            if (barcode.startsWith("O-BTN.")) {
+            if (barcode.startsWith("OBT")) {
                 let targets = [];
                 try {
                     // the scanned barcode could be anything, and could crash the queryselectorall
                     // function
-                    targets = getVisibleElements(ui.activeElement, `[barcode_trigger=${barcode.slice(6)}]`);
-                } catch (_e) {
+                    targets = getVisibleElements(ui.activeElement, `[barcode_trigger=${barcode.slice(3)}]`);
+                } catch {
                     console.warn(`Barcode '${barcode}' is not valid`);
                 }
                 for (let elem of targets) {
                     elem.click();
                 }
             }
-            if (barcode.startsWith("O-CMD.")) {
+            if (barcode.startsWith("OCD")) {
                 const fn = COMMANDS[barcode];
                 if (fn) {
                     fn();
                 } else {
-                    notification.add(env._t("Barcode: ") + `'${barcode}'`, {
-                        title: env._t("Unknown barcode command"),
+                    notification.add(_t("Barcode: %(barcode)s", { barcode }), {
+                        title: _t("Unknown barcode command"),
                         type: "danger"
                     });
                 }

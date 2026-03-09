@@ -1,28 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* barcodes_gs1_nomenclature
-# 
-# Translators:
-# Martin Trigaux, 2022
-# Matjaz Mozetic <m.mozetic@matmoz.si>, 2022
-# matjaz k <matjaz@mentis.si>, 2022
-# Tadej Lupšina <tadej@hbs.si>, 2022
-# Katja Deržič, 2023
-# Aleš Pipan, 2025
-# 
+# * barcodes_gs1_nomenclature
+#
+# "Tiffany Chang (tic)" <tic@odoo.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server saas~18.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-15 12:50+0000\n"
-"PO-Revision-Date: 2022-09-22 05:45+0000\n"
-"Last-Translator: Aleš Pipan, 2025\n"
-"Language-Team: Slovenian (https://app.transifex.com/odoo/teams/41243/sl/)\n"
+"POT-Creation-Date: 2025-02-20 10:02+0000\n"
+"PO-Revision-Date: 2025-09-16 21:29+0000\n"
+"Last-Translator: \"Tiffany Chang (tic)\" <tic@odoo.com>\n"
+"Language-Team: Slovenian <https://translate.odoo.com/projects/odoo-19/"
+"barcodes_gs1_nomenclature/sl/>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields.selection,name:barcodes_gs1_nomenclature.selection__barcode_rule__gs1_content_type__alpha
@@ -74,6 +70,13 @@ msgid "Destination location"
 msgstr "Ciljna lokacija"
 
 #. module: barcodes_gs1_nomenclature
+#: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_barcode_nomenclature__display_name
+#: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_barcode_rule__display_name
+#: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_ir_http__display_name
+msgid "Display Name"
+msgstr "Prikazani naziv"
+
+#. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_barcode_rule__encoding
 msgid "Encoding"
 msgstr "Kodiranje"
@@ -104,6 +107,13 @@ msgid "HTTP Routing"
 msgstr "HTTP usmerjanje"
 
 #. module: barcodes_gs1_nomenclature
+#: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_barcode_nomenclature__id
+#: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_barcode_rule__id
+#: model:ir.model.fields,field_description:barcodes_gs1_nomenclature.field_ir_http__id
+msgid "ID"
+msgstr "ID"
+
+#. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields,help:barcodes_gs1_nomenclature.field_barcode_rule__gs1_decimal_usage
 msgid ""
 "If True, use the last digit of AI to determine where the first decimal is"
@@ -114,14 +124,12 @@ msgstr ""
 #. module: barcodes_gs1_nomenclature
 #. odoo-javascript
 #: code:addons/barcodes_gs1_nomenclature/static/src/js/barcode_parser.js:0
-#, python-format
 msgid "Invalid barcode: can't be formated as date"
 msgstr "Neveljavna črtna koda: ni mogoče oblikovati kot datum"
 
 #. module: barcodes_gs1_nomenclature
 #. odoo-javascript
 #: code:addons/barcodes_gs1_nomenclature/static/src/js/barcode_parser.js:0
-#, python-format
 msgid "Invalid barcode: the check digit is incorrect"
 msgstr "Neveljavna črtna koda: kontrolna številka je napačna"
 
@@ -159,12 +167,12 @@ msgstr "Datum pakiranja"
 #. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields.selection,name:barcodes_gs1_nomenclature.selection__barcode_rule__type__package
 msgid "Package"
-msgstr "Programski paket"
+msgstr "Paket"
 
 #. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields.selection,name:barcodes_gs1_nomenclature.selection__barcode_rule__type__package_type
 msgid "Package Type"
-msgstr "Tip pakrianja"
+msgstr "Tip paketa"
 
 #. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields.selection,name:barcodes_gs1_nomenclature.selection__barcode_rule__type__quantity
@@ -174,9 +182,10 @@ msgstr "Količina"
 #. module: barcodes_gs1_nomenclature
 #. odoo-python
 #: code:addons/barcodes_gs1_nomenclature/models/barcode_nomenclature.py:0
-#, python-format
-msgid "The FNC1 Separator Alternative is not a valid Regex: "
+msgid "The FNC1 Separator Alternative is not a valid Regex: %(error)s"
 msgstr ""
+"Alternativni ločilni element FNC1 ni veljaven regularni izraz:\n"
+"%(error)s"
 
 #. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields,help:barcodes_gs1_nomenclature.field_barcode_rule__gs1_content_type
@@ -184,21 +193,18 @@ msgid ""
 "The GS1 content type defines what kind of data the rule will process the "
 "barcode as:        * Date: the barcode will be converted into a Odoo "
 "datetime;        * Measure: the barcode's value is related to a specific "
-"UoM;        * Numeric Identifier: fixed length barcode following a specific "
-"encoding;        * Alpha-Numeric Name: variable length barcode."
+"unit;        * Numeric Identifier: fixed length barcode following a specific"
+" encoding;        * Alpha-Numeric Name: variable length barcode."
 msgstr ""
+"Vrsta vsebine GS1 določa, za kakšno vrsto podatkov bo pravilo obdelalo črtno "
+"kodo:        * Datum: črtna koda bo pretvorjena v datum in čas Odoo;        *"
+" Merjenje: vrednost črtne kode je povezana z določeno enoto;        * "
+"Številski identifikator: črtna koda fiksne dolžine, ki sledi določenemu "
+"kodiranju;        * Alfanumerično ime: črtna koda spremenljive dolžine."
 
 #. module: barcodes_gs1_nomenclature
 #. odoo-python
 #: code:addons/barcodes_gs1_nomenclature/models/barcode_rule.py:0
-#, python-format
-msgid "The rule pattern \"%s\" is not a valid Regex: "
-msgstr ""
-
-#. module: barcodes_gs1_nomenclature
-#. odoo-python
-#: code:addons/barcodes_gs1_nomenclature/models/barcode_rule.py:0
-#, python-format
 msgid ""
 "The rule pattern \"%s\" is not valid, it needs two groups:\n"
 "\t- A first one for the Application Identifier (usually 2 to 4 digits);\n"
@@ -210,16 +216,23 @@ msgstr ""
 
 #. module: barcodes_gs1_nomenclature
 #. odoo-python
+#: code:addons/barcodes_gs1_nomenclature/models/barcode_rule.py:0
+msgid "The rule pattern '%(rule)s' is not a valid Regex: %(error)s"
+msgstr "Vzorec pravila '%(rule)s' ni veljaven regularni izraz: %(error)s"
+
+#. module: barcodes_gs1_nomenclature
+#. odoo-python
 #: code:addons/barcodes_gs1_nomenclature/models/barcode_nomenclature.py:0
-#, python-format
 msgid ""
 "There is something wrong with the barcode rule \"%s\" pattern.\n"
 "If this rule uses decimal, check it can't get sometime else than a digit as last char for the Application Identifier.\n"
 "Check also the possible matched values can only be digits, otherwise the value can't be casted as a measure."
 msgstr ""
-"Nekaj ​​je narobe s pravilom o črtni kodi \"%s\" vzorca.\n"
-"Če to pravilo uporablja decimalno število, preverite, ali lahko kot zadnji znak za identifikator aplikacije dobi kaj drugega kot številko.\n"
-"Preverite tudi, ali so možne ujemajoče se vrednosti lahko samo števke, sicer vrednosti ni mogoče pretvoriti v mero."
+"Nekaj je narobe s pravilom o črtni kodi \"%s\" vzorca.\n"
+"Če to pravilo uporablja decimalno število, preverite, ali lahko kot zadnji "
+"znak za identifikator aplikacije dobi kaj drugega kot številko.\n"
+"Preverite tudi, ali so možne ujemajoče se vrednosti lahko samo števke, sicer "
+"vrednosti ni mogoče pretvoriti v mero."
 
 #. module: barcodes_gs1_nomenclature
 #: model:ir.model.fields,help:barcodes_gs1_nomenclature.field_barcode_nomenclature__is_gs1_nomenclature
@@ -234,14 +247,12 @@ msgstr ""
 #. module: barcodes_gs1_nomenclature
 #. odoo-javascript
 #: code:addons/barcodes_gs1_nomenclature/static/src/js/barcode_parser.js:0
-#, python-format
 msgid "This barcode can't be parsed by any barcode rules."
 msgstr "Te črtne kode ni mogoče razčleniti z nobenim pravilom za črtne kode."
 
 #. module: barcodes_gs1_nomenclature
 #. odoo-javascript
 #: code:addons/barcodes_gs1_nomenclature/static/src/js/barcode_parser.js:0
-#, python-format
 msgid "This barcode can't be partially or fully parsed."
 msgstr "Te črtne kode ni mogoče delno ali v celoti razčleniti."
 

@@ -4,7 +4,8 @@ import calendar
 
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
-from odoo.tools import get_barcode_check_digit
+from odoo.fields import Domain
+from odoo.tools.barcode import get_barcode_check_digit
 
 FNC1_CHAR = '\x1D'
 
@@ -26,7 +27,7 @@ class BarcodeNomenclature(models.Model):
                 try:
                     re.compile("(?:%s)?" % nom.gs1_separator_fnc1)
                 except re.error as error:
-                    raise ValidationError(_("The FNC1 Separator Alternative is not a valid Regex: ") + str(error))
+                    raise ValidationError(_("The FNC1 Separator Alternative is not a valid Regex: %(error)s", error))
 
     @api.model
     def gs1_date_to_date(self, gs1_date):
@@ -63,6 +64,7 @@ class BarcodeNomenclature(models.Model):
     def parse_gs1_rule_pattern(self, match, rule):
         result = {
             'rule': rule,
+            'type': rule.type,
             'ai': match.group(1),
             'string_value': match.group(2),
         }
@@ -94,8 +96,8 @@ class BarcodeNomenclature(models.Model):
             result['value'] = match.group(2)
         return result
 
-    def gs1_decompose_extanded(self, barcode):
-        """Try to decompose the gs1 extanded barcode into several unit of information using gs1 rules.
+    def gs1_decompose_extended(self, barcode):
+        """Try to decompose the gs1 extended barcode into several unit of information using gs1 rules.
 
         Return a ordered list of dict
         """
@@ -132,47 +134,72 @@ class BarcodeNomenclature(models.Model):
 
         return results
 
-    def parse_barcode(self, barcode):
+    def parse_nomenclature_barcode(self, barcode):
         if self.is_gs1_nomenclature:
-            return self.gs1_decompose_extanded(barcode)
-        return super().parse_barcode(barcode)
+            return self.gs1_decompose_extended(barcode)
+        return super().parse_nomenclature_barcode(barcode)
 
     @api.model
-    def _preprocess_gs1_search_args(self, args, barcode_types, field='barcode'):
-        """Helper method to preprocess 'args' in _search method to add support to
+    def _preprocess_gs1_search_args(self, domain, barcode_types, field='barcode'):
+        """Helper method to preprocess 'domain' in _search method to add support to
         search with GS1 barcode result.
         Cut off the padding if using GS1 and searching on barcode. If the barcode
         is only digits to keep the original barcode part only.
         """
+        domain = Domain(domain)
         nomenclature = self.env.company.nomenclature_id
-        if nomenclature.is_gs1_nomenclature:
-            for i, arg in enumerate(args):
-                if not isinstance(arg, (list, tuple)) or len(arg) != 3:
-                    continue
-                field_name, operator, value = arg
-                if field_name != field or operator not in ['ilike', 'not ilike', '=', '!='] or value is False:
-                    continue
+        if not self.env.context.get('skip_preprocess_gs1'):
+            def map_gs1_barcode(condition):
+                if condition.field_expr != field or not nomenclature.is_gs1_nomenclature:
+                    return condition
+                # Check operator
+                # handle `in` first and check the rest
+                operator = condition.operator
+                value = condition.value
+                if not value:
+                    return condition
 
-                parsed_data = []
+                if operator in ('in', 'not in') and len(value) > 1:
+                    sub_domain = Domain.OR(
+                        map_gs1_barcode(Domain(field, '=', v))
+                        for v in value
+                    )
+                    if operator == 'not in':
+                        sub_domain = ~sub_domain
+                    return sub_domain
+                if operator in ('in', 'not in'):
+                    operator = '=' if operator == 'in' else '!='
+                    value = next(iter(value))
+                elif operator not in ('ilike', 'not ilike', '=', '!='):
+                    return condition
+
+                # Parse the value
+                if not value:
+                    return condition
                 try:
-                    parsed_data += nomenclature.parse_barcode(value) or []
+                    parsed_data = nomenclature.parse_barcode(value) or []
                 except (ValidationError, ValueError):
-                    pass
+                    parsed_data = []
 
                 replacing_operator = 'ilike' if operator in ['ilike', '='] else 'not ilike'
                 for data in parsed_data:
-                    data_type = data['rule'].type
+                    data_type = data['type']
                     value = data['value']
                     if data_type in barcode_types:
+                        if data_type == 'lot':
+                            return Domain(field, operator, value)
                         match = re.match('0*([0-9]+)$', str(value))
                         if match:
                             unpadded_barcode = match.groups()[0]
-                            args[i] = (field_name, replacing_operator, unpadded_barcode)
+                            return Domain(field, replacing_operator, unpadded_barcode)
                         break
 
                 # The barcode isn't a valid GS1 barcode, checks if it can be unpadded.
                 if not parsed_data:
                     match = re.match('0+([0-9]+)$', value)
                     if match:
-                        args[i] = (field_name, replacing_operator, match.groups()[0])
-        return args
+                        return Domain(field, replacing_operator, match.groups()[0])
+                return condition
+
+            domain = domain.map_conditions(map_gs1_barcode)
+        return domain
