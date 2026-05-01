@@ -17,7 +17,7 @@ msgstr ""
 
 #. module: loyalty_delivery
 #. odoo-python
-#: code:addons/loyalty_delivery/models/loyalty_reward.py
+#: code:addons/loyalty_delivery/models/loyalty_reward.py:0
 #, python-format
 msgid " (Max %s)"
 msgstr " (Maks %s)"
@@ -29,7 +29,7 @@ msgstr "( Maks"
 
 #. module: loyalty_delivery
 #. odoo-python
-#: code:addons/loyalty_delivery/models/loyalty_program.py
+#: code:addons/loyalty_delivery/models/loyalty_program.py:0
 #, python-format
 msgid "Automatic promotion: free shipping on orders higher than $50"
 msgstr "Automatska promocija: besplatna dostava za narudžbe veće od 50 KM"
@@ -42,7 +42,7 @@ msgstr "Besplatna dostava"
 
 #. module: loyalty_delivery
 #. odoo-python
-#: code:addons/loyalty_delivery/models/loyalty_reward.py
+#: code:addons/loyalty_delivery/models/loyalty_reward.py:0
 #, python-format
 msgid "Free shipping"
 msgstr "Besplatna dostava"
@@ -68,4 +68,4 @@ msgstr "Vrsta nagrade"
 #. module: loyalty_delivery
 #: model:ir.model,name:loyalty_delivery.model_sale_order
 msgid "Sales Order"
-msgstr "Prodajni nalog"
+msgstr "Narudžba"
