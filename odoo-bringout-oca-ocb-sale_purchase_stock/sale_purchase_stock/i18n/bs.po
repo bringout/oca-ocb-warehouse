@@ -23,4 +23,29 @@ msgstr "Nalog za nabavu"
 #. module: sale_purchase_stock
 #: model:ir.model,name:sale_purchase_stock.model_sale_order
 msgid "Sales Order"
-msgstr "Prodajni nalog"
+msgstr "Narudžba"
+
+#. module: sale_purchase_stock
+#: model:ir.model.fields,field_description:sale_purchase_stock.field_purchase_order__display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: sale_purchase_stock
+#: model:ir.model.fields,field_description:sale_purchase_stock.field_purchase_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_purchase_stock
+#: model:ir.model,name:sale_purchase_stock.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Stavka narudžbe nabavke"
+
+#. module: sale_purchase_stock
+#: model:ir.model,name:sale_purchase_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Kretanje zaliha"
+
+#. module: sale_purchase_stock
+#: model:ir.model,name:sale_purchase_stock.model_stock_rule
+msgid "Stock Rule"
+msgstr "Pravilo zaliha"

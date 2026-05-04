@@ -22,7 +22,7 @@ msgstr ""
 
 # taken from hr.po
 #. module: barcodes
-#: code:addons/barcodes/models/barcode_rule.py
+#: code:addons/barcodes/models/barcode_rule.py:0
 #, python-format
 msgid " '*' is not a valid Regex Barcode Pattern. Did you mean '.*' ?"
 msgstr " '*' nije ispravan regex barkod uzorak. Jeste li mislili '.*'?"
@@ -74,10 +74,9 @@ msgid "Add a new barcode nomenclature"
 msgstr "Dodavanje nove barkod nomenklature"
 
 #. module: barcodes
-#: selection:barcode.rule,type:0
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__alias
 msgid "Alias"
-msgstr "Alias"
+msgstr ""
 
 # taken from hr.po
 #. module: barcodes
@@ -186,12 +185,12 @@ msgstr "Sniženi proizvod"
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__display_name
 msgid "Display Name"
-msgstr "Prikazani naziv"
+msgstr "Naziv za prikaz"
 
 #. module: barcodes
-#: selection:barcode.rule,encoding
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_rule__encoding__ean13
 msgid "EAN-13"
-msgstr "EAN-13"
+msgstr ""
 
 # taken from hr.po
 #. module: barcodes
@@ -200,9 +199,9 @@ msgid "EAN-13 to UPC-A"
 msgstr "EAN-13 u UPC-A"
 
 #. module: barcodes
-#: selection:barcode.rule,encoding
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_rule__encoding__ean8
 msgid "EAN-8"
-msgstr "EAN-8"
+msgstr ""
 
 # taken from hr.po
 #. module: barcodes
@@ -249,8 +248,6 @@ msgstr "HTTP usmjeravanje"
 
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__id
-#: model:ir.model.fields,field_description:barcodes.field_barcode_rule__id
-#: model:ir.model.fields,field_description:barcodes.field_barcodes_barcode_events_mixin__id
 msgid "ID"
 msgstr "ID"
 
@@ -258,7 +255,7 @@ msgstr "ID"
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature____last_update
 msgid "Last Modified on"
-msgstr "Zadnje mijenjano"
+msgstr "Zadnja izmjena"
 
 # taken from hr.po
 #. module: barcodes
@@ -344,7 +341,7 @@ msgstr "Odaberi"
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule__sequence
 msgid "Sequence"
-msgstr "Sekvenca"
+msgstr "Redoslijed"
 
 #. module: barcodes
 #. openerp-web
@@ -425,9 +422,9 @@ msgstr ""
 "jedan ili drugi način pri pokušaju poklapanja pravila sa drugim kodiranjem."
 
 #. module: barcodes
-#: selection:barcode.rule,encoding
+#: model:ir.model.fields.selection,name:barcodes.selection__barcode_rule__encoding__upca
 msgid "UPC-A"
-msgstr "UPC-A"
+msgstr ""
 
 # taken from hr.po
 #. module: barcodes
@@ -469,13 +466,13 @@ msgstr "Proizvod za vaganje"
 
 # taken from hr.po
 #. module: barcodes
-#: code:addons/barcodes/static/src/barcode_handlers.js
+#: code:addons/barcodes/static/src/barcode_handlers.js:0
 #, python-format
 msgid "Barcode: "
 msgstr "Barkod: "
 
 #. module: barcodes
-#: code:addons/barcodes/models/barcode_events_mixin.py
+#: code:addons/barcodes/models/barcode_events_mixin.py:0
 #, python-format
 msgid ""
 "In order to use barcodes.barcode_events_mixin, method on_barcode_scanned "
@@ -485,14 +482,14 @@ msgstr ""
 "mora biti implementirana"
 
 #. module: barcodes
-#: code:addons/barcodes/models/barcode_rule.py
+#: code:addons/barcodes/models/barcode_rule.py:0
 #, python-format
 msgid ""
 "The barcode pattern %(pattern)s does not lead to a valid regular expression."
 msgstr "Obrazac barkoda %(pattern)s ne vodi do validnog regularnog izraza."
 
 #. module: barcodes
-#: code:addons/barcodes/models/barcode_rule.py
+#: code:addons/barcodes/models/barcode_rule.py:0
 #, python-format
 msgid ""
 "There is a syntax error in the barcode pattern %(pattern)s: a rule can only "
@@ -502,7 +499,7 @@ msgstr ""
 "sadržati jedan par zagrada."
 
 #. module: barcodes
-#: code:addons/barcodes/models/barcode_rule.py
+#: code:addons/barcodes/models/barcode_rule.py:0
 #, python-format
 msgid ""
 "There is a syntax error in the barcode pattern %(pattern)s: braces can only "
@@ -512,7 +509,7 @@ msgstr ""
 "sadržati N-ove praćene sa D-ovima."
 
 #. module: barcodes
-#: code:addons/barcodes/models/barcode_rule.py
+#: code:addons/barcodes/models/barcode_rule.py:0
 #, python-format
 msgid ""
 "There is a syntax error in the barcode pattern %(pattern)s: empty braces."
@@ -520,7 +517,66 @@ msgstr ""
 "Postoji sintaksna greška u obrascu barkoda %(pattern)s: prazne zagrade."
 
 #. module: barcodes
-#: code:addons/barcodes/static/src/barcode_handlers.js
+#: code:addons/barcodes/static/src/barcode_handlers.js:0
 #, python-format
 msgid "Unknown barcode command"
 msgstr "Nepoznata komanda barkoda"
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_rule.py:0
+msgid " '*' is not a valid Regex Barcode Pattern. Did you mean '.*'?"
+msgstr " '*' nije ispravan Regex obrazac za barkod. Mislili ste '.*'?"
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/components/manual_barcode.xml:0
+msgid "Apply"
+msgstr "Primijeni"
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/components/barcode_scanner.xml:0
+msgid "Barcode"
+msgstr "Barkod"
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/barcode_handlers.js:0
+msgid "Barcode: %(barcode)s"
+msgstr "Barkod: %(barcode)s"
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/components/manual_barcode.js:0
+msgid "Enter a barcode..."
+msgstr "Unesite barkod..."
+
+#. module: barcodes
+#: model_terms:ir.ui.view,arch_db:barcodes.view_barcode_nomenclature_form
+msgid ""
+"Patterns can also define how numerical values, such as weight or price, can be\n"
+"                                encoded into the barcode. They are indicated by <code>{NNN}</code> where the N's\n"
+"                                define where the number's digits are encoded. Floats are also supported with the\n"
+"                                decimals indicated with D's, such as <code>{NNNDD}</code>. In these cases,\n"
+"                                the barcode field on the associated records <i>must</i> show these digits as\n"
+"                                zeroes."
+msgstr ""
+"Obrasci također mogu definisati kako se numeričke vrijednosti, poput težine ili cijene,\n"
+"                                kodiraju u barkod. Označavaju se sa <code>{NNN}</code> gdje N\n"
+"                                definira gdje su kodirane cifre broja. Decimalni brojevi su također podržani uz\n"
+"                                decimale označene sa D, npr. <code>{NNNDD}</code>. U tim slučajevima,\n"
+"                                polje barkoda na povezanim zapisima <i>mora</i> prikazivati te cifre kao\n"
+"                                nule."
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/components/barcode_scanner.js:0
+msgid "Please, Scan again!"
+msgstr "Molimo, skenirajte ponovo!"
+
+#. module: barcodes
+#: code:addons/barcodes/static/src/components/barcode_scanner.xml:0
+msgid "Tap to scan"
+msgstr "Dodirnite za skeniranje"
+
+#. module: barcodes
+#: code:addons/barcodes/models/barcode_nomenclature.py:0
+msgid ""
+"You cannot delete '%(name)s' because it's the default barcode nomenclature."
+msgstr ""
+"Ne možete obrisati '%(name)s' jer je to zadana nomenklatura barkodova."

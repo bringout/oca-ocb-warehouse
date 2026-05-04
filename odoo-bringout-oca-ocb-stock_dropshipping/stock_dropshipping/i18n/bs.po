@@ -23,7 +23,7 @@ msgstr "Tvrtke"
 
 # taken from hr.po
 #. module: stock_dropshipping
-#: model:stock.route,name:stock_dropshipping.route_drop_shipping
+#: model:ir.model.fields.selection,name:stock_dropshipping.selection__stock_picking_type__code__dropship
 msgid "Dropship"
 msgstr "Isporuka na odredište"
 
@@ -71,13 +71,13 @@ msgstr "Stavka nabavne narudžbe"
 #. module: stock_dropshipping
 #: model:ir.model,name:stock_dropshipping.model_sale_order
 msgid "Sales Order"
-msgstr "Prodajni nalog"
+msgstr "Narudžba"
 
 # taken from hr.po
 #. module: stock_dropshipping
 #: model:ir.model,name:stock_dropshipping.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Stavka prodajne narudžbe"
+msgstr "Stavka narudžbe"
 
 # taken from hr.po
 #. module: stock_dropshipping
@@ -90,3 +90,38 @@ msgstr "Skladišno pravilo"
 #: model:ir.model,name:stock_dropshipping.model_stock_picking
 msgid "Transfer"
 msgstr "Prijenos"
+
+#. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_product_product__display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: stock_dropshipping
+#: model:ir.actions.act_window,name:stock_dropshipping.action_picking_tree_dropship
+msgid "Dropships"
+msgstr "Dropship isporuke"
+
+#. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_product_product__id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_stock_replenish_mixin
+msgid "Product Replenish Mixin"
+msgstr "Mixin dopune proizvoda"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_product_product
+msgid "Product Variant"
+msgstr "Varijanta proizvoda"
+
+#. module: stock_dropshipping
+#: model_terms:ir.ui.view,arch_db:stock_dropshipping.stock_picking_type_kanban
+msgid "To Validate"
+msgstr "Za validaciju"
+
+#. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_stock_picking_type__code
+msgid "Type of Operation"
+msgstr "Tip operacije"

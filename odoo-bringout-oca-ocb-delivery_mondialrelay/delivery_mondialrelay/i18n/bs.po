@@ -55,7 +55,7 @@ msgstr ""
 
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/models/sale_order.py
+#: code:addons/delivery_mondialrelay/models/sale_order.py:0
 #, python-format
 msgid ""
 "Mondial Relay mismatching between delivery method and shipping address."
@@ -79,14 +79,14 @@ msgstr "Mondialrelay tip paketa"
 # taken from hr.po
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/models/delivery_carrier.py
+#: code:addons/delivery_mondialrelay/models/delivery_carrier.py:0
 #, python-format
 msgid "Operation not supported"
 msgstr "Operacija nije podržana"
 
 #. module: delivery_mondialrelay
 #. odoo-python
-#: code:addons/delivery_mondialrelay/wizard/choose_delivery_carrier.py
+#: code:addons/delivery_mondialrelay/wizard/choose_delivery_carrier.py:0
 #, python-format
 msgid "Please, choose a Parcel Point"
 msgstr ""
@@ -117,7 +117,7 @@ msgstr ""
 #. module: delivery_mondialrelay
 #: model:ir.model,name:delivery_mondialrelay.model_sale_order
 msgid "Sales Order"
-msgstr "Prodajni nalog"
+msgstr "Narudžba"
 
 # taken from hr.po
 #. module: delivery_mondialrelay
@@ -140,3 +140,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__shipping_zip
 msgid "Zip"
 msgstr "Poštanski br."
+
+#. module: delivery_mondialrelay
+#: model:ir.model,website_form_label:delivery_mondialrelay.model_res_partner
+msgid "Create a Customer"
+msgstr "Kreiraj kupca"
+
+#. module: delivery_mondialrelay
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: delivery_mondialrelay
+#: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__id
+msgid "ID"
+msgstr "ID"

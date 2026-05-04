@@ -66,3 +66,18 @@ msgstr "Prijenos"
 #: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking_type__weight_uom_name
 msgid "Weight unit of measure label"
 msgstr "Natpis za jedinicu mjere težine"
+
+#. module: delivery_stock_picking_batch
+#: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Naziv za prikaz"
+
+#. module: delivery_stock_picking_batch
+#: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking__id
+msgid "ID"
+msgstr "ID"
+
+#. module: delivery_stock_picking_batch
+#: model:ir.model.fields,field_description:delivery_stock_picking_batch.field_stock_picking_type__batch_max_weight
+msgid "Maximum weight"
+msgstr "Maksimalna težina"
