@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-25 18:36+0000\n"
+"POT-Creation-Date: 2026-02-04 18:35+0000\n"
 "PO-Revision-Date: 2025-10-08 18:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -26,9 +26,7 @@ msgstr ""
 
 #. module: purchase_requisition_stock
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order__display_name
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order_line__display_name
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition__display_name
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition_create_alternative__display_name
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition_line__display_name
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_stock_move__display_name
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_stock_rule__display_name
@@ -44,22 +42,13 @@ msgstr "Pastga ko‘chirish"
 
 #. module: purchase_requisition_stock
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order__id
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order_line__id
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition__id
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition_create_alternative__id
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition_line__id
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_stock_move__id
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_stock_rule__id
 #, fuzzy
 msgid "ID"
 msgstr "ID"
-
-#. module: purchase_requisition_stock
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order__on_time_rate_perc
-#: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_order_line__on_time_rate_perc
-#, fuzzy
-msgid "OTD"
-msgstr "OTD"
 
 #. module: purchase_requisition_stock
 #: model:ir.model.fields,field_description:purchase_requisition_stock.field_purchase_requisition__picking_type_id
@@ -72,12 +61,6 @@ msgstr "Operatsiya turi"
 #, fuzzy
 msgid "Purchase Order"
 msgstr "Xarid buyurtmasi"
-
-#. module: purchase_requisition_stock
-#: model:ir.model,name:purchase_requisition_stock.model_purchase_order_line
-#, fuzzy
-msgid "Purchase Order Line"
-msgstr "Xarid buyurtmasi satri"
 
 #. module: purchase_requisition_stock
 #: model:ir.model,name:purchase_requisition_stock.model_purchase_requisition
@@ -114,9 +97,3 @@ msgstr "Tovar qoidasi"
 #, fuzzy
 msgid "Warehouse"
 msgstr "Ombor"
-
-#. module: purchase_requisition_stock
-#: model:ir.model,name:purchase_requisition_stock.model_purchase_requisition_create_alternative
-#, fuzzy
-msgid "Wizard to preset values for alternative PO"
-msgstr "Muqobil xarid buyurtmasi uchun qiymatlarni oldindan o‘rnatish ustasi"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-25 18:36+0000\n"
+"POT-Creation-Date: 2026-03-12 18:36+0000\n"
 "PO-Revision-Date: 2025-11-16 15:08+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Arabic <https://translate.odoo.com/projects/odoo-19/delivery/"
@@ -98,23 +98,21 @@ msgstr ""
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.delivery_report_saleorder_document
-msgid "<strong>Shipping Description</strong>"
-msgstr "<strong>وصف الشحن</strong>"
+msgid "<strong>Delivery Description</strong>"
+msgstr ""
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__carrier_description
 msgid ""
 "A description of the delivery method that you want to communicate to your "
-"customers on the Sales Order and sales confirmation email.E.g. instructions "
+"customers on the Sales Order and sales confirmation email. E.g. instructions "
 "for customers to follow."
 msgstr ""
-"وصف طريقة التوصيل التي ترغب بالتواصل مع العميل بشأنها في أمر البيع ورسالة "
-"تأكيد البيع على البريد الإلكتروني. مثال: إرشادات ليتبعها العميل."
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__integration_level
-msgid "Action while validating Delivery Orders"
-msgstr "الإجراء المتبع عند تصديق أوامر التوصيل"
+msgid "Action while validating Delivery Orders."
+msgstr ""
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__active
@@ -130,8 +128,8 @@ msgstr "إضافة"
 #. odoo-python
 #: code:addons/delivery/models/sale_order.py:0
 #: code:addons/delivery/wizard/choose_delivery_carrier.py:0
-msgid "Add a shipping method"
-msgstr "إضافة طريقة شحن"
+msgid "Add a delivery method"
+msgstr ""
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_order_form_with_carrier
@@ -157,9 +155,8 @@ msgstr "مبلغ"
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__amount
 msgid ""
 "Amount of the order to benefit from a free shipping, expressed in the "
-"company currency"
+"company currency."
 msgstr ""
-"إجمالي قيمة الطلب التي تؤهله للحصول على الشحن المجاني، معبر عنها بعملة الشركة"
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
@@ -198,25 +195,8 @@ msgstr "يمكن إنشاء عملية إرجاع"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_price_rule__carrier_id
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_tree
 msgid "Carrier"
 msgstr "شركة الشحن"
-
-#. module: delivery
-#. odoo-python
-#: code:addons/delivery/models/delivery_carrier.py:0
-msgid ""
-"Carrier %s cannot have the same tag in both Must Have Tags and Excluded Tags."
-msgstr ""
-"لا يمكن أن يكون لشركة الشحن %s نفس علامة التصنيف في كل من \"علامات التصنيف "
-"الضرورية\" و\"علامات التصنيف المستثناة\""
-
-#. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__carrier_description
-msgid "Carrier Description"
-msgstr "وصف الناقل"
 
 #. module: delivery
 #: model:ir.model.fields.selection,name:delivery.selection__payment_provider__custom_mode__cash_on_delivery
@@ -329,14 +309,9 @@ msgid "Define a new delivery method"
 msgstr "تحديد طريقة تسليم جديدة"
 
 #. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
-msgid "Delivery Carrier"
-msgstr "شركة الشحن"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_choose_delivery_carrier
-msgid "Delivery Carrier Selection Wizard"
-msgstr "مُعالِج تحديد شركة الشحن"
+#: model:product.category,name:delivery.product_category_deliveries
+msgid "Deliveries"
+msgstr ""
 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_price_rule_form
@@ -350,18 +325,28 @@ msgid "Delivery Message"
 msgstr "رسالة التوصيل"
 
 #. module: delivery
+#: model:ir.model,name:delivery.model_delivery_carrier
+#: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__carrier_id
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__name
 #: model:ir.model.fields,field_description:delivery.field_res_partner__property_delivery_carrier_id
 #: model:ir.model.fields,field_description:delivery.field_res_users__property_delivery_carrier_id
 #: model:ir.model.fields,field_description:delivery.field_sale_order__carrier_id
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_search
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_tree
 msgid "Delivery Method"
 msgstr "طريقة التوصيل"
+
+#. module: delivery
+#: model:ir.model,name:delivery.model_choose_delivery_carrier
+msgid "Delivery Method Selection Wizard"
+msgstr ""
 
 #. module: delivery
 #: model:ir.actions.act_window,name:delivery.action_delivery_carrier_form
 #: model:ir.ui.menu,name:delivery.sale_menu_action_delivery_carrier_form
 #: model_terms:ir.ui.view,arch_db:delivery.delivery_provider_module_kanban
+#: model_terms:ir.ui.view,arch_db:delivery.res_config_settings_view_form
 msgid "Delivery Methods"
 msgstr "طرق التوصيل"
 
@@ -397,15 +382,29 @@ msgid "Delivery cost should be recomputed"
 msgstr "يجب إعادة احتساب تكلفة التوصيل"
 
 #. module: delivery
-#: model_terms:ir.actions.act_window,help:delivery.action_delivery_zip_prefix_list
+#. odoo-python
+#: code:addons/delivery/models/delivery_carrier.py:0
 msgid ""
-"Delivery zip prefixes are assigned to delivery carriers to restrict\n"
-"            which zips it is available to."
+"Delivery method %(name)s cannot have the same tag in both Must Have Tags and "
+"Excluded Tags."
 msgstr ""
-"يتم إسناد بادئات الرمز البريدي للتوصيل إلى شركات الشحن لتقييد\n"
-"            الرموز البريدية المتاحة لشركة الشحن."
 
 #. module: delivery
+#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
+msgid ""
+"Delivery method details to be included at bottom sales orders and their "
+"confirmation emails. E.g. Instructions for customers to follow."
+msgstr ""
+
+#. module: delivery
+#: model_terms:ir.actions.act_window,help:delivery.action_delivery_zip_prefix_list
+msgid ""
+"Delivery zip prefixes are assigned to delivery methods to restrict\n"
+"            which zips it is available to."
+msgstr ""
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier__carrier_description
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "Description"
 msgstr "الوصف"
@@ -419,11 +418,6 @@ msgstr "الوجهة"
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__sequence
 msgid "Determine the display order"
 msgstr "تحديد ترتيب العرض"
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.choose_delivery_carrier_view_form
-msgid "Discard"
-msgstr "إهمال"
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__display_name
@@ -499,11 +493,9 @@ msgstr "املأ هذا الحقل إن كنت تخطط لفوترة الشحن 
 #. module: delivery
 #: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid ""
-"Filling this form allows you to make the shipping method available according "
+"Filling this form allows you to make the delivery method available according "
 "to the content of the order or its destination."
 msgstr ""
-"عندما تقوم بتعبئة هذه الاستمارة، ستتمكن من جعل طريقة الشحن متاحة بناءً وفقاً "
-"لمحتوى الطلبية أو وجهتها."
 
 #. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_delivery_carrier__fixed_margin
@@ -561,10 +553,8 @@ msgstr "المُعرف"
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__free_over
 msgid ""
 "If the order total amount (shipping excluded) is above or equal to this "
-"value, the customer benefits from a free shipping"
+"value, the customer benefits from a free shipping."
 msgstr ""
-"إذا كان إجمالي قيمة الطلب (دون مصاريف الشحن) مساوياً لهذه القيمة أو يفوقها، "
-"يتم شحن طلبية العميل مجاناً"
 
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__max_volume
@@ -796,15 +786,11 @@ msgstr "هذه البادئة موجودة بالفعل!"
 #. module: delivery
 #: model:ir.model.fields,help:delivery.field_delivery_carrier__zip_prefix_ids
 msgid ""
-"Prefixes of zip codes that this carrier applies to. Note that regular "
-"expressions can be used to support countries with varying zip code lengths, "
-"i.e. '$' can be added to end of prefix to match the exact zip (e.g. '100$' "
-"will only match '100' and not '1000')"
+"Prefixes of zip codes that this delivery method applies to. Note that "
+"regular expressions can be used to support countries with varying zip code "
+"lengths, i.e. '$' can be added to end of prefix to match the exact zip (e.g. "
+"'100$' will only match '100' and not '1000')"
 msgstr ""
-"بادئات الرموز البريدية التي ينطبق عليها موصل الشحن هذا. يرجى العلم بأن "
-"التعابير النمطية يمكن استخدامها لدعم الدول التي تحتوي على رموز بريدية ذات "
-"أطوال متفاوتة، مثال: \"$\" يمكن إضافتها إلى نهاية البادئة لتطابق الرمز "
-"البريدي (مثال: \"100$\" ستطابق فقط \"100\" وليس \"1000\")"
 
 #. module: delivery
 #: model:ir.model.fields.selection,name:delivery.selection__delivery_price_rule__variable__price
@@ -899,17 +885,6 @@ msgid "Set to True if your credentials are certified for production."
 msgstr "تعيين القيمة كصحيحة إذا كانت بيانات اعتمادك معتمدة للإنتاج."
 
 #. module: delivery
-#: model:ir.model.fields,field_description:delivery.field_choose_delivery_carrier__carrier_id
-msgid "Shipping Method"
-msgstr "طريقة الشحن"
-
-#. module: delivery
-#: model:ir.model,name:delivery.model_delivery_carrier
-#: model_terms:ir.ui.view,arch_db:delivery.res_config_settings_view_form
-msgid "Shipping Methods"
-msgstr "طُرُق الشَّحن"
-
-#. module: delivery
 #: model:ir.model.fields,field_description:delivery.field_sale_order__shipping_weight
 msgid "Shipping Weight"
 msgstr "الوزن عند الشحن"
@@ -922,15 +897,6 @@ msgid ""
 msgstr ""
 "تأمين الشحن هو خدمة يمكن من خلالها إرجاع الأموال إلى المرسل الذي ضاعت شحنته "
 "أو سُرقت أو أُتلفت أثناء النقل."
-
-#. module: delivery
-#: model_terms:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
-msgid ""
-"Shipping method details to be included at bottom sales orders and their "
-"confirmation emails. E.g. Instructions for customers to follow."
-msgstr ""
-"تفاصيل طريقة الشحن لوضعها أسفل أوامر البيع ورسائل التأكيد عبر البريد "
-"الإلكتروني. مثال: إرشادات ليتبعها عملاء."
 
 #. module: delivery
 #: model:delivery.carrier,name:delivery.free_delivery_carrier
@@ -1121,19 +1087,16 @@ msgid ""
 "The following delivery lines (product, invoiced quantity and price) have "
 "already been processed:\n"
 "\n"
+"%s"
 msgstr ""
-"لا يمكنك تحديث تكلفة الشحن لطلبية قد تمت فوترتها بالفعل!\n"
-"\n"
-"تمت معالجة البنود التالية (المنتج، الكمية المفوترة، والسعر) بالفعل:\n"
-"\n"
 
 #. module: delivery
 #. odoo-python
 #: code:addons/delivery/models/product_category.py:0
 msgid ""
-"You cannot delete the deliveries product category as it is used on the "
-"delivery carriers products."
-msgstr "لا يمكنك حذف فئة منتج التوصيل، لأنه يُستخدَم لدى منتجات شركات الشحن."
+"You cannot delete this product category as it is used on the products linked "
+"to delivery methods."
+msgstr ""
 
 #. module: delivery
 #: model_terms:payment.provider,auth_msg:delivery.payment_provider_cod
@@ -1182,28 +1145,3 @@ msgstr "مثلًا: UPS السريع"
 msgid "i.e. https://ekartlogistics.com/shipmenttrack/<shipmenttrackingnumber>"
 msgstr ""
 "مثال: https://ekartlogistics.com/shipmenttrack/<shipmenttrackingnumber>"
-
-#~ msgid "<strong>Shipping Description:</strong>"
-#~ msgstr "<strong>وصف الشحن:</strong>"
-
-#~ msgid "Default delivery method used in sales orders."
-#~ msgstr "طريقة التوصيل الافتراضية المستخدمة في أوامر المبيعات. "
-
-#~ msgid "Delivery Rating Success"
-#~ msgstr "معدلات نجاح التوصيل "
-
-#~ msgid "Destination Availability"
-#~ msgstr "إمكانية التوصيل للوجهة "
-
-#~ msgid ""
-#~ "Filling this form allows you to filter delivery carriers according to the "
-#~ "delivery address of your customer."
-#~ msgstr ""
-#~ "يتيح لك ملء هذه الاستمارة تصفية شركات التوصيل حسب عنوان التوصيل الخاص "
-#~ "بالعميل. "
-
-#~ msgid "Free Shipping"
-#~ msgstr "شحن مجاني"
-
-#~ msgid "Group By"
-#~ msgstr "التجميع حسب "

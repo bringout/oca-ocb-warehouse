@@ -17,10 +17,24 @@
                                         <span class="o_stat_text">Routes</span>
                                     </div>
                             </button>
+                            <button name="action_open_internal_locations"
+                                    string="Locations"
+                                    icon="fa-th"
+                                    class="oe_stat_button"
+                                    type="object"
+                                    groups="stock.group_stock_multi_locations">
+                                    <div class="o_stat_info">
+                                        <span class="o_stat_text">Locations</span>
+                                    </div>
+                            </button>
                         </div>
                         <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
-                        <label for="name"/>
-                        <h1><field name="name" placeholder="e.g. Central Warehouse" class="w-100"/></h1>
+                        <group>
+                            <label for="name" class="d-md-none"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. Central Warehouse" class="w-100"/>
+                            </h1>
+                        </group>
                         <group>
                             <group>
                                 <field name="active" invisible="1"/>

@@ -3,15 +3,15 @@
 
     <t t-name="stock.TraceabilityReport">
         <div class="o_action">
-            <Layout display="display">
-                <t t-set-slot="layout-buttons">
-                    <div class="o_cp_buttons" role="toolbar" aria-label="Control panel buttons" t-ref="buttons">
+            <Layout display="this.display">
+                <t t-set-slot="control-panel-buttons">
+                    <div class="o_cp_buttons" role="toolbar" aria-label="Control panel buttons" t-custom-ref="buttons">
                         <button type="button" class="btn btn-primary" t-on-click="() => this.onClickPrint()">Print</button>
                     </div>
                 </t>
 
                 <div class="container-fluid o_stock_reports_page o_stock_reports_no_print">
-                    <t t-if="state.lines.length">
+                    <t t-if="this.state.lines.length">
                         <h1 class="o_report_heading text-start">Traceability Report</h1>
                         <div class="o_stock_reports_table table-responsive">
                             <table class="table">
@@ -28,7 +28,7 @@
                                 </thead>
                                 <tbody>
                                     <t t-call="stock.ReportMRPLines">
-                                        <t t-set="lines" t-value="state.lines"/>
+                                        <t t-set="lines" t-value="this.state.lines"/>
                                         <t t-set="hasUpDown" t-value="true"/>
                                     </t>
                                 </tbody>
@@ -62,15 +62,15 @@
                         </t>
 
                         <span t-if="col and line.reference === col" t-att-class="!line.unfoldable ? 'o_stock_reports_nofoldable' : ''">
-                            <a class="o_stock_reports_web_action" href="#" t-on-click.prevent="() => this.onClickBoundLink(line)" t-esc="col"/>
+                            <a class="o_stock_reports_web_action" href="#" t-on-click.prevent="() => this.onClickBoundLink(line)" t-out="col"/>
                         </span>
                         <span t-elif="col and ((line.picking_type_code == 'incoming' and line.location_source === col) or (line.picking_type_code == 'outgoing' and line.location_destination === col))">
-                            <a class="o_stock_report_partner_action" href="#" t-on-click.prevent="() => this.onClickPartner(line)" t-esc="col"/>
+                            <a class="o_stock_report_partner_action" href="#" t-on-click.prevent="() => this.onClickPartner(line)" t-out="col"/>
                         </span>
                         <span t-elif="col and line.lot_name === col">
-                            <a class="o_stock_report_lot_action" href="#" t-on-click.prevent="() => this.onClickOpenLot(line)" t-esc="col"/>
+                            <a class="o_stock_report_lot_action" href="#" t-on-click.prevent="() => this.onClickOpenLot(line)" t-out="col"/>
                         </span>
-                        <t t-elif="col" t-esc="col"/>
+                        <t t-elif="col" t-out="col"/>
                     </td>
                 </t>
             </tr>

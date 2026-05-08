@@ -4,7 +4,7 @@
 from datetime import date, datetime, timedelta
 from re import findall
 
-from odoo.tests import Form, TransactionCase
+from odoo.tests import tagged, Form, TransactionCase
 from odoo import Command
 
 
@@ -33,11 +33,11 @@ class TestReportsCommon(TransactionCase):
             'tracking': 'serial',
         })
 
-        product_form = Form(cls.env['product.product'])
-        product_form.is_storable = True
-        product_form.name = 'Product'
-        product_form.categ_id = cls.env.ref('product.product_category_goods')
-        cls.product = product_form.save()
+        cls.product = cls.env['product.product'].create({
+            'name': 'Product',
+            'categ_id': cls.env.ref('product.product_category_goods').id,
+            'tracking': 'none',
+        })
         cls.product_template = cls.product.product_tmpl_id
         cls.wh_2 = cls.env['stock.warehouse'].create({
             'name': 'Evil Twin Warehouse',
@@ -77,6 +77,7 @@ class TestReportsCommon(TransactionCase):
         return res
 
 
+@tagged('at_install', '-post_install')  # LEGACY at_install Fails in post install
 class TestReports(TestReportsCommon):
     def _check_closure_commands(self, zpl_rendered_template):
         wrong_xz_count = findall(r'\^XZ[^\\]+[^n]', str(zpl_rendered_template))
@@ -86,18 +87,18 @@ class TestReports(TestReportsCommon):
         """ Test that all the special characters are correctly rendered for the product name, the default code and the barcode.
             In this test we test that the double quote is rendered correctly.
         """
-        report = self.env.ref('stock.label_product_product')
+        report = self.env.ref('product.report_product_template_label_zpl')
         target = b'\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^FO35,77^BY2^BCN,100,Y,N,N^FDscan""me^FS\n^XZ\n\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^FO35,77^BY2^BCN,100,Y,N,N^FDscan""me^FS\n^XZ\n'
-        rendering, qweb_type = report._render_qweb_text('stock.label_product_product', self.product1.product_tmpl_id.id, {'quantity_by_product': {self.product1.product_tmpl_id.id: 2}, 'active_model': 'product.template', 'zpl_template': 'normal'})
+        rendering, qweb_type = report._render_qweb_text('product.report_product_template_label_zpl', self.product1.product_tmpl_id.id, {'quantity_by_product': {self.product1.product_tmpl_id.id: 2}, 'active_model': 'product.template', 'zpl_template': 'normal'})
         self._check_closure_commands(rendering)
         self.assertEqual(target, rendering.replace(b' ', b''), 'Product name, default code or barcode is not correctly rendered, make sure the quotes are escaped correctly')
         self.assertEqual(qweb_type, 'text', 'the report type is not good')
 
     def test_product_label_custom_barcode_reports(self):
         """ Test that the custom barcodes are correctly rendered with special characters."""
-        report = self.env.ref('stock.label_product_product')
+        report = self.env.ref('product.report_product_template_label_zpl')
         target = b'\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^FO35,77^BY2^BCN,100,Y,N,N^FD123"barcode^FS\n^XZ\n\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^FO35,77^BY2^BCN,100,Y,N,N^FD123"barcode^FS\n^XZ\n\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^FO35,77^BY2^BCN,100,Y,N,N^FDbarcode"456^FS\n^XZ\n\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^FO35,77^BY2^BCN,100,Y,N,N^FDbarcode"456^FS\n^XZ\n'
-        rendering, qweb_type = report._render_qweb_text('stock.label_product_product', self.product1.product_tmpl_id.id, {'custom_barcodes': {self.product1.product_tmpl_id.id: [('123"barcode', 2), ('barcode"456', 2)]}, 'quantity_by_product': {}, 'active_model': 'product.template', 'zpl_template': 'normal'})
+        rendering, qweb_type = report._render_qweb_text('product.report_product_template_label_zpl', self.product1.product_tmpl_id.id, {'custom_barcodes': {self.product1.product_tmpl_id.id: [('123"barcode', 2), ('barcode"456', 2)]}, 'quantity_by_product': {}, 'active_model': 'product.template', 'zpl_template': 'normal'})
         self._check_closure_commands(rendering)
         self.assertEqual(target, rendering.replace(b' ', b''), 'Custom barcodes are most likely not corretly rendered, make sure the quotes are escaped correctly')
         self.assertEqual(qweb_type, 'text', 'the report type is not good')
@@ -128,10 +129,10 @@ class TestReports(TestReportsCommon):
     def test_reports_product_no_barcode(self):
         """ Test that product without barcode is correctly rendered without a barcode.
         """
-        report = self.env.ref('stock.label_product_product')
+        report = self.env.ref('product.report_product_template_label_zpl')
         self.product1.barcode = False
         target = b'\n\n^XA^CI28\n\n^FT35,40^A0N,25^FD[C4181234""154654654654]Mellohi"^FS\n^XZ\n'
-        rendering, qweb_type = report._render_qweb_text('stock.label_product_product', self.product1.product_tmpl_id.id, {'quantity_by_product': {self.product1.product_tmpl_id.id: 1}, 'active_model': 'product.template', 'zpl_template': 'normal'})
+        rendering, qweb_type = report._render_qweb_text('product.report_product_template_label_zpl', self.product1.product_tmpl_id.id, {'quantity_by_product': {self.product1.product_tmpl_id.id: 1}, 'active_model': 'product.template', 'zpl_template': 'normal'})
         self.assertEqual(target, rendering.replace(b' ', b''), 'Product name, default code or barcode is not correctly rendered, make sure the quotes are escaped correctly')
         self.assertEqual(qweb_type, 'text', 'the report type is not good')
 
@@ -174,7 +175,7 @@ class TestReports(TestReportsCommon):
             'location_id': stock.id,
             'location_dest_id': self.env.ref('stock.stock_location_customers').id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 20.0,
         })
         self.env.flush_all()
@@ -200,7 +201,7 @@ class TestReports(TestReportsCommon):
             'location_id': self.env.ref('stock.stock_location_suppliers').id,
             'location_dest_id': stock.id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 10.0,
         })
         move_in._action_confirm()
@@ -222,7 +223,7 @@ class TestReports(TestReportsCommon):
             'location_id': stock.id,
             'location_dest_id': self.env.ref('stock.stock_location_customers').id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 30.0,
         })
         move_out._action_confirm()
@@ -281,7 +282,7 @@ class TestReports(TestReportsCommon):
             'location_id': stock.id,
             'location_dest_id': stock_without_wh.id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 10.0,
         })
         move._action_confirm()
@@ -298,7 +299,7 @@ class TestReports(TestReportsCommon):
             'location_id': stock_without_wh.id,
             'location_dest_id': self.env.ref('stock.stock_location_customers').id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 10.0,
         })
         move._action_confirm()
@@ -337,7 +338,7 @@ class TestReports(TestReportsCommon):
             'location_id': self.env.ref('stock.stock_location_suppliers').id,
             'location_dest_id': stock.id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 20.0,
         })
         move_in._action_confirm()
@@ -356,7 +357,7 @@ class TestReports(TestReportsCommon):
             'location_id': stock.id,
             'location_dest_id': self.env.ref('stock.stock_location_customers').id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 10.0,
         })
         move_out._action_confirm()
@@ -867,7 +868,7 @@ class TestReports(TestReportsCommon):
             'move_ids': [Command.create({
                 'product_id': self.product.id,
                 'product_uom_qty': 5,
-                'product_uom': self.product.uom_id.id,
+                'uom_id': self.product.uom_id.id,
                 'location_id': wh.lot_stock_id.id,
                 'location_dest_id': self.env.ref('stock.stock_location_customers').id,
                 'procure_method': 'make_to_order',
@@ -2072,7 +2073,7 @@ class TestReports(TestReportsCommon):
             'location_dest_id': self.ref('stock.stock_location_customers'),
             'move_ids': [Command.create({
                 'product_id': self.product.id,
-                'product_uom': self.ref('uom.product_uom_unit'),
+                'uom_id': self.ref('uom.product_uom_unit'),
                 'product_uom_qty': 3.0,
             })],
         })
@@ -2085,7 +2086,7 @@ class TestReports(TestReportsCommon):
             'location_dest_id': warehouse_1.lot_stock_id.id,
             'move_ids': [Command.create({
                 'product_id': self.product.id,
-                'product_uom': self.ref('uom.product_uom_unit'),
+                'uom_id': self.ref('uom.product_uom_unit'),
                 'product_uom_qty': 1.0,
             })],
         })
@@ -2097,3 +2098,50 @@ class TestReports(TestReportsCommon):
         self.assertEqual(picking_out.move_ids.mapped('quantity'), [0.0, 2.0])
         self.env['report.stock.report_reception'].action_assign(out_move.ids, [1.0], picking_in.move_ids.ids)
         self.assertEqual(picking_out.move_ids.mapped('quantity'), [1.0, 2.0])
+
+    def test_aggregated_quantities_partial_and_over_delivery(self):
+        """
+        Test that aggregated product quantities preserve the original demand
+        and quantity done during a partial or over delivery.
+        """
+        delivery = self.env['stock.picking'].create({
+            'picking_type_id': self.ref('stock.picking_type_out'),
+            'location_id': self.env.ref('stock.stock_location_stock').id,
+            'location_dest_id': self.env.ref('stock.stock_location_customers').id,
+            'move_ids': [Command.create({
+                'product_id': self.product.id,
+                'uom_id': self.ref('uom.product_uom_unit'),
+                'product_uom_qty': 10.0,
+            })],
+        })
+        delivery.action_confirm()
+        delivery.action_assign()
+        # -------------------------
+        # Partial delivery (6 / 10)
+        # -------------------------
+        delivery.move_ids.quantity = 6
+        delivery.move_ids.picked = True
+        wizard_vals = delivery.button_validate()
+        wizard = Form(
+            self.env[wizard_vals['res_model']]
+            .with_context(wizard_vals['context'])
+        )
+        wizard.save().process_cancel_backorder()
+        aggregated = list(delivery.move_line_ids._get_aggregated_product_quantities().values())
+        self.assertEqual(aggregated[0]['qty_ordered'], 10)
+        self.assertEqual(aggregated[0]['quantity'], 6)
+        # -------------------------
+        # Over-delivery (12 / 10)
+        # -------------------------
+        delivery.move_line_ids.quantity = 12
+        aggregated = list(delivery.move_line_ids._get_aggregated_product_quantities().values())
+        self.assertEqual(aggregated[0]['qty_ordered'], 10)
+        self.assertEqual(aggregated[0]['quantity'], 12)
+        # -------------------------
+        # Over-delivery (10 / 0)
+        # -------------------------
+        delivery.move_ids.product_uom_qty = 0
+        delivery.move_line_ids.quantity = 10
+        aggregated = list(delivery.move_line_ids._get_aggregated_product_quantities().values())
+        self.assertEqual(aggregated[0]['qty_ordered'], 0)
+        self.assertEqual(aggregated[0]['quantity'], 10)

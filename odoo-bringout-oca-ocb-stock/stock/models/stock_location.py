@@ -12,7 +12,7 @@ from odoo.fields import Domain
 
 class StockLocation(models.Model):
     _name = 'stock.location'
-    _description = "Inventory Locations"
+    _description = "Inventory Location"
     _parent_name = "location_id"
     _parent_store = True
     _order = 'complete_name, id'
@@ -101,15 +101,18 @@ class StockLocation(models.Model):
     _parent_path_id_idx = models.Index("(parent_path, id)")
 
     @api.depends('name', 'location_id.complete_name', 'usage')
-    @api.depends_context('formatted_display_name')
+    @api.depends_context('formatted_display_name', 'show_empty')
     def _compute_display_name(self):
         super()._compute_display_name()
+        formatted_display_name = self.env.context.get('formatted_display_name')
         for location in self:
             has_parent = location.location_id and location.usage != 'view'
-            if location.env.context.get('formatted_display_name') and has_parent:
+            if formatted_display_name and has_parent:
                 location.display_name = f"--{location.location_id.complete_name}/--{location.name}"
             elif has_parent:
                 location.display_name = f"{location.location_id.complete_name}/{location.name}"
+            if formatted_display_name and self.env.context.get('show_empty') and location.is_empty:
+                location.display_name += self.env._("\t--Empty--")
 
     @api.depends('outgoing_move_line_ids.quantity_product_uom', 'incoming_move_line_ids.quantity_product_uom',
                  'outgoing_move_line_ids.state', 'incoming_move_line_ids.state',
@@ -354,7 +357,7 @@ class StockLocation(models.Model):
                         ('product_id', '=', product.id),
                         ('location_dest_id', 'in', locations.ids),
                         ('state', 'not in', ['draft', 'done', 'cancel'])
-                    ], ['location_dest_id'], ['quantity:array_agg', 'product_uom_id:recordset'])
+                    ], ['location_dest_id'], ['quantity:array_agg', 'uom_id:recordset'])
                     quant_data = self.env['stock.quant']._read_group([
                         ('product_id', '=', product.id),
                         ('location_id', 'in', locations.ids),
@@ -496,7 +499,7 @@ class StockLocation(models.Model):
             groupby=['location_dest_id', 'product_id'], aggregates=['quantity_product_uom:sum']
         )
 
-        products = Product.union(*(product for __, product, __ in quants + outgoing_move_lines + incoming_move_lines))
+        products = Product.union(product for __, product, __ in quants + outgoing_move_lines + incoming_move_lines)
         products.fetch(['weight'])
 
         result = defaultdict(lambda: defaultdict(float))
@@ -516,7 +519,7 @@ class StockLocation(models.Model):
 
 class StockRoute(models.Model):
     _name = 'stock.route'
-    _description = "Inventory Routes"
+    _description = "Inventory Route"
     _order = 'sequence'
     _check_company_auto = True
 
@@ -529,7 +532,7 @@ class StockRoute(models.Model):
     warehouse_selectable = fields.Boolean('Applicable on Warehouse', help="When a warehouse is selected for this route, this route should be seen as the default route when products pass through this warehouse.")
     package_type_selectable = fields.Boolean('Applicable on Package Type', help="When checked, the route will be selectable on package types")
     supplied_wh_id = fields.Many2one('stock.warehouse', 'Supplied Warehouse', index='btree_not_null')
-    supplier_wh_id = fields.Many2one('stock.warehouse', 'Supplying Warehouse')
+    supplier_wh_id = fields.Many2one('stock.warehouse', 'Supplying Warehouse', index='btree_not_null')
     company_id = fields.Many2one(
         'res.company', 'Company',
         default=lambda self: self.env.company, index=True,
@@ -593,3 +596,19 @@ class StockRoute(models.Model):
 
     def _is_valid_resupply_route_for_product(self, product):
         return False
+
+    def _get_routes_with_no_warehouse(self):
+        rule_actions = self._get_non_push_pull_rule_actions()
+        route_domain = [
+            ('warehouse_selectable', '=', True),
+            ('rule_ids.action', 'in', rule_actions),
+            ('company_id', 'in', [False, self.env.company.id]),
+            '|',
+                ('warehouse_ids', '=', False),
+                ('warehouse_ids', 'not in', self.env['stock.warehouse']._search([
+                    ('company_id', '=', self.env.company.id)]))
+        ]
+        return self.env['stock.route'].search(route_domain)
+
+    def _get_non_push_pull_rule_actions(self):
+        return []

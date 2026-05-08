@@ -48,7 +48,7 @@ class TestStockLandedCosts(TestStockLandedCostsCommon):
             'move_ids': [(0, 0, {
                 'product_id': product_landed_cost_1.id,
                 'product_uom_qty': 15,
-                'product_uom': self.ref('uom.product_uom_unit'),
+                'uom_id': self.ref('uom.product_uom_unit'),
                 'location_id': self.warehouse.lot_stock_id.id,
                 'location_dest_id': self.ref('stock.stock_location_customers'),
             })],
@@ -73,7 +73,7 @@ class TestStockLandedCosts(TestStockLandedCostsCommon):
             'move_ids': [(0, 0, {
                 'product_id': product_landed_cost_2.id,
                 'product_uom_qty': 10,
-                'product_uom': self.ref('uom.product_uom_unit'),
+                'uom_id': self.ref('uom.product_uom_unit'),
                 'location_id': self.warehouse.lot_stock_id.id,
                 'location_dest_id': self.ref('stock.stock_location_customers'),
             })],
@@ -183,7 +183,7 @@ class TestStockLandedCosts(TestStockLandedCostsCommon):
                         'name': self.product_a.name,
                         'product_id': self.product_a.id,
                         'product_qty': 1.0,
-                        'product_uom_id': self.product_a.uom_id.id,
+                        'uom_id': self.product_a.uom_id.id,
                         'price_unit': 100.0,
                         'tax_ids': False,
                     }),
@@ -228,13 +228,15 @@ class TestStockLandedCosts(TestStockLandedCostsCommon):
             'partner_id': self.partner_a.id
         })
         account_move._update_order_line_info(
-            product_id=self.landed_cost.id,
-            quantity=1
+            product=self.landed_cost,
+            quantity=1,
+            uom=account_move.product_uom_id,
         )
         self.assertTrue(account_move.invoice_line_ids.is_landed_costs_line, "The landed cost should appear in the move line.")
         account_move._update_order_line_info(
-            product_id=self.product.id,
-            quantity=1
+            product=self.product,
+            quantity=1,
+            uom=account_move.product_uom_id,
         )
         move_line_no_landed = account_move.line_ids.filtered(lambda line: line.product_id == self.product)
         self.assertFalse(move_line_no_landed.is_landed_costs_line, "The landed cost should not be set to True.")

@@ -4,7 +4,12 @@ from odoo import models
 class StockValuationReport(models.AbstractModel):
     _inherit = 'stock_account.stock.valuation.report'
 
-    # TODO remove in master
+    def _get_report_data(self, date=False, product_category=False, warehouse=False):
+        data = super()._get_report_data(date, product_category, warehouse)
+        not_invoiced_received_data = self._compute_goods_received_not_invoiced(date, product_category)
+        data['not_invoiced_received_goods'] = not_invoiced_received_data
+        return data
+
     def _compute_goods_received_not_invoiced(self, date=False, product_category=False):
         """ Compute valuation for already received but not invoiced yet goods,
         purchase order by purchase order."""
@@ -13,14 +18,12 @@ class StockValuationReport(models.AbstractModel):
             domain += [('product_id.categ_id', '=', product_category.id)]
         if date:
             domain += [('date_approve', '<=', date)]
-        pol_by_order = self.env['purchase.order.line']._read_group(
-            domain=domain,
-            groupby=['order_id'],
-            aggregates=['id:recordset']
-        )
+        purchase_order_lines = self.env['purchase.order.line'].search(domain)
+        purchase_orders = purchase_order_lines.order_id
         not_invoiced_received_lines = []
         total = 0
-        for order, order_lines in pol_by_order:
+        for order in purchase_orders:
+            order_lines = purchase_order_lines.filtered(lambda pol: pol.order_id == order)
             value = 0
             for order_line in order_lines:
                 confirmed_invoice_lines = order_line.invoice_lines.filtered(

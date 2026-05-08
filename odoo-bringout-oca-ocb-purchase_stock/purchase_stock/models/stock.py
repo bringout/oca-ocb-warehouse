@@ -37,9 +37,36 @@ class StockPicking(models.Model):
     def _search_delay_pass(self, operator, value):
         return [('purchase_id.date_order', operator, value)]
 
+    def _create_return(self):
+        picking = super()._create_return()
+        if len(picking.move_ids.partner_id) == 1 and picking.partner_id != picking.move_ids.partner_id:
+            picking.partner_id = picking.move_ids.partner_id
+        return picking
+
+    def _prepare_return_move_default_values(self, move_id):
+        vals = super()._prepare_return_move_default_values(move_id)
+        if self.location_id.usage == "supplier":
+            vals['purchase_line_id'], vals['partner_id'] = move_id._get_purchase_line_and_partner_from_chain()
+        return vals
+
     def _action_done(self):
         self.purchase_id.sudo().action_acknowledge()
         return super()._action_done()
+
+    def _log_less_quantities_than_expected(self, moves):
+        moves_information = [(k, v) for k, v in moves.items()]
+        purchase_order = self.move_ids.purchase_line_id.order_id
+        if purchase_order:
+            purchase_order.sudo().activity_schedule(
+                'mail.mail_activity_data_warning',
+                summary=_('Missing products in receipt'),
+                note=self.env['ir.qweb']._render('purchase_stock.exception_on_picking', {
+                    'origin_picking': self,
+                    'moves_information': moves_information,
+                }),
+                user_id=purchase_order.user_id.id,
+            )
+        return super()._log_less_quantities_than_expected(moves)
 
 
 class StockWarehouse(models.Model):
@@ -54,7 +81,7 @@ class StockWarehouse(models.Model):
     def _compute_buy_to_resupply(self):
         for warehouse in self:
             buy_route = warehouse.buy_pull_id.route_id
-            warehouse.buy_to_resupply = warehouse.id in buy_route.warehouse_ids.ids
+            warehouse.buy_to_resupply = warehouse.id in buy_route.warehouse_ids.ids or (buy_route.warehouse_selectable and not buy_route.warehouse_ids)
 
     def _inverse_buy_to_resupply(self):
         for warehouse in self:
@@ -62,6 +89,7 @@ class StockWarehouse(models.Model):
             if not buy_route:
                 buy_route = self.env['stock.rule'].search([
                     ('action', '=', 'buy'), ('warehouse_id', '=', warehouse.id)]).route_id
+            buy_route = buy_route.sudo()
             if warehouse.buy_to_resupply:
                 buy_route.warehouse_ids = [Command.link(warehouse.id)]
             else:
@@ -71,7 +99,7 @@ class StockWarehouse(models.Model):
         purchase_route = self._find_or_create_global_route('purchase_stock.route_warehouse0_buy', _('Buy'))
         for warehouse in self:
             if warehouse.buy_to_resupply:
-                purchase_route.warehouse_ids = [Command.link(warehouse.id)]
+                purchase_route.sudo().warehouse_ids = [Command.link(warehouse.id)]
         return super()._create_or_update_route()
 
     def _generate_global_route_rules_values(self):
@@ -122,22 +150,6 @@ class StockWarehouse(models.Model):
         return res
 
 
-class StockReturnPicking(models.TransientModel):
-    _inherit = "stock.return.picking"
-
-    def _prepare_move_default_values(self, return_line, new_picking):
-        vals = super()._prepare_move_default_values(return_line, new_picking)
-        if self.location_id.usage == "supplier":
-            vals['purchase_line_id'], vals['partner_id'] = return_line.move_id._get_purchase_line_and_partner_from_chain()
-        return vals
-
-    def _create_return(self):
-        picking = super()._create_return()
-        if len(picking.move_ids.partner_id) == 1 and picking.partner_id != picking.move_ids.partner_id:
-            picking.partner_id = picking.move_ids.partner_id
-        return picking
-
-
 class StockWarehouseOrderpoint(models.Model):
     _inherit = "stock.warehouse.orderpoint"
 
@@ -166,7 +178,7 @@ class StockWarehouseOrderpoint(models.Model):
         """ Extend to add more depends values """
         super()._compute_deadline_date()
 
-    @api.depends('product_id.purchase_order_line_ids.product_qty', 'product_id.purchase_order_line_ids.state', 'supplier_id', 'supplier_id.product_uom_id', 'product_id.seller_ids', 'product_id.seller_ids.product_uom_id')
+    @api.depends('product_id.purchase_order_line_ids.product_qty', 'product_id.purchase_order_line_ids.state', 'supplier_id', 'supplier_id.uom_id', 'product_id.seller_ids', 'product_id.seller_ids.uom_id')
     def _compute_qty_to_order_computed(self):
         """ Extend to add more depends values
         TODO: Probably performance costly due to x2many in depends
@@ -200,7 +212,7 @@ class StockWarehouseOrderpoint(models.Model):
     def _inverse_supplier_id(self):
         for orderpoint in self:
             if not orderpoint.route_id and orderpoint.supplier_id:
-                orderpoint.route_id = self.env['stock.rule'].search([('action', '=', 'buy')])[0].route_id
+                orderpoint.route_id = orderpoint._get_default_route(force_action="buy")
 
     @api.depends('effective_route_id', 'supplier_id', 'rule_ids', 'product_id.seller_ids', 'product_id.seller_ids.delay')
     def _compute_supplier_id_placeholder(self):
@@ -214,10 +226,14 @@ class StockWarehouseOrderpoint(models.Model):
             orderpoint.effective_vendor_id = (orderpoint.supplier_id if orderpoint.supplier_id else orderpoint._get_default_supplier()).partner_id
 
     def _search_effective_vendor_id(self, operator, value):
-        vendors = self.env['res.partner'].search([('id', operator, value)])
-        orderpoints = self.env['stock.warehouse.orderpoint'].search([]).filtered(
-            lambda orderpoint: orderpoint.effective_vendor_id in vendors
+        target_partners = self.env['res.partner'].search([('id', operator, value)])
+
+        orderpoints = self.env['stock.warehouse.orderpoint'].search([
+            ('vendor_ids.partner_id', 'in', target_partners.ids)
+        ]).filtered(
+            lambda op: op.effective_vendor_id in target_partners
         )
+
         return [('id', 'in', orderpoints.ids)]
 
     def _search_available_vendor(self, operator, value):
@@ -249,20 +265,22 @@ class StockWarehouseOrderpoint(models.Model):
 
         return result
 
-    def _get_default_route(self):
-        route_ids = self.env['stock.rule'].search([
-            ('action', '=', 'buy')
-        ]).route_id
-        route_id = self.rule_ids.route_id & route_ids
-        if self.product_id.seller_ids and route_id:
-            return route_id[0]
-        return super()._get_default_route()
+    def _get_default_route(self, force_action=False):
+        self.ensure_one()
+        if not force_action or force_action == 'buy':
+            if self.product_id.seller_ids:
+                route_id = self.rule_ids.filtered(lambda r: r.action == 'buy').route_id
+                if route_id:
+                    return route_id[0]
+            if force_action:
+                return self.env['stock.route']
+        return super()._get_default_route(force_action=force_action)
 
     def _get_default_supplier(self):
         self.ensure_one()
         if self.show_supplier and self.product_id:
-            return self._get_default_rule()._get_matching_supplier(
-                self.product_id, self.qty_to_order, self.product_uom, self.company_id, {}
+            return self.env['stock.rule']._pick_supplier(
+                self.company_id, self.product_id, qty=self.qty_to_order, uom=self.uom_id
             )
         else:
             return self.env['product.supplierinfo']
@@ -315,16 +333,16 @@ class StockWarehouseOrderpoint(models.Model):
         supplier = self.supplier_id or self.product_id.with_company(self.company_id)._select_seller(
             quantity=qty_to_order,
             date=max(dates_info['date_order'].date(), fields.Date.today()),
-            uom_id=self.product_uom
+            uom_id=self.uom_id
         )
-        return supplier.product_uom_id
+        return supplier.uom_id
 
     def _quantity_in_progress(self):
         res = super()._quantity_in_progress()
         qty_by_product_location, dummy = self.product_id._get_quantity_in_progress(self.location_id.ids)
         for orderpoint in self:
             product_qty = qty_by_product_location.get((orderpoint.product_id.id, orderpoint.location_id.id), 0.0)
-            product_uom_qty = orderpoint.product_id.uom_id._compute_quantity(product_qty, orderpoint.product_uom, round=False)
+            product_uom_qty = orderpoint.product_id.uom_id._compute_quantity(product_qty, orderpoint.uom_id, round=False)
             res[orderpoint.id] += product_uom_qty
         return res
 

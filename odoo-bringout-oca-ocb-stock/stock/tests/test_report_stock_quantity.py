@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 from odoo import fields, tests
 from odoo.fields import Command
-from odoo.tests import Form
+from odoo.tests import tagged, Form
 from freezegun import freeze_time
 
 
@@ -36,7 +36,7 @@ class TestReportStockQuantity(tests.TransactionCase):
             'location_id': cls.supplier_location.id,
             'location_dest_id': cls.wh.lot_stock_id.id,
             'product_id': cls.product1.id,
-            'product_uom': cls.uom_unit.id,
+            'uom_id': cls.uom_unit.id,
             'product_uom_qty': 100.0,
             'quantity': 100.0,
             'state': 'done',
@@ -47,7 +47,7 @@ class TestReportStockQuantity(tests.TransactionCase):
             'location_id': cls.wh.lot_stock_id.id,
             'location_dest_id': cls.customer_location.id,
             'product_id': cls.product1.id,
-            'product_uom': cls.uom_unit.id,
+            'uom_id': cls.uom_unit.id,
             'product_uom_qty': 120.0,
             'state': 'partially_available',
             'date': fields.Datetime.add(fields.Datetime.now(), days=3),
@@ -72,7 +72,7 @@ class TestReportStockQuantity(tests.TransactionCase):
             'location_id': self.wh.lot_stock_id.id,
             'location_dest_id': transit_loc.id,
             'product_id': self.product1.id,
-            'product_uom': self.uom_unit.id,
+            'uom_id': self.uom_unit.id,
             'product_uom_qty': 25.0,
             'state': 'assigned',
             'date': fields.Datetime.now(),
@@ -82,7 +82,7 @@ class TestReportStockQuantity(tests.TransactionCase):
             'location_id': transit_loc.id,
             'location_dest_id': wh2.lot_stock_id.id,
             'product_id': self.product1.id,
-            'product_uom': self.uom_unit.id,
+            'uom_id': self.uom_unit.id,
             'product_uom_qty': 25.0,
             'state': 'waiting',
             'date': fields.Datetime.now(),
@@ -135,7 +135,7 @@ class TestReportStockQuantity(tests.TransactionCase):
         self.env['stock.move'].create({
             'product_id': self.product_replenished.id,
             'product_uom_qty': 500.0,
-            'product_uom': self.uom_unit.id,
+            'uom_id': self.uom_unit.id,
             'location_id': self.wh.lot_stock_id.id,
             'location_dest_id': self.ref('stock.stock_location_customers'),
             'picking_id': delivery_picking.id,
@@ -203,7 +203,7 @@ class TestReportStockQuantity(tests.TransactionCase):
             'location_id': wh01.lot_stock_id.id,
             'location_dest_id': wh02.lot_stock_id.id,
             'product_id': product.id,
-            'product_uom': product.uom_id.id,
+            'uom_id': product.uom_id.id,
             'product_uom_qty': 1,
             'date': date,
         } for date in (today, in_two_days)])

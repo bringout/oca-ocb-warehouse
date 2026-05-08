@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-25 18:37+0000\n"
+"POT-Creation-Date: 2026-01-16 18:37+0000\n"
 "PO-Revision-Date: 2025-09-29 19:46+0000\n"
 "Last-Translator: \"Dylan Kiss (dyki)\" <dyki@odoo.com>\n"
 "Language-Team: Hungarian <https://translate.odoo.com/projects/odoo-19/"
@@ -26,8 +26,8 @@ msgstr ""
 
 #. module: stock_dropshipping
 #: model:ir.model,name:stock_dropshipping.model_res_company
-msgid "Companies"
-msgstr "Vállalatok"
+msgid "Company"
+msgstr ""
 
 #. module: stock_dropshipping
 #: model:ir.model.fields,field_description:stock_dropshipping.field_product_product__display_name
@@ -91,6 +91,11 @@ msgid "Lot/Serial"
 msgstr "Lot/szériaszám"
 
 #. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_stock_picking_type__code
+msgid "Operation Category"
+msgstr ""
+
+#. module: stock_dropshipping
 #: model:ir.model,name:stock_dropshipping.model_stock_picking_type
 msgid "Picking Type"
 msgstr "Kigyűjtés típusa"
@@ -139,14 +144,3 @@ msgstr "Jóváhagyásra vár"
 #: model:ir.model,name:stock_dropshipping.model_stock_picking
 msgid "Transfer"
 msgstr "Átmozgatás"
-
-#. module: stock_dropshipping
-#: model:ir.model.fields,field_description:stock_dropshipping.field_stock_picking_type__code
-msgid "Type of Operation"
-msgstr "Művelet típusa"
-
-#~ msgid "Stock Move"
-#~ msgstr "Készletmozgás"
-
-#~ msgid "Procurement Group"
-#~ msgstr "Beszerzési csoport"

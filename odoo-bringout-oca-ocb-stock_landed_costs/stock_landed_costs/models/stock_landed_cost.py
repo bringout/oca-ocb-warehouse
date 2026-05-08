@@ -41,6 +41,7 @@ class StockLandedCost(models.Model):
     picking_ids = fields.Many2many(
         'stock.picking', string='Transfers',
         copy=False)
+    pickings_count = fields.Integer(compute='_compute_pickings_count')
     cost_lines = fields.One2many(
         'stock.landed.cost.lines', 'cost_id', 'Cost Lines',
         copy=True)
@@ -63,7 +64,7 @@ class StockLandedCost(models.Model):
     account_journal_id = fields.Many2one(
         'account.journal', 'Account Journal',
         required=True, default=lambda self: self._default_account_journal_id())
-    company_id = fields.Many2one('res.company', string="Company", required=True, default=lambda self: self.env.company)
+    company_id = fields.Many2one('res.company', string="Company", required=True, index=True, default=lambda self: self.env.company)
     vendor_bill_id = fields.Many2one(
         'account.move', 'Vendor Bill', copy=False, domain=[('move_type', '=', 'in_invoice')], index='btree_not_null')
     currency_id = fields.Many2one('res.currency', related='company_id.currency_id')
@@ -72,6 +73,11 @@ class StockLandedCost(models.Model):
     def _compute_total_amount(self):
         for cost in self:
             cost.amount_total = sum(line.price_unit for line in cost.cost_lines)
+
+    @api.depends('picking_ids')
+    def _compute_pickings_count(self):
+        for cost in self:
+            cost.pickings_count = len(cost.picking_ids)
 
     @api.onchange('target_model')
     def _onchange_target_model(self):
@@ -89,10 +95,10 @@ class StockLandedCost(models.Model):
         self.button_cancel()
         return super().unlink()
 
-    def _track_subtype(self, init_values):
-        if 'state' in init_values and self.state == 'done':
+    def _track_log_get_default_subtype(self, track_init_values):
+        if 'state' in track_init_values and self.state == 'done':
             return self.env.ref('stock_landed_costs.mt_stock_landed_cost_open')
-        return super()._track_subtype(init_values)
+        return super()._track_log_get_default_subtype(track_init_values)
 
     def button_cancel(self):
         if any(cost.state == 'done' for cost in self):
@@ -160,7 +166,7 @@ class StockLandedCost(models.Model):
             # it doesn't make sense to make a landed cost for a product that isn't set as being valuated in real time at real cost
             if move.product_id.cost_method not in ('fifo', 'average') or move.state == 'cancel' or not move.quantity:
                 continue
-            qty = move.product_uom._compute_quantity(move.quantity, move.product_id.uom_id)
+            qty = move.uom_id._compute_quantity(move.quantity, move.product_id.uom_id)
 
             vals = {
                 'product_id': move.product_id.id,
@@ -242,6 +248,21 @@ class StockLandedCost(models.Model):
             AdjustementLines.browse(key).write({'additional_landed_cost': value})
         return True
 
+    def action_view_pickings(self):
+        self.ensure_one()
+        action = {
+            'type': 'ir.actions.act_window',
+            'res_model': 'stock.picking',
+            'view_mode': 'list,form',
+        }
+        if len(self.picking_ids) == 1:
+            action['res_id'] = self.picking_ids.id
+            action['view_mode'] = 'form'
+        elif self.picking_ids:
+            action['name'] = self.env._("Transfers")
+            action['domain'] = [('id', 'in', self.picking_ids.ids)]
+        return action
+
     def _get_targeted_move_ids(self):
         return self.picking_ids.move_ids
 
@@ -303,7 +324,7 @@ class StockLandedCostLines(models.Model):
 
 class StockValuationAdjustmentLines(models.Model):
     _name = 'stock.valuation.adjustment.lines'
-    _description = 'Valuation Adjustment Lines'
+    _description = 'Valuation Adjustment Line'
 
     name = fields.Char(
         'Description', compute='_compute_name', store=True)

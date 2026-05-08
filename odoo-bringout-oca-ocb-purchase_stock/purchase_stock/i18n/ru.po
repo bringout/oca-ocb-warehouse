@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-10 18:38+0000\n"
+"POT-Creation-Date: 2026-03-12 18:36+0000\n"
 "PO-Revision-Date: 2025-11-08 19:05+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Russian <https://translate.odoo.com/projects/odoo-19/"
@@ -25,8 +25,8 @@ msgstr ""
 
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
-msgid "% On-Time Delivery"
-msgstr "% своевременной поставки"
+msgid "% On Time"
+msgstr ""
 
 #. module: purchase_stock
 #. odoo-python
@@ -59,6 +59,16 @@ msgid "+ %s day(s)"
 msgstr "+ %s дн."
 
 #. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
+msgid "<small class=\"text-muted ms-1\"> / month</small>"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
+msgid "<small class=\"text-muted\">Demand: </small>"
+msgstr ""
+
+#. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.res_partner_view_purchase_buttons_inherit
 msgid "<span class=\"o_stat_text\">On-time Rate</span>"
 msgstr "<span class=\"o_stat_text\">Уровень своевременности</span>"
@@ -80,17 +90,7 @@ msgstr ""
 
 #. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
-msgid "<span class=\"text-muted small me-1\">Monthly Demand:</span>"
-msgstr ""
-
-#. module: purchase_stock
-#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
 msgid "<span class=\"text-muted small ms-1\">Forecasted</span>"
-msgstr ""
-
-#. module: purchase_stock
-#: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
-msgid "<span invisible=\"on_time_rate &gt;= 0\">No data yet</span>"
 msgstr ""
 
 #. module: purchase_stock
@@ -209,13 +209,13 @@ msgstr "Купить для пополнения"
 
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_company
-msgid "Companies"
-msgstr "Компании"
+msgid "Company"
+msgstr ""
 
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__effective_date
-msgid "Completion date of the first receipt order."
-msgstr "Дата завершения первого приходного ордера."
+msgid "Completion date of the last receipt order."
+msgstr ""
 
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_config_settings
@@ -252,6 +252,13 @@ msgstr "Пользовательское описание"
 #: model:ir.model.fields.selection,name:purchase_stock.selection__res_partner__group_rfq__day
 msgid "Daily"
 msgstr "Ежедневно"
+
+#. module: purchase_stock
+#: model:ir.model.fields,help:purchase_stock.field_purchase_order__date_promised
+msgid ""
+"Date promised by the vendor for at least 1 or more products to be delivered "
+"by."
+msgstr ""
 
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_picking__days_to_arrive
@@ -305,6 +312,13 @@ msgid "Deliver To"
 msgstr "Доставить в"
 
 #. module: purchase_stock
+#: model:ir.model.fields,help:purchase_stock.field_purchase_order_line__date_promised
+msgid ""
+"Delivery Date promised by the vendor. If the vendor delivers products after "
+"this date, their On-Time rate will be negatively impacted."
+msgstr ""
+
+#. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.product_supplierinfo_replenishment_tree_view
 msgid "Delivery Time"
 msgstr ""
@@ -328,6 +342,7 @@ msgstr "Место назначения Тип местоположения"
 #: model:ir.model.fields,field_description:purchase_stock.field_res_company__display_name
 #: model:ir.model.fields,field_description:purchase_stock.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:purchase_stock.field_res_partner__display_name
+#: model:ir.model.fields,field_description:purchase_stock.field_stock_account_stock_valuation_report__display_name
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_forecasted_product_product__display_name
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_lot__display_name
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_move__display_name
@@ -425,11 +440,6 @@ msgid "Friday"
 msgstr "Пятница"
 
 #. module: purchase_stock
-#: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order__receipt_status__full
-msgid "Fully Received"
-msgstr "Полностью принят"
-
-#. module: purchase_stock
 #. odoo-javascript
 #: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
 msgid "Generate the draft vendor bill."
@@ -478,6 +488,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:purchase_stock.field_res_company__id
 #: model:ir.model.fields,field_description:purchase_stock.field_res_config_settings__id
 #: model:ir.model.fields,field_description:purchase_stock.field_res_partner__id
+#: model:ir.model.fields,field_description:purchase_stock.field_stock_account_stock_valuation_report__id
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_forecasted_product_product__id
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_lot__id
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_move__id
@@ -512,8 +523,8 @@ msgstr "Инкотерм Местонахождение"
 
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_route
-msgid "Inventory Routes"
-msgstr "Маршруты Склада"
+msgid "Inventory Route"
+msgstr ""
 
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__is_shipped
@@ -596,6 +607,12 @@ msgid "Minimum Inventory Rule"
 msgstr "Правило минимального остатка"
 
 #. module: purchase_stock
+#. odoo-python
+#: code:addons/purchase_stock/models/stock.py:0
+msgid "Missing products in receipt"
+msgstr ""
+
+#. module: purchase_stock
 #: model:ir.model.fields.selection,name:purchase_stock.selection__res_partner__group_on__1
 msgid "Monday"
 msgstr "Понедельник"
@@ -634,18 +651,13 @@ msgid "No supplier has been found to replenish"
 msgstr ""
 
 #. module: purchase_stock
-#: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order__receipt_status__pending
-msgid "Not Received"
-msgstr "Не получено"
-
-#. module: purchase_stock
 #. odoo-javascript
 #: code:addons/purchase_stock/static/src/purchase_dashboard/purchase_dashboard.xml:0
 msgid "OTD"
 msgstr "OTD"
 
 #. module: purchase_stock
-#: model_terms:ir.ui.view,arch_db:purchase_stock.res_partner_view_purchase_buttons_inherit
+#: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "On"
 msgstr "На"
 
@@ -684,6 +696,11 @@ msgid "On-time Rate"
 msgstr "Уровень своевременности"
 
 #. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "Only"
+msgstr ""
+
+#. module: purchase_stock
 #. odoo-python
 #: code:addons/purchase_stock/models/stock_rule.py:0
 msgid "Order Deadline"
@@ -700,8 +717,8 @@ msgstr "Точка заказа"
 #: model:ir.model.fields,help:purchase_stock.field_res_users__on_time_rate
 msgid ""
 "Over the past x days; the number of products received on time divided by the "
-"number of ordered products.x is either the System Parameter "
-"purchase_stock.on_time_delivery_days or the default 365"
+"number of ordered products.x is either the System Parameter purchase_stock."
+"on_time_delivery_days or the default 365"
 msgstr ""
 "За последние x дней; количество продуктов, полученных вовремя, деленное на "
 "количество заказанных продуктов.x - это либо системный параметр "
@@ -711,11 +728,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:purchase_stock.field_product_product__purchase_order_line_ids
 msgid "PO Lines"
 msgstr "Линии абонентского обслуживания"
-
-#. module: purchase_stock
-#: model:ir.model.fields.selection,name:purchase_stock.selection__purchase_order__receipt_status__partial
-msgid "Partially Received"
-msgstr "Частично получено"
 
 #. module: purchase_stock
 #. odoo-javascript
@@ -748,6 +760,12 @@ msgstr "Миксин пополнения запаса продукта"
 #: model:ir.model,name:purchase_stock.model_product_product
 msgid "Product Variant"
 msgstr "Вариант продукта"
+
+#. module: purchase_stock
+#: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__date_promised
+#: model:ir.model.fields,field_description:purchase_stock.field_purchase_order_line__date_promised
+msgid "Promised Date"
+msgstr ""
 
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order_line__propagate_cancel
@@ -817,11 +835,6 @@ msgid "Receipt Date"
 msgstr ""
 
 #. module: purchase_stock
-#: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__receipt_status
-msgid "Receipt Status"
-msgstr "Статус получения"
-
-#. module: purchase_stock
 #: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
 msgid "Receive"
 msgstr "Получить"
@@ -838,20 +851,14 @@ msgid "Received Qty Method"
 msgstr "Метод получения количества"
 
 #. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "Received quantity is less than the expected quantity for transfer"
+msgstr ""
+
+#. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__picking_ids
 msgid "Receptions"
 msgstr "Приемные"
-
-#. module: purchase_stock
-#: model:ir.model.fields,help:purchase_stock.field_purchase_order__receipt_status
-msgid ""
-"Red: Late\n"
-"            Orange: To process today\n"
-"            Green: On time"
-msgstr ""
-"Красный: Просрочено\n"
-"            Оранжевый: Обработать сегодня\n"
-"            Зеленый: Вовремя"
 
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_stock_reference
@@ -949,6 +956,11 @@ msgid "Stock Rule"
 msgstr "Правило запаса"
 
 #. module: purchase_stock
+#: model:ir.model,name:purchase_stock.model_stock_account_stock_valuation_report
+msgid "Stock Valuation"
+msgstr "Оценка запасов"
+
+#. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_report_stock_report_stock_rule
 msgid "Stock rule report"
 msgstr "Отчет о норме запасов"
@@ -1008,6 +1020,11 @@ msgid "Sunday"
 msgstr "Воскресенье"
 
 #. module: purchase_stock
+#: model:ir.model.fields,field_description:purchase_stock.field_product_replenish__partner_id
+msgid "Supplier"
+msgstr ""
+
+#. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_stock_warehouse_orderpoint__supplier_id_placeholder
 msgid "Supplier Id Placeholder"
 msgstr ""
@@ -1057,8 +1074,8 @@ msgid ""
 "location (%(location)s) of reordering rule (%(reordering_rule)s) for product "
 "%(product)s. Change the operation type or cancel the request for quotation."
 msgstr ""
-"Склад типа операции (%(operation_type)s) не соответствует местоположению (%"
-"(location)s), указанному в правиле повторного заказа (%(reordering_rule)s) "
+"Склад типа операции (%(operation_type)s) не соответствует местоположению "
+"(%(location)s), указанному в правиле повторного заказа (%(reordering_rule)s) "
 "для товара %(product)s. Измените тип операции или отмените запрос котировки."
 
 #. module: purchase_stock
@@ -1164,11 +1181,6 @@ msgid "Tuesday"
 msgstr "Вторник"
 
 #. module: purchase_stock
-#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
-msgid "Units"
-msgstr ""
-
-#. module: purchase_stock
 #. odoo-javascript
 #: code:addons/purchase_stock/static/src/js/tours/purchase_stock.js:0
 msgid "Validate the receipt of all ordered products."
@@ -1263,12 +1275,18 @@ msgid "You must set a Vendor Location for this partner %s"
 msgstr "Вы должны указать местоположение Производителя для партнера  %s"
 
 #. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "and no backorder is planned. Manual action may be needed."
+msgstr ""
+
+#. module: purchase_stock
 #. odoo-javascript
 #: code:addons/purchase_stock/static/src/product_catalog/search/search_panel.xml:0
 msgid "day(s)"
 msgstr "дней"
 
 #. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
 #: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_po
 msgid "of"
 msgstr "из"
@@ -1279,138 +1297,17 @@ msgid "ordered instead of"
 msgstr "заказано вместо"
 
 #. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "received in contrast to the expected"
+msgstr ""
+
+#. module: purchase_stock
 #. odoo-python
 #: code:addons/purchase_stock/models/stock_rule.py:0
 msgid "this product should be manually replenished."
 msgstr ""
 
 #. module: purchase_stock
-#. odoo-javascript
-#: code:addons/purchase_stock/static/src/product_catalog/search/search_panel.xml:0
-msgid "x"
+#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
+msgid "units"
 msgstr ""
-
-#~ msgid "Stock Valuation"
-#~ msgstr "Оценка запасов"
-
-#~ msgid "Requests for quotation"
-#~ msgstr "Запросы на Коммерческое предложение"
-
-#~ msgid ""
-#~ "<span invisible=\"on_time_rate &gt;= 0\">No On-time Delivery Data</span>"
-#~ msgstr ""
-#~ "<span invisible=\"on_time_rate &gt;= 0\">Нет данных о своевременной "
-#~ "доставке</span>"
-
-#~ msgid "<span>Forecasted: </span>"
-#~ msgstr "<span>Прогноз: </span>"
-
-#~ msgid "<strong>Shipping address:</strong>"
-#~ msgstr "<strong>Адрес поставки:</strong>"
-
-#~ msgid "Currency exchange rate difference"
-#~ msgstr "Курсовая разница"
-
-#~ msgid ""
-#~ "Depending on the modules installed, this will allow you to define the "
-#~ "route of the product: whether it will be bought, manufactured, "
-#~ "replenished on order, etc."
-#~ msgstr ""
-#~ "В зависимости от установленных модулей, это позволит вам определить "
-#~ "маршрут движения товара: будет ли он куплен, изготовлен, пополнен по "
-#~ "заказу и т.д."
-
-#~ msgid ""
-#~ "For the product %s, the warehouse of the operation type (%s) is "
-#~ "inconsistent with the location (%s) of the reordering rule (%s). Change "
-#~ "the operation type or cancel the request for quotation."
-#~ msgstr ""
-#~ "Для продукта %s склад типа операции (%s) не соответствует местоположению "
-#~ "(%s) правила переупорядочивания (%s). Измените тип операции или отмените "
-#~ "запрос предложения."
-
-#~ msgid ""
-#~ "Margin of error for vendor lead times. When the system generates Purchase "
-#~ "Orders for reordering products,they will be scheduled that many days "
-#~ "earlier to cope with unexpected vendor delays."
-#~ msgstr ""
-#~ "Поле погрешности для времени выполнения поставщиком. Когда система "
-#~ "генерирует заказы на перезаказ закупки продуктов, они будут запланированы "
-#~ "на несколько дней раньше, чтобы справиться с непредвиденными задержками "
-#~ "поставщиков."
-
-#~ msgid "Move forward expected request creation date by"
-#~ msgstr "Перенесите ожидаемую дату создания запроса на"
-
-#~ msgid "No data yet"
-#~ msgstr "Нет данных"
-
-#~ msgid ""
-#~ "Odoo is not able to generate the anglo saxon entries. The total valuation "
-#~ "of %s is zero."
-#~ msgstr ""
-#~ "Odoo не может генерировать англо-саксонские записи. Общая оценка %s равна "
-#~ "нулю."
-
-#~ msgid "Price Difference Account"
-#~ msgstr "Счёт ценовой разницы"
-
-#~ msgid "Procurement Group"
-#~ msgstr "Группа Снабжения"
-
-#~ msgid "Product Supplier"
-#~ msgstr "Поставщик продукции"
-
-#~ msgid "Purchase Security Lead Time"
-#~ msgstr "Время ожидания обеспечения безопасности покупки"
-
-#~ msgid "Purchase Visibility Days"
-#~ msgstr "Дни наглядности при покупке"
-
-#~ msgid "Receive Products"
-#~ msgstr "Получать продукты"
-
-#~ msgid "Routes"
-#~ msgstr "Маршруты"
-
-#~ msgid "Schedule request for quotations earlier to avoid delays"
-#~ msgstr "Заранее планируйте запрос котировок, чтобы избежать задержек"
-
-#~ msgid "Stock Valuation Layer"
-#~ msgstr "Уровень оценки запасов"
-
-#~ msgid ""
-#~ "This account is used in automated inventory valuation to record the price "
-#~ "difference between a purchase order and its related vendor bill when "
-#~ "validating this vendor bill."
-#~ msgstr ""
-#~ "Этот счет используется при автоматической оценке запасов для учета "
-#~ "разницы в ценах между заказом на закупку и связанным с ним счетом "
-#~ "поставщика при проверке этого счета поставщика."
-
-#~ msgid ""
-#~ "This account will be used to value price difference between purchase "
-#~ "price and accounting cost."
-#~ msgstr ""
-#~ "Этот счет используется для оценки разницы между ценой приобретения и "
-#~ "учетной стоимостью."
-
-#~ msgid ""
-#~ "Unable to cancel purchase order %s as some receptions have already been "
-#~ "done."
-#~ msgstr ""
-#~ "Невозможно отменить заказ на поставку %s, так как некоторые приемы уже "
-#~ "выполнены."
-
-#~ msgid "Visibility Days applied on the purchase routes."
-#~ msgstr "Дни видимости применяются на маршрутах покупки."
-
-#~ msgid ""
-#~ "You cannot decrease the ordered quantity below the received quantity.\n"
-#~ "Create a return first."
-#~ msgstr ""
-#~ "Вы не можете уменьшить заказанное количество ниже полученного.\n"
-#~ "Сначала создайте возврат."
-
-#~ msgid "days"
-#~ msgstr "дней"
