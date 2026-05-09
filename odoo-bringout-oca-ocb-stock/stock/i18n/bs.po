@@ -1948,7 +1948,7 @@ msgstr "Kliknite ili pritisnite enter za dodavanje opisa"
 # model: model_terms:ir.ui.view,arch_db:stock.view_stock_replenishment_info
 #, []
 msgid "Close"
-msgstr "Amortizovano"
+msgstr "Zatvori"
 
 # model:
 # model:ir.model.fields.selection,name:stock.selection__stock_putaway_rule__sublocation__closest_location
