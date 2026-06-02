@@ -157,7 +157,7 @@ msgstr "Za ospskrbu kupi"
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_company
 msgid "Companies"
-msgstr "Tvrtke"
+msgstr "Kompanije"
 
 #. module: purchase_stock
 #: model:ir.model.fields,help:purchase_stock.field_purchase_order__effective_date
@@ -168,7 +168,7 @@ msgstr "Datum završetka prvog naloga za prijem."
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -251,7 +251,7 @@ msgstr "Tip odredišne lokacije"
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_account_move__display_name
 msgid "Display Name"
-msgstr "Naziv za prikaz"
+msgstr "Naziv prikaza"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -395,19 +395,19 @@ msgstr "Instaliran modul Prodaje"
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_account_move
 msgid "Journal Entry"
-msgstr "Stavka dnevnika"
+msgstr "Knjiženje"
 
 # taken from hr.po
 #. module: purchase_stock
 #: model:ir.model,name:purchase_stock.model_account_move_line
 msgid "Journal Item"
-msgstr "Stavka žurnala"
+msgstr "Stavka dnevnika"
 
 # taken from hr.po
 #. module: purchase_stock
 #: model:ir.model.fields,field_description:purchase_stock.field_vendor_delay_report____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena"
+msgstr "Zadnji put izmijenjeno"
 
 # taken from hr.po
 #. module: purchase_stock
@@ -1522,3 +1522,102 @@ msgstr "ovaj proizvod treba ručno dopuniti."
 #: code:addons/purchase_stock/static/src/product_catalog/search/search_panel.xml:0
 msgid "x"
 msgstr "x"
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.purchase_order_view_form_inherit
+msgid "% On Time"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
+msgid "<small class=\"text-muted ms-1\"> / month</small>"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
+msgid "<small class=\"text-muted\">Demand: </small>"
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model,name:purchase_stock.model_res_company
+msgid "Company"
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model.fields,help:purchase_stock.field_purchase_order__effective_date
+msgid "Completion date of the last receipt order."
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model.fields,help:purchase_stock.field_purchase_order__date_promised
+msgid ""
+"Date promised by the vendor for at least 1 or more products to be delivered "
+"by."
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model.fields,help:purchase_stock.field_purchase_order_line__date_promised
+msgid ""
+"Delivery Date promised by the vendor. If the vendor delivers products after "
+"this date, their On-Time rate will be negatively impacted."
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model,name:purchase_stock.model_stock_route
+msgid "Inventory Route"
+msgstr ""
+
+#. module: purchase_stock
+#: code:addons/purchase_stock/models/stock.py:0
+msgid "Missing products in receipt"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "Only"
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model.fields,field_description:purchase_stock.field_purchase_order__date_promised
+msgid "Promised Date"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "Received quantity is less than the expected quantity for transfer"
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model,name:purchase_stock.model_stock_account_stock_valuation_report
+msgid "Stock Valuation"
+msgstr ""
+
+#. module: purchase_stock
+#: model:ir.model.fields,field_description:purchase_stock.field_product_replenish__partner_id
+msgid "Supplier"
+msgstr ""
+
+#. module: purchase_stock
+#: code:addons/purchase_stock/static/src/product_catalog/search/search_panel.xml:0
+msgid "Total"
+msgstr "Ukupno"
+
+#. module: purchase_stock
+#: code:addons/purchase_stock/models/purchase_order_line.py:0
+msgid "You must set a Vendor Location for partner %(partner_name)s"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "and no backorder is planned. Manual action may be needed."
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.exception_on_picking
+msgid "received in contrast to the expected"
+msgstr ""
+
+#. module: purchase_stock
+#: model_terms:ir.ui.view,arch_db:purchase_stock.product_view_kanban_catalog_purchase_only
+msgid "units"
+msgstr ""

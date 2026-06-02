@@ -264,7 +264,7 @@ msgstr "Šarže"
 #. module: stock_picking_batch
 #: model_terms:ir.ui.view,arch_db:stock_picking_batch.stock_add_to_wave_form
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Odustani"
 
 # taken from hr.po
 #. module: stock_picking_batch
@@ -380,7 +380,7 @@ msgstr "Detaljne operacije"
 #. module: stock_picking_batch
 #: model:ir.model.fields,field_description:stock_picking_batch.field_stock_add_to_wave__display_name
 msgid "Display Name"
-msgstr "Naziv za prikaz"
+msgstr "Naziv prikaza"
 
 # taken from hr.po
 #. module: stock_picking_batch
@@ -492,19 +492,19 @@ msgstr "Je pratilac"
 #. module: stock_picking_batch
 #: model:ir.model.fields,field_description:stock_picking_batch.field_stock_add_to_wave____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena"
+msgstr "Zadnji put izmijenjeno"
 
 # taken from hr.po
 #. module: stock_picking_batch
 #: model:ir.model.fields,field_description:stock_picking_batch.field_stock_add_to_wave__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnji put ažurirao"
 
 # taken from hr.po
 #. module: stock_picking_batch
 #: model:ir.model.fields,field_description:stock_picking_batch.field_stock_add_to_wave__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnji put ažurirano"
 
 # taken from hr.po
 #. module: stock_picking_batch
@@ -976,7 +976,7 @@ msgstr "Uklonjen odgovorni iz %s"
 #. module: stock_picking_batch
 #: model_terms:ir.ui.view,arch_db:stock_picking_batch.stock_picking_batch_form
 msgid "Validate"
-msgstr "Odobri"
+msgstr "Potvrdi"
 
 # taken from hr.po
 #. module: stock_picking_batch
@@ -1457,3 +1457,53 @@ msgstr "shipping_volume"
 #: model:ir.model.fields,field_description:stock_picking_batch.field_stock_picking_batch__estimated_shipping_weight
 msgid "shipping_weight"
 msgstr "shipping_weight"
+
+#. module: stock_picking_batch
+#: model_terms:ir.ui.view,arch_db:stock_picking_batch.stock_picking_batch_kanban
+msgid "<i class=\"fa fa-calendar text-primary me-2\" title=\"Calendar\"/>"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model:ir.model.fields,field_description:stock_picking_batch.field_stock_picking_batch__activity_plans_ids
+msgid "Activity Plans"
+msgstr "Planovi aktivnosti"
+
+#. module: stock_picking_batch
+#: model:ir.model,name:stock_picking_batch.model_stock_picking_to_batch
+msgid "Batch Transfer Line"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model:ir.model.fields.selection,name:stock_picking_batch.selection__stock_picking_batch__priority__0
+msgid "Normal"
+msgstr ""
+
+#. module: stock_picking_batch
+#: code:addons/stock_picking_batch/models/stock_move.py:0
+msgid "Open: Stock Move"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model:ir.model.fields,field_description:stock_picking_batch.field_stock_picking_batch__picking_type_code
+msgid "Operation Category"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model:ir.model.fields,field_description:stock_picking_batch.field_stock_picking_batch__priority
+msgid "Priority"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model_terms:ir.ui.view,arch_db:stock_picking_batch.view_stock_move_operations
+msgid "Transfer:"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model:ir.model.fields.selection,name:stock_picking_batch.selection__stock_picking_batch__priority__1
+msgid "Urgent"
+msgstr ""
+
+#. module: stock_picking_batch
+#: model:ir.model,name:stock_picking_batch.model_stock_add_to_wave
+msgid "Wave Transfer Line"
+msgstr ""

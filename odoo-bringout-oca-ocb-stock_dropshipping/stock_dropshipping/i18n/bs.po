@@ -19,7 +19,7 @@ msgstr ""
 #. module: stock_dropshipping
 #: model:ir.model,name:stock_dropshipping.model_res_company
 msgid "Companies"
-msgstr "Tvrtke"
+msgstr "Kompanije"
 
 # taken from hr.po
 #. module: stock_dropshipping
@@ -125,3 +125,13 @@ msgstr "Za validaciju"
 #: model:ir.model.fields,field_description:stock_dropshipping.field_stock_picking_type__code
 msgid "Type of Operation"
 msgstr "Tip operacije"
+
+#. module: stock_dropshipping
+#: model:ir.model,name:stock_dropshipping.model_res_company
+msgid "Company"
+msgstr ""
+
+#. module: stock_dropshipping
+#: model:ir.model.fields,field_description:stock_dropshipping.field_stock_picking_type__code
+msgid "Operation Category"
+msgstr ""

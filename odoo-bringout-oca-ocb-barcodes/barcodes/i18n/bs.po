@@ -185,7 +185,7 @@ msgstr "Sniženi proizvod"
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__display_name
 msgid "Display Name"
-msgstr "Naziv za prikaz"
+msgstr "Naziv prikaza"
 
 #. module: barcodes
 #: model:ir.model.fields.selection,name:barcodes.selection__barcode_rule__encoding__ean13
@@ -255,19 +255,19 @@ msgstr "ID"
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena"
+msgstr "Zadnji put izmijenjeno"
 
 # taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnji put ažurirao"
 
 # taken from hr.po
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_nomenclature__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnji put ažurirano"
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
@@ -580,3 +580,8 @@ msgid ""
 "You cannot delete '%(name)s' because it's the default barcode nomenclature."
 msgstr ""
 "Ne možete obrisati '%(name)s' jer je to zadana nomenklatura barkodova."
+
+#. module: barcodes
+#: model:ir.model,name:barcodes.model_res_company
+msgid "Company"
+msgstr ""

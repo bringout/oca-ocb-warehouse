@@ -1466,7 +1466,7 @@ msgstr "Ne mogu pronaći nijednu generičku rutu %s ."
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.lot_label_layout_form_picking
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Odustani"
 
 # taken from hr.po
 #. module: stock
@@ -1798,7 +1798,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model,name:stock.model_res_config_settings
 msgid "Config Settings"
-msgstr "Konfiguracija postavki"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: stock
@@ -2716,7 +2716,7 @@ msgstr "Prikaz lotova/SN na otpremnicama"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_barcode_rule__display_name
 msgid "Display Name"
-msgstr "Naziv za prikaz"
+msgstr "Naziv prikaza"
 
 # taken from hr.po
 #. module: stock
@@ -4173,19 +4173,19 @@ msgstr "Zadnja inventura"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena"
+msgstr "Zadnji put izmijenjeno"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnji put ažurirao"
 
 # taken from hr.po
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_lot_label_layout__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnji put ažurirano"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_quant__last_count_date
@@ -5072,7 +5072,7 @@ msgstr "Zabilješka"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking__note
 msgid "Notes"
-msgstr "Zabilješke"
+msgstr "Napomene"
 
 # taken from hr.po
 #. module: stock
@@ -7978,7 +7978,7 @@ msgstr ""
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_warehouse
 msgid "Technical Information"
-msgstr "Tehnička informacija"
+msgstr "Tehničke informacije"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking__show_check_availability
@@ -9113,7 +9113,7 @@ msgstr "Korisnik dodijeljen za brojanje proizvoda."
 #. module: stock
 #: model:ir.actions.server,name:stock.action_validate_picking
 msgid "Validate"
-msgstr "Odobri"
+msgstr "Potvrdi"
 
 #. module: stock
 #. odoo-javascript
@@ -9150,7 +9150,7 @@ msgstr "Lokacije dobavljača"
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_type_kanban
 msgid "View"
-msgstr "Pregled"
+msgstr "Prikaz"
 
 # taken from hr.po
 #. module: stock
@@ -14444,3 +14444,372 @@ msgstr "jedinica"
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_replenishment_info
 msgid "x"
 msgstr "x"
+
+#. module: stock
+#: code:addons/stock/models/stock_location.py:0
+msgid "\t--Empty--"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields.selection,name:stock.selection__stock_picking_type__product_label_format__2x7
+msgid "2 x 7"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields.selection,name:stock.selection__stock_picking_type__product_label_format__4x7
+msgid "4 x 7"
+msgstr ""
+
+#. module: stock
+#: model:mail.template,body_html:stock.mail_template_data_delivery_confirmation
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Hello <t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t>,<br/><br/>\n"
+"        <t t-if=\"hasattr(object, 'delivery_type') and object.delivery_type == 'in_store'\">\n"
+"            Your order has been collected.\n"
+"        </t>\n"
+"        <t t-else=\"\">\n"
+"            We are glad to inform you that your order has been shipped.\n"
+"        </t>\n"
+"        <t t-if=\"hasattr(object, 'carrier_tracking_ref') and object.carrier_tracking_ref\">\n"
+"            Your tracking reference is\n"
+"            <strong>\n"
+"            <t t-if=\"object.carrier_tracking_url\">\n"
+"                <t t-set=\"multiple_carrier_tracking\" t-value=\"object.get_multiple_carrier_tracking()\"/>\n"
+"                <t t-if=\"multiple_carrier_tracking\">\n"
+"                    <t t-foreach=\"multiple_carrier_tracking\" t-as=\"line\">\n"
+"                        <br/><a t-att-href=\"line[1]\" target=\"_blank\" t-out=\"line[0] or ''\"/>\n"
+"                    </t>\n"
+"                </t>\n"
+"                <t t-else=\"\">\n"
+"                    <a t-attf-href=\"{{ object.carrier_tracking_url }}\" target=\"_blank\" t-out=\"object.carrier_tracking_ref or ''\"/>.\n"
+"                </t>\n"
+"            </t>\n"
+"            <t t-else=\"\">\n"
+"                <t t-out=\"object.carrier_tracking_ref or ''\"/>.\n"
+"            </t>\n"
+"            </strong>\n"
+"        </t>\n"
+"        <br/><br/>\n"
+"        Please find your delivery order attached for more details.<br/><br/>\n"
+"        Thank you,\n"
+"        <t t-if=\"user.signature\">\n"
+"            <br/>\n"
+"            <div data-o-mail-quote=\"1\">--<br data-o-mail-quote=\"1\"/><t t-out=\"user.signature or ''\">Mitchell Admin</t></div>\n"
+"        </t>\n"
+"    </p>\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_warehouse
+msgid "<span class=\"o_stat_text\">Locations</span>"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_production_lot_form
+msgid "<span class=\"o_stat_text\">Scraps</span>"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.report_picking
+msgid "<strong>From:</strong>"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_move.py:0
+msgid ""
+"A package cannot be moved multiple times within a single transfer or split across multiple locations.\n"
+"\n"
+"Concerned package(s):\n"
+"%(package_names)s"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_lot__activity_plans_ids
+msgid "Activity Plans"
+msgstr "Planovi aktivnosti"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "Annual Inventory Date"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_zero_demand_confirmation
+msgid ""
+"Are you sure you want to proceed this transfer with moves that have no "
+"demand?"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields.selection,name:stock.selection__res_company__picking_policy__direct
+msgid "As soon as possible, with back orders"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "By default, next physical inventory will be scheduled at this date"
+msgstr ""
+
+#. module: stock
+#: model:res.company,free_order_label:stock.res_company_1
+msgid "Confirm Order"
+msgstr "Potvrdi narudžbu"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "Confirmation Email"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_res_company__default_stock_location_id
+msgid "Default Stock Location"
+msgstr ""
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.stock_quant_action
+msgid "Detailed Stock"
+msgstr ""
+
+#. module: stock
+#: model:ir.model,name:stock.model_digest_digest
+msgid "Digest"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+msgid "Exchange"
+msgstr ""
+
+#. module: stock
+#: model:ir.model,name:stock.model_stock_route
+msgid "Inventory Route"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_move__is_scrap
+msgid "Is Scrap"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_lot__is_scrap
+msgid "Is Scrapped"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_zero_demand_confirmation
+msgid "Keep lines"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_digest_digest__kpi_stock_delivery_count_value
+msgid "Kpi Stock Delivery Count Value"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_digest_digest__kpi_stock_receipt_count_value
+msgid "Kpi Stock Receipt Count Value"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+msgid "Mark as To Do"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.product_template_form_view_stock
+msgid "None"
+msgstr "Nijedan"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_type_form
+msgid ""
+"Odoo opens a PDF preview by default. If you (Enterprise users only) want to print instantly,\n"
+"                                        install the IoT App on a computer that is on the same local network as the\n"
+"                                        barcode operator and configure the routing of the reports."
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_move__picking_code
+msgid "Operation Category"
+msgstr ""
+
+#. module: stock
+#: model:res.company,pay_now_label:stock.res_company_1
+msgid "Pay now"
+msgstr "Plati odmah"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_res_company__picking_policy
+msgid "Picking Policy"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,help:stock.field_stock_picking_type__sequence_code
+msgid "Prefix value of the record for the sequence"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.report_picking
+msgid "Presence depends on the operation category."
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_zero_demand_confirmation
+msgid "Remove lines"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/static/src/views/stock_orderpoint_list_view.xml:0
+msgid ""
+"Replenish products up to the Max Quantity                     set. If a "
+"Quantity To Order has been manually forced, this quantity will be ordered "
+"instead."
+msgstr ""
+
+#. module: stock
+#: model:ir.actions.server,name:stock.action_revert_move_line
+msgid "Revert"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_lot.py:0
+msgid "Scrap %(lot_name)s"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_move.py:0
+msgid "Scrap of %s"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_move_form
+msgid "Scrapped Lots"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_lot.py:0
+msgid "Scraps of %s"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_move__should_replenish_scrapped
+msgid "Should Replenish"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_picking_type__show_return_picking_type
+msgid "Show Return Picking Type"
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_picking__show_return
+msgid "Show return button"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_zero_demand_confirmation
+msgid "Some moves have zero demand quantity."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:0
+msgid "Split Backorder"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:0
+msgid "Split from %(original_picking_link)s."
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/static/src/fields/stock_picking_locked_statusbar_field.js:0
+msgid "Status bar with lock/unlock indicator for Pickings"
+msgstr ""
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.stock_move_action_outgoing
+msgid "Stock Moves (deliveries)"
+msgstr ""
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.stock_move_action_incoming
+msgid "Stock Moves (receipts)"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_quant.py:0
+msgid "Template for Inventory Adjustments"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:0
+msgid "The backorder %(backorder_picking_link)s has been created."
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,help:stock.field_product_product__property_stock_inventory
+msgid ""
+"This location will be used as the source location for stock moves generated "
+"by an inventory adjustment."
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,help:stock.field_product_product__property_stock_production
+msgid ""
+"This location will be used as the source location for stock moves generated "
+"by a manufacturing order."
+msgstr ""
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__qty_to_order_to_max
+msgid "To Order to Reach Max"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_type_form
+msgid ""
+"Unless previously specified by the source document, this will be the default"
+" shipping policy for this operation type."
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_product_tree
+msgid "View Forecast"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "View and allocate received quantities"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "When to start shipping"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_move.py:0
+msgid "You must select a lot/serial number."
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.actions.act_window,help:stock.action_orderpoint_replenish
+msgid ""
+"You'll find here smart replenishment propositions based on inventory forecasts.\n"
+"            Create new replenishment rules if you want to maintain minimum stock levels for\n"
+"            some products, and automate these rules to create RFQs or Manufacturing Orders."
+msgstr ""
+
+#. module: stock
+#: model:ir.model,name:stock.model_stock_zero_demand_confirmation
+msgid "Zero Demand Confirmation"
+msgstr ""
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:0
+msgid "Zero Demand Warning"
+msgstr ""

@@ -44,7 +44,7 @@ msgstr ""
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_lines__account_id
 msgid "Account"
-msgstr "Naziv konta"
+msgstr "Konto"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -133,7 +133,7 @@ msgstr "Po težini"
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_form
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Odustani"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -145,7 +145,7 @@ msgstr "Otkazan"
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_res_company
 msgid "Companies"
-msgstr "Tvrtke"
+msgstr "Kompanije"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -157,7 +157,7 @@ msgstr "Kompanija"
 #. module: stock_landed_costs
 #: model:ir.model.fields,help:stock_landed_costs.field_stock_landed_cost__company_id
 msgid "Company related to this journal"
-msgstr "Preduzeće za koju se vodi ovaj dnevnik"
+msgstr "Kompanija vezana za ovaj dnevnik"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -169,7 +169,7 @@ msgstr "Izračunaj"
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_res_config_settings
 msgid "Config Settings"
-msgstr "Tipovi Landed cost-a"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -262,7 +262,7 @@ msgstr "Opis"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_account_move__display_name
 msgid "Display Name"
-msgstr "Naziv za prikaz"
+msgstr "Naziv prikaza"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -405,13 +405,13 @@ msgstr "Dnevnik"
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_account_move
 msgid "Journal Entry"
-msgstr "Stavka dnevnika"
+msgstr "Knjiženje"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_account_move_line
 msgid "Journal Item"
-msgstr "Stavka žurnala"
+msgstr "Stavka dnevnika"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -441,19 +441,19 @@ msgstr "Zavisni troškovi obračunati"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena"
+msgstr "Zadnji put izmijenjeno"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnji put ažurirao"
 
 # taken from hr.po
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnji put ažurirano"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -721,7 +721,7 @@ msgstr "Tip izuzetne aktivnosti na zapisu."
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_form
 msgid "Validate"
-msgstr "Obračunaj"
+msgstr "Potvrdi"
 
 # taken from hr.po
 #. module: stock_landed_costs
@@ -870,3 +870,25 @@ msgstr "Ocjene"
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_search
 msgid "Show all records whose next activity date is past"
 msgstr "Prikaži sve zapise čiji je datum sljedeće aktivnosti prošao"
+
+#. module: stock_landed_costs
+#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_plans_ids
+msgid "Activity Plans"
+msgstr "Planovi aktivnosti"
+
+#. module: stock_landed_costs
+#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__pickings_count
+msgid "Pickings Count"
+msgstr ""
+
+#. module: stock_landed_costs
+#: model:ir.model,name:stock_landed_costs.model_stock_valuation_adjustment_lines
+msgid "Valuation Adjustment Line"
+msgstr ""
+
+#. module: stock_landed_costs
+#: code:addons/stock_landed_costs/models/product.py:0
+msgid ""
+"You cannot change the product type or disable landed cost option because the"
+" product is used in a journal item."
+msgstr ""

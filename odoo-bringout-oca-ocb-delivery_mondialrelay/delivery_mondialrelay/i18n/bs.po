@@ -155,3 +155,13 @@ msgstr "Naziv za prikaz"
 #: model:ir.model.fields,field_description:delivery_mondialrelay.field_choose_delivery_carrier__id
 msgid "ID"
 msgstr "ID"
+
+#. module: delivery_mondialrelay
+#: model:ir.model,name:delivery_mondialrelay.model_delivery_carrier
+msgid "Delivery Method"
+msgstr ""
+
+#. module: delivery_mondialrelay
+#: model:ir.model,name:delivery_mondialrelay.model_choose_delivery_carrier
+msgid "Delivery Method Selection Wizard"
+msgstr ""
