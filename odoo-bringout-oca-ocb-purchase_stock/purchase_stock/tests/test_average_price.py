@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from odoo.fields import Date
-from odoo.tests import tagged, Form
+from odoo.tests import tagged
 
 import time
 
@@ -21,7 +20,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         product_cable_management_box = self.env['product.product'].create({
             'default_code': 'AVG',
             'name': 'Average Ice Cream',
-            'type': 'product',
+            'is_storable': True,
             'categ_id': self.stock_account_product_categ.id,
             'list_price': 100.0,
             'standard_price': 60.0,
@@ -53,8 +52,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
 
         # Process the reception of purchase order 1
         picking = purchase_order_1.picking_ids[0]
-        res = picking.button_validate()
-        Form(self.env[res['res_model']].with_context(res['context'])).save().process()
+        picking.button_validate()
 
         # Check the average_price of the product (average icecream).
         self.assertEqual(product_cable_management_box.qty_available, 10.0, 'Wrong quantity in stock after first reception')
@@ -77,8 +75,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         purchase_order_2.button_confirm()
         # Process the reception of purchase order 2
         picking = purchase_order_2.picking_ids[0]
-        res = picking.button_validate()
-        Form(self.env['stock.immediate.transfer'].with_context(res['context'])).save().process()
+        picking.button_validate()
 
         # Check the standard price
         self.assertEqual(product_cable_management_box.standard_price, 75.0, 'After second reception, we should have an average price of 75.0 on the product')
@@ -99,8 +96,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
 
         # Assign this outgoing shipment and process the delivery
         outgoing_shipment.action_assign()
-        res = outgoing_shipment.button_validate()
-        Form(self.env['stock.immediate.transfer'].with_context(res['context'])).save().process()
+        outgoing_shipment.button_validate()
 
         # Check the average price (60 * 10 + 30 * 80) / 40 = 75.0€ did not change
         self.assertEqual(product_cable_management_box.standard_price, 75.0, 'Average price should not have changed with outgoing picking!')
@@ -124,8 +120,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         # Process the reception of purchase order 3 in grams
 
         picking = purchase_order_3.picking_ids[0]
-        res = picking.button_validate()
-        Form(self.env[res['res_model']].with_context(res['context'])).save().process()
+        picking.button_validate()
 
         # Check price is (75.0 * 20 + 200*0.5) / 20.5 = 78.04878€
         self.assertEqual(product_cable_management_box.qty_available, 20.5, 'Reception of purchase order in grams leads to wrong quantity in stock')
@@ -138,7 +133,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
 
         avco_product = self.env['product.product'].create({
             'name': 'Average Ice Cream',
-            'type': 'product',
+            'is_storable': True,
             'categ_id': self.stock_account_product_categ.id,
             'purchase_method': 'purchase',
         })
@@ -163,52 +158,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         self.assertEqual(purchase_order.order_line[0].qty_invoiced, 1.0, 'QTY invoiced should have been set to 1 on the purchase order line')
 
         picking = purchase_order.picking_ids[0]
-        picking.action_set_quantities_to_reservation()
-        # clear cash to ensure access rights verification
-        self.env.invalidate_all()
-        picking.with_user(self.res_users_stock_user).button_validate()
-
-        self.assertEqual(picking.state, 'done', 'Transfer should be in the DONE state')
-
-    def test_inventory_user_fifo_vacuum_svl_access(self):
-        """ Test to check if Inventory/User is able to validate a
-        transfer when the product has been invoiced already """
-
-        avco_product = self.env['product.product'].create({
-            'name': 'Average Ice Cream',
-            'type': 'product',
-            'categ_id': self.stock_account_product_categ.id,
-        })
-        avco_product.categ_id.property_cost_method = 'average'
-        avco_product.standard_price = 300
-
-        # Add a previous move to triger "run_fifo_vaccum"
-        out_move = self.env['stock.move'].create({
-            'name': 'out move',
-            'product_id': avco_product.id,
-            'location_id': self.company_data['default_warehouse'].lot_stock_id.id,
-            'location_dest_id': self.env.ref('stock.stock_location_customers').id,
-            'product_uom': self.env.ref('uom.product_uom_unit').id,
-            'product_uom_qty': 10,
-        })
-        out_move._action_confirm()
-        out_move._action_assign()
-        out_move.quantity_done = 10
-        out_move._action_done()
-
-        purchase_order = self.env['purchase.order'].create({
-            'partner_id': self.partner_a.id,
-            'order_line': [(0, 0, {
-                'product_id': avco_product.id,
-                'product_qty': 1.0,
-                'price_unit': 750.00,
-            })]
-        })
-        purchase_order.button_confirm()
-
-        picking = purchase_order.picking_ids[0]
-        picking.action_set_quantities_to_reservation()
-
+        picking.move_ids.picked = True
         # clear cash to ensure access rights verification
         self.env.invalidate_all()
         picking.with_user(self.res_users_stock_user).button_validate()
@@ -220,7 +170,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
 
         avco_product = self.env['product.product'].create({
             'name': 'Average Ice Cream',
-            'type': 'product',
+            'is_storable': True,
             'categ_id': self.stock_account_product_categ.id,
             'purchase_method': 'purchase',
         })
@@ -251,10 +201,47 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         bill.action_post()
 
         picking = purchase_order.picking_ids[0]
-        picking.action_set_quantities_to_reservation()
         picking.button_validate()
 
         self.assertEqual(avco_product.avg_cost, 300)
+
+    def test_svl_avco_with_discount(self):
+        """
+            Ensure the stock valuation is correct when
+            the purchase order has a discount and the
+            product was invoiced before being received
+        """
+
+        avco_product = self.env['product.product'].create({
+            'name': 'Average Ice Cream',
+            'type': 'consu',
+            'categ_id': self.stock_account_product_categ.id,
+            'purchase_method': 'purchase',
+        })
+        avco_product.categ_id.property_cost_method = 'average'
+
+        purchase_order = self.env['purchase.order'].create({
+            'partner_id': self.partner_a.id,
+            'order_line': [(0, 0, {
+                'product_id': avco_product.id,
+                'product_qty': 10.0,
+                'price_unit': 10.0,
+                'discount': 10.0,
+            })]
+        })
+
+        purchase_order.button_confirm()
+        purchase_order.action_create_invoice()
+        bill = purchase_order.invoice_ids[0]
+
+        bill.invoice_date = time.strftime('%Y-%m-%d')
+        bill.action_post()
+
+        picking = purchase_order.picking_ids[0]
+        picking.button_validate()
+
+        self.assertEqual(avco_product.avg_cost, 9)
+        self.assertEqual(avco_product.value_svl, 90)
 
     def test_no_compensatory_svl_from_asymmetrical_rounding(self):
         """ Ensure that a purchase order for a high quantity of some product using avg costing does
@@ -263,7 +250,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         self.stock_account_product_categ.property_cost_method = 'average'
         avco_product = self.env['product.product'].create({
             'name': 'test_rounding_in_valuation product',
-            'type': 'product',
+            'is_storable': True,
             'categ_id': self.stock_account_product_categ.id,
             'purchase_method': 'purchase',
             'standard_price': 2.0,
@@ -274,7 +261,7 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
             'type_tax_use': 'purchase',
             'amount_type': 'percent',
             'amount': 10,
-            'price_include': True,
+            'price_include_override': 'tax_included',
             'invoice_repartition_line_ids': [
                 (0, 0, {'repartition_type': 'base'}),
                 (0, 0, {
@@ -296,73 +283,10 @@ class TestAveragePrice(ValuationReconciliationTestCommon):
         })
         po.button_confirm()
 
-        po.picking_ids.move_ids.quantity_done = 999
+        po.picking_ids.move_ids.quantity = 999
         po.picking_ids.button_validate()
         po.action_create_invoice()
         po.invoice_ids[0].invoice_date = time.strftime('%Y-%m-%d')
         po.invoice_ids[0].action_post()
 
         self.assertFalse(po.picking_ids.move_ids.stock_valuation_layer_ids.stock_valuation_layer_ids)
-
-    def test_bill_discount_ordered_quantity_control_policy(self):
-        """
-        """
-        self.stock_account_product_categ.property_cost_method = 'average'
-        avco_product = self.env['product.product'].create({
-            'name': 'test_rounding_in_valuation product',
-            'type': 'product',
-            'categ_id': self.stock_account_product_categ.id,
-            'purchase_method': 'purchase',
-        })
-        purchase_order = self.env['purchase.order'].create({
-            'partner_id': self.partner_a.id,
-            'order_line': [(0, 0, {
-                'product_id': avco_product.id,
-                'product_qty': 5,
-                'price_unit': 10,
-            })],
-        })
-        purchase_order.button_confirm()
-        purchase_order.action_create_invoice()
-        bill = purchase_order.invoice_ids[0]
-        bill.invoice_line_ids[0].discount = 10
-        bill.invoice_date = Date.today()
-        bill.action_post()
-        receipt = purchase_order.picking_ids[0]
-        receipt.move_ids[0].quantity_done = 1
-        res_dict = receipt.button_validate()
-
-        self.assertEqual(res_dict['res_model'], 'stock.backorder.confirmation')
-        wizard = self.env[(res_dict.get('res_model'))].browse(res_dict.get('res_id')).with_context(res_dict['context'])
-        wizard.process()
-
-        self.assertEqual(sum(self.env['stock.valuation.layer'].search([
-                ('product_id', '=', avco_product.id),
-            ]).mapped('value')),
-            9,
-        )
-
-        backorder1 = receipt.backorder_ids
-        backorder1.move_ids[0].quantity_done = 2
-        res_dict = backorder1.button_validate()
-
-        self.assertEqual(res_dict['res_model'], 'stock.backorder.confirmation')
-        wizard = self.env[(res_dict.get('res_model'))].browse(res_dict.get('res_id')).with_context(res_dict['context'])
-        wizard.process()
-
-        self.assertEqual(sum(self.env['stock.valuation.layer'].search([
-                ('product_id', '=', avco_product.id),
-                ('stock_move_id', '=', backorder1.move_ids[0].id)
-            ]).mapped('value')),
-            18,
-        )
-
-        backorder2 = backorder1.backorder_ids
-        backorder2.move_ids[0].quantity_done = 2
-        backorder2.button_validate()
-        self.assertEqual(sum(self.env['stock.valuation.layer'].search([
-                ('product_id', '=', avco_product.id),
-                ('stock_move_id', '=', backorder2.move_ids[0].id)
-            ]).mapped('value')),
-            18,
-        )
