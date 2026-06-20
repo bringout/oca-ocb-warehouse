@@ -1,14 +1,13 @@
-odoo.define('stock.reports.setup.tour', function (require) {
-    "use strict";
+/** @odoo-module **/
 
-    const tour = require('web_tour.tour');
+import { registry } from "@web/core/registry";
 
-    tour.register('test_stock_route_diagram_report', {
+    registry.category("web_tour.tours").add('test_stock_route_diagram_report', {
         test: true,
-    }, [
+        steps: () => [
     {
         trigger: '.o_kanban_record',
-        extra_trigger:'.breadcrumb',
+        extra_trigger: '.o_breadcrumb',
     },
     {
         trigger: '.nav-item > a:contains("Inventory")',
@@ -18,10 +17,14 @@ odoo.define('stock.reports.setup.tour', function (require) {
     },
     {
         trigger: 'iframe .o_report_stock_rule',
+        isCheck: true,
     },
-    ]);
+    ],
+    });
 
-    tour.register("test_context_from_warehouse_filter", { test: true }, [
+registry.category("web_tour.tours").add("test_context_from_warehouse_filter", {
+    test: true,
+    steps: () => [
         // Add "foo" to the warehouse context key
         {
             trigger: ".o_searchview_input",
@@ -71,12 +74,26 @@ odoo.define('stock.reports.setup.tour', function (require) {
             run: "click",
         },
         {
+            trigger: ".o_form_view",
+            run: () => {
+                if (!document.querySelector("button[name=action_product_tmpl_forecast_report]")) {
+                    const panelButtons = document.querySelectorAll(
+                        ".o_control_panel_actions button"
+                    );
+                    const moreButton = Array.from(panelButtons).find(
+                        (button) => button.textContent.trim() == "More"
+                    );
+                    moreButton.click();
+                }
+            },
+        },
+        {
             trigger: "button[name=action_product_tmpl_forecast_report]",
             run: "click",
         },
         {
             trigger: ".o_graph_view",
-            isCheck: true,
+            run: () => {},
         },
-    ]);
+    ],
 });

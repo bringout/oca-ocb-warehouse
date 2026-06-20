@@ -1,30 +1,26 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* spreadsheet_dashboard_purchase_stock
-# 
-# Translators:
-# Wil Odoo, 2024
-# Jaisal Shah <jaisal13shah@gmail.com>, 2025
-# Manav Shah, 2025
-# Ujjawal Pathak, 2025
-# 
+# * spreadsheet_dashboard_purchase_stock
+#
+# Weblate <noreply-mt-weblate@weblate.org>, 2025, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 10:43+0000\n"
-"PO-Revision-Date: 2022-09-29 09:44+0000\n"
-"Last-Translator: Ujjawal Pathak, 2025\n"
-"Language-Team: Hindi (https://app.transifex.com/odoo/teams/41243/hi/)\n"
+"POT-Creation-Date: 2025-12-29 18:38+0000\n"
+"PO-Revision-Date: 2026-05-26 13:26+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Hindi <https://translate.odoo.com/projects/odoo-17/"
+"spreadsheet_dashboard_purchase_stock/hi/>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: hi\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.17\n"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid " days"
@@ -32,11 +28,6 @@ msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Amount"
@@ -66,12 +57,9 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Buyer"
-msgstr ""
+msgstr "खरीदार"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -83,14 +71,12 @@ msgstr "वर्ग"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Country"
 msgstr "देश"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Current"
@@ -136,33 +122,28 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Opened"
-msgstr ""
+msgstr "खोला गया"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Order"
-msgstr ""
+msgstr "ऑर्डर"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Ordered"
-msgstr ""
+msgstr "ऑर्डर किया गया"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Orders"
-msgstr ""
+msgstr "ऑर्डर"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -174,18 +155,16 @@ msgstr "समयावधि"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Previous"
-msgstr ""
+msgstr "पिछला"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Product"
-msgstr "उत्पाद"
+msgstr "प्रॉडक्ट"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -193,6 +172,11 @@ msgstr "उत्पाद"
 #, python-format
 msgid "Product Category"
 msgstr "उत्पाद श्रेणी"
+
+#. module: spreadsheet_dashboard_purchase_stock
+#: model:spreadsheet.dashboard,name:spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase
+msgid "Purchase"
+msgstr "परचेज़"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -241,16 +225,14 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Purchased"
-msgstr ""
+msgstr "खरीदा गया"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Qty Ordered"
-msgstr ""
+msgstr "ऑर्डर की गई मात्रा"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -278,7 +260,7 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Responsible"
-msgstr "जिम्मेदार"
+msgstr "ज़िम्मेदार"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -339,10 +321,9 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Total Untaxed"
-msgstr ""
+msgstr "बिना टैक्स की कुल राशि"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -360,10 +341,6 @@ msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Vendor"
@@ -392,8 +369,6 @@ msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "since last period"

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 10:43+0000\n"
-"PO-Revision-Date: 2024-01-25 10:43+0000\n"
+"POT-Creation-Date: 2025-12-29 18:38+0000\n"
+"PO-Revision-Date: 2025-12-29 18:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,18 +18,12 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid " days"
 msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Amount"
@@ -59,9 +53,6 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Buyer"
 msgstr ""
@@ -76,14 +67,12 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Country"
 msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Current"
@@ -141,17 +130,12 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Ordered"
 msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Orders"
@@ -167,14 +151,12 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Previous"
 msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Product"
@@ -185,6 +167,11 @@ msgstr ""
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Product Category"
+msgstr ""
+
+#. module: spreadsheet_dashboard_purchase_stock
+#: model:spreadsheet.dashboard,name:spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase
+msgid "Purchase"
 msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
@@ -238,8 +225,6 @@ msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Qty Ordered"
@@ -332,7 +317,6 @@ msgstr ""
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Total Untaxed"
 msgstr ""
@@ -353,10 +337,6 @@ msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Vendor"
@@ -385,8 +365,6 @@ msgstr ""
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "since last period"

@@ -12,7 +12,7 @@ class TestWarehouse(TestStockCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.partner = cls.env['res.partner'].create({'name': 'Deco Addict'})
+        cls.partner = cls.env['res.partner'].create({'name': 'Acme Corporation'})
 
     def test_inventory_product(self):
         self.product_1.type = 'product'
@@ -117,7 +117,8 @@ class TestWarehouse(TestStockCommon):
         self.assertEqual(product.qty_available, 0.0)
         self.assertEqual(product.virtual_available, -5.0)
 
-        customer_move.quantity_done = 5
+        customer_move.quantity = 5
+        customer_move.picked = True
         customer_move._action_done()
         self.assertEqual(product.qty_available, -5.0)
 
@@ -125,7 +126,8 @@ class TestWarehouse(TestStockCommon):
         receive_move = self._create_move(product, self.env.ref('stock.stock_location_suppliers'), self.warehouse_1.lot_stock_id, product_uom_qty=15)
 
         receive_move._action_confirm()
-        receive_move.quantity_done = 15
+        receive_move.quantity = 15
+        receive_move.picked = True
         receive_move._action_done()
 
         product._compute_quantities()
@@ -140,7 +142,8 @@ class TestWarehouse(TestStockCommon):
         self.assertEqual(product.qty_available, 10.0)
         self.assertEqual(product.virtual_available, 8.0)
 
-        customer_move_2.quantity_done = 2.0
+        customer_move_2.quantity = 2.0
+        customer_move_2.picked = True
         customer_move_2._action_done()
         product._compute_quantities()
         self.assertEqual(product.qty_available, 8.0)
@@ -168,7 +171,8 @@ class TestWarehouse(TestStockCommon):
             'location_dest_id': customer_location.id,
         })
         picking_out.action_confirm()
-        picking_out.move_ids.quantity_done = 1
+        picking_out.move_ids.quantity = 1
+        picking_out.move_ids.picked = True
         picking_out._action_done()
 
         quant = self.env['stock.quant'].search([('product_id', '=', productA.id), ('location_id', '=', stock_location.id)])
@@ -181,7 +185,8 @@ class TestWarehouse(TestStockCommon):
         stock_return_picking_action = stock_return_picking.create_returns()
         return_pick = self.env['stock.picking'].browse(stock_return_picking_action['res_id'])
         return_pick.action_assign()
-        return_pick.move_ids.quantity_done = 1
+        return_pick.move_ids.quantity = 1
+        return_pick.move_ids.picked = True
         return_pick._action_done()
 
         quant = self.env['stock.quant'].search([('product_id', '=', productA.id), ('location_id', '=', stock_location.id)])
@@ -211,7 +216,8 @@ class TestWarehouse(TestStockCommon):
             'location_dest_id': customer_location.id,
         })
         picking_out.action_confirm()
-        picking_out.move_ids.quantity_done = 1
+        picking_out.move_ids.quantity = 1
+        picking_out.move_ids.picked = True
         picking_out._action_done()
 
         # Make an inventory adjustment to set the quantity to 0
@@ -366,6 +372,7 @@ class TestWarehouse(TestStockCommon):
             'picking_type_id': self.env.ref('stock.picking_type_out').id,
             'location_id': warehouse_shop_namur.lot_stock_id.id,
             'location_dest_id': customer_location.id,
+            'state': 'draft',
         })
         self.env['stock.move'].create({
             'name': product.name,
@@ -385,17 +392,20 @@ class TestWarehouse(TestStockCommon):
         picking_stock_transit = self.env['stock.picking'].search([('location_id', '=', warehouse_distribution_namur.lot_stock_id.id)])
         self.assertTrue(picking_stock_transit)
         picking_stock_transit.action_assign()
-        picking_stock_transit.move_ids[0].quantity_done = 1.0
+        picking_stock_transit.move_ids[0].quantity = 1.0
+        picking_stock_transit.move_ids[0].picked = True
         picking_stock_transit._action_done()
 
         picking_transit_shop_namur = self.env['stock.picking'].search([('location_dest_id', '=', warehouse_shop_namur.lot_stock_id.id)])
         self.assertTrue(picking_transit_shop_namur)
         picking_transit_shop_namur.action_assign()
-        picking_transit_shop_namur.move_ids[0].quantity_done = 1.0
+        picking_transit_shop_namur.move_ids[0].quantity = 1.0
+        picking_transit_shop_namur.move_ids[0].picked = True
         picking_transit_shop_namur._action_done()
 
         picking_out_namur.action_assign()
-        picking_out_namur.move_ids[0].quantity_done = 1.0
+        picking_out_namur.move_ids[0].picked = True
+        picking_out_namur.move_ids[0].quantity = 1.0
         picking_out_namur._action_done()
 
         # Check that the correct quantity has been provided to customer
@@ -410,6 +420,7 @@ class TestWarehouse(TestStockCommon):
             'picking_type_id': self.env.ref('stock.picking_type_out').id,
             'location_id': warehouse_shop_wavre.lot_stock_id.id,
             'location_dest_id': customer_location.id,
+            'state': 'draft',
         })
         self.env['stock.move'].create({
             'name': product.name,
@@ -429,23 +440,45 @@ class TestWarehouse(TestStockCommon):
         picking_stock_transit = self.env['stock.picking'].search([('location_id', '=', warehouse_distribution_wavre.lot_stock_id.id)])
         self.assertTrue(picking_stock_transit)
         picking_stock_transit.action_assign()
-        picking_stock_transit.move_ids[0].quantity_done = 1.0
+        picking_stock_transit.move_ids[0].quantity = 1.0
+        picking_stock_transit.move_ids[0].picked = True
         picking_stock_transit._action_done()
 
         picking_transit_shop_wavre = self.env['stock.picking'].search([('location_dest_id', '=', warehouse_shop_wavre.lot_stock_id.id)])
         self.assertTrue(picking_transit_shop_wavre)
         picking_transit_shop_wavre.action_assign()
-        picking_transit_shop_wavre.move_ids[0].quantity_done = 1.0
+        picking_transit_shop_wavre.move_ids[0].quantity = 1.0
+        picking_transit_shop_wavre.move_ids[0].picked = True
         picking_transit_shop_wavre._action_done()
 
         picking_out_wavre.action_assign()
-        picking_out_wavre.move_ids[0].quantity_done = 1.0
+        picking_out_wavre.move_ids[0].quantity = 1.0
+        picking_out_wavre.move_ids[0].picked = True
         picking_out_wavre._action_done()
 
         # Check that the correct quantity has been provided to customer
         self.assertEqual(self.env['stock.quant']._gather(product, customer_location).quantity, 2)
         # Ensure there still no quants in distribution warehouse
         self.assertEqual(sum(self.env['stock.quant']._gather(product, warehouse_distribution_wavre.lot_stock_id).mapped('quantity')), 0)
+
+    def test_add_resupply_warehouse_one_by_one(self):
+        """ Checks that selecting a warehouse as a resupply warehouse one after another correctly sets the routes as well.
+        """
+        warehouse_A, warehouse_B, warehouse_C = self.env['stock.warehouse'].create([{
+            'name': code,
+            'code': code,
+        } for code in ['WH_A', 'WH_B', 'WH_C']])
+        warehouse_A.resupply_wh_ids = [Command.link(warehouse_B.id)]
+        # Assign Warehouse B as supplier warehouse
+        self.assertEqual(len(warehouse_A.resupply_route_ids), 1)
+        self.assertEqual(warehouse_A.resupply_route_ids.supplier_wh_id, warehouse_B)
+        # Assign Warehouse C as supplier warehouse
+        warehouse_A.resupply_wh_ids = [Command.link(warehouse_C.id)]
+        self.assertEqual(len(warehouse_A.resupply_route_ids), 2)
+        self.assertRecordValues(warehouse_A.resupply_route_ids.sorted('id'), [
+            {'supplier_wh_id': warehouse_B.id},
+            {'supplier_wh_id': warehouse_C.id},
+        ])
 
     def test_toggle_resupply_warehouse(self):
         """ Checks that selecting then unselecting a warehouse as resupply correctly archives/unarchives the related route.
@@ -528,7 +561,6 @@ class TestWarehouse(TestStockCommon):
 
         # Picking Type
         self.assertFalse(warehouse.in_type_id.active)
-        self.assertFalse(warehouse.in_type_id.show_operations)
         self.assertFalse(warehouse.out_type_id.active)
         self.assertFalse(warehouse.int_type_id.active)
         self.assertFalse(warehouse.pick_type_id.active)
@@ -553,7 +585,6 @@ class TestWarehouse(TestStockCommon):
 
         # Picking Type
         self.assertTrue(warehouse.in_type_id.active)
-        self.assertFalse(warehouse.in_type_id.show_operations)
         self.assertTrue(warehouse.out_type_id.active)
         self.assertTrue(warehouse.int_type_id.active)
         self.assertFalse(warehouse.pick_type_id.active)
@@ -673,3 +704,26 @@ class TestWarehouse(TestStockCommon):
         test_warehouse.sequence = 100
         location._compute_warehouse_id()
         self.assertEqual(location.warehouse_id, test_warehouse)
+
+    def test_modified_global_route(self):
+        """ Ensure that _find_or_create_global_route, if called multiple time, only creates the route once
+
+        If a global route was renamed, and has a company setup,
+          then the system would create multiple duplicates with the new name when creating a new warehouse;
+          one duplicate for each call _find_or_create_global_route.
+        """
+        company_2 = self.env["res.company"].create({"name": "Company 2"})
+
+        mto_route = self.warehouse_1.mto_pull_id.route_id
+        mto_route.rule_ids.unlink()  # Quick patch to be able to set a company on the route
+        mto_route.write({"name": "New Name (MTO)", "company_id": self.warehouse_1.company_id.id})
+
+        self.env["stock.warehouse"].with_company(company_2).create({"name": "Warehouse 2", "code": "2"})
+
+        route_sudo = self.env["stock.route"].sudo().with_context(active_test=False)
+        renamed_route_count = route_sudo.search_count([("name", "=", "New Name (MTO)")])
+        self.assertEqual(renamed_route_count, 1)
+
+        new_mto_route = route_sudo.search([("name", "=", "Replenish on Order (MTO)")])
+        self.assertEqual(len(new_mto_route), 1)
+        self.assertEqual(new_mto_route.company_id.id, company_2.id)

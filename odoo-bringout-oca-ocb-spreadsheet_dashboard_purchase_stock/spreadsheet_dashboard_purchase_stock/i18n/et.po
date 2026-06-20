@@ -1,38 +1,35 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # 	* spreadsheet_dashboard_purchase_stock
-# 
+#
 # Translators:
-# Algo Kärp <algokarp@gmail.com>, 2022
-# Arma Gedonsky <armagedonsky@hot.ee>, 2022
-# Triine Aavik <triine@avalah.ee>, 2022
-# Piia Paurson <piia@avalah.ee>, 2022
-# Rivo Zängov <eraser@eraser.ee>, 2022
-# Martin Trigaux, 2022
-# Martin Aavastik <martin@avalah.ee>, 2022
-# Andre Roomet <andreroomet@gmail.com>, 2022
-# Eneli Õigus <enelioigus@gmail.com>, 2022
-# Egon Raamat <egon@avalah.ee>, 2022
+# Algo Kärp <algokarp@gmail.com>, 2023
+# Arma Gedonsky <armagedonsky@hot.ee>, 2023
+# Martin Trigaux, 2023
+# Rivo Zängov <eraser@eraser.ee>, 2023
+# Triine Aavik <triine@avalah.ee>, 2023
+# Egon Raamat <egon@avalah.ee>, 2023
+# Martin Aavastik <martin@avalah.ee>, 2023
 # Anna, 2023
+# Patrick-Jordan Kiudorv, 2023
 # JanaAvalah, 2023
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 10:43+0000\n"
-"PO-Revision-Date: 2022-09-29 09:44+0000\n"
+"POT-Creation-Date: 2025-12-29 18:38+0000\n"
+"PO-Revision-Date: 2023-10-26 23:09+0000\n"
 "Last-Translator: JanaAvalah, 2023\n"
 "Language-Team: Estonian (https://app.transifex.com/odoo/teams/41243/et/)\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid " days"
@@ -40,11 +37,6 @@ msgstr "päev(a)"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Amount"
@@ -74,9 +66,6 @@ msgstr "Keskmine tellimus"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Buyer"
 msgstr "Ostja"
@@ -91,14 +80,12 @@ msgstr "Kategooria"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Country"
 msgstr "Riik"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Current"
@@ -151,11 +138,10 @@ msgstr "Avatud"
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Order"
-msgstr "Tellimus"
+msgstr "Ost"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Ordered"
@@ -163,10 +149,6 @@ msgstr "Tellitud"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Orders"
@@ -182,14 +164,12 @@ msgstr "Periood"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Previous"
 msgstr "Eelmine"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Product"
@@ -200,7 +180,12 @@ msgstr "Toode"
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Product Category"
-msgstr "Tootekategooria"
+msgstr "Toote kategooria"
+
+#. module: spreadsheet_dashboard_purchase_stock
+#: model:spreadsheet.dashboard,name:spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase
+msgid "Purchase"
+msgstr "Ost"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -254,8 +239,6 @@ msgstr "Ostetud"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Qty Ordered"
 msgstr "Tellitud kogus"
@@ -307,7 +290,7 @@ msgstr "Populaarsed ostjad"
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Top Countries"
-msgstr "Populaarsed riigid"
+msgstr "Parimad riigid"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -347,7 +330,6 @@ msgstr "Populaarsed tarnijad"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Total Untaxed"
 msgstr "Maksustamata summa kokku"
@@ -357,7 +339,7 @@ msgstr "Maksustamata summa kokku"
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Transfer"
-msgstr "Ülekanne"
+msgstr "Siirded"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -369,13 +351,9 @@ msgstr "Siirded loomise kuupäeva järgi"
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "Vendor"
-msgstr "Partner"
+msgstr "Tarnija"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
@@ -400,8 +378,6 @@ msgstr "ostustatistika – eelnev"
 
 #. module: spreadsheet_dashboard_purchase_stock
 #. odoo-javascript
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
-#: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #: code:addons/spreadsheet_dashboard_purchase_stock/data/files/purchase_dashboard.json:0
 #, python-format
 msgid "since last period"

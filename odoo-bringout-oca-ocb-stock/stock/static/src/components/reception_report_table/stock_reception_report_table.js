@@ -2,8 +2,7 @@
 
 import { useService } from "@web/core/utils/hooks";
 import { ReceptionReportLine } from "../reception_report_line/stock_reception_report_line";
-
-const { Component } = owl;
+import { Component } from "@odoo/owl";
 
 export class ReceptionReportTable extends Component {
     setup() {
@@ -43,7 +42,6 @@ export class ReceptionReportTable extends Component {
     }
 
     async onClickPrintLabels() {
-        const reportFile = 'stock.report_reception_report_label';
         const modelIds = [];
         const quantities = [];
         for (const line of this.props.lines) {
@@ -56,10 +54,9 @@ export class ReceptionReportTable extends Component {
         }
 
         return this.actionService.doAction({
-            type: "ir.actions.report",
-            report_type: "qweb-pdf",
-            report_name: `${reportFile}?docids=${modelIds}&quantity=${quantities}`,
-            report_file: reportFile,
+            ...this.props.labelReport,
+            context: { active_ids: modelIds },
+            data: { docids: modelIds, quantity: quantities.join(",") },
         });
     }
 
@@ -91,6 +88,7 @@ ReceptionReportTable.props = {
     scheduledDate: { type: String, optional: true },
     lines: Array,
     source: Array,
+    labelReport: Object,
     showUom: Boolean,
     precision: Number,
 };

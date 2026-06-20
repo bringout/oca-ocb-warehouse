@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-
+from collections import defaultdict
 from odoo import api, fields, models, _
 from odoo.osv.expression import AND
 
@@ -18,10 +18,10 @@ class StockWarehouse(models.Model):
 
     buy_to_resupply = fields.Boolean('Buy to Resupply', default=True,
                                      help="When products are bought, they can be delivered to this warehouse")
-    buy_pull_id = fields.Many2one('stock.rule', 'Buy rule')
+    buy_pull_id = fields.Many2one('stock.rule', 'Buy rule', copy=False)
 
-    def _get_global_route_rules_values(self):
-        rules = super(StockWarehouse, self)._get_global_route_rules_values()
+    def _generate_global_route_rules_values(self):
+        rules = super()._generate_global_route_rules_values()
         location_id = self.in_type_id.default_location_dest_id
         rules.update({
             'buy_pull_id': {
@@ -74,8 +74,16 @@ class ReturnPicking(models.TransientModel):
 
     def _prepare_move_default_values(self, return_line, new_picking):
         vals = super(ReturnPicking, self)._prepare_move_default_values(return_line, new_picking)
-        vals['purchase_line_id'] = return_line.move_id.purchase_line_id.id
+        if self.location_id.usage == "supplier":
+            vals['purchase_line_id'], vals['partner_id'] = return_line.move_id._get_purchase_line_and_partner_from_chain()
         return vals
+
+    def _create_returns(self):
+        new_picking_id, picking_type_id = super()._create_returns()
+        picking = self.env['stock.picking'].browse(new_picking_id)
+        if len(picking.move_ids.partner_id) == 1:
+            picking.partner_id = picking.move_ids.partner_id
+        return new_picking_id, picking_type_id
 
 
 class Orderpoint(models.Model):
@@ -118,7 +126,12 @@ class Orderpoint(models.Model):
 
     def _compute_days_to_order(self):
         res = super()._compute_days_to_order()
-        for orderpoint in self:
+        # Avoid computing rule_ids if no stock.rules with the buy action
+        if not self.env['stock.rule'].search([('action', '=', 'buy')]):
+            return res
+        # Compute rule_ids only for orderpoint whose compnay_id.days_to_purchase != orderpoint.days_to_order
+        orderpoints_to_compute = self.filtered(lambda orderpoint: orderpoint.days_to_order != orderpoint.company_id.days_to_purchase)
+        for orderpoint in orderpoints_to_compute:
             if 'buy' in orderpoint.rule_ids.mapped('action'):
                 orderpoint.days_to_order = orderpoint.company_id.days_to_purchase
         return res
@@ -156,7 +169,7 @@ class Orderpoint(models.Model):
         self.ensure_one()
         domain = [('orderpoint_id', 'in', self.ids)]
         if self.env.context.get('written_after'):
-            domain = AND([domain, [('write_date', '>', self.env.context.get('written_after'))]])
+            domain = AND([domain, [('write_date', '>=', self.env.context.get('written_after'))]])
         order = self.env['purchase.order.line'].search(domain, limit=1).order_id
         if order:
             action = self.env.ref('purchase.action_rfq_form')
@@ -212,14 +225,18 @@ class StockLot(models.Model):
 
     @api.depends('name')
     def _compute_purchase_order_ids(self):
+        purchase_order_ids_map = defaultdict(set)
+        move_lines = self.env['stock.move.line'].search([
+            ('lot_id', 'in', self.ids),
+            ('state', '=', 'done'),
+            ('move_id.picking_id.location_id.usage', '=', 'supplier'),
+            ('move_id.purchase_line_id.order_id', '!=', False)
+        ])
+        for move_line in move_lines:
+            purchase_order_ids_map[move_line.lot_id.id].add(move_line.move_id.purchase_line_id.order_id.id)
         for lot in self:
-            stock_moves = self.env['stock.move.line'].search([
-                ('lot_id', '=', lot.id),
-                ('state', '=', 'done')
-            ]).mapped('move_id')
-            stock_moves = stock_moves.search([('id', 'in', stock_moves.ids)]).filtered(
-                lambda move: move.picking_id.location_id.usage == 'supplier' and move.state == 'done')
-            lot.purchase_order_ids = stock_moves.mapped('purchase_line_id.order_id')
+            po_ids = purchase_order_ids_map.get(lot.id, [])
+            lot.purchase_order_ids = self.env['purchase.order'].browse(po_ids)
             lot.purchase_order_count = len(lot.purchase_order_ids)
 
     def action_view_po(self):

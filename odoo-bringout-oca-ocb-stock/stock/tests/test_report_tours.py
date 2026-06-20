@@ -18,7 +18,7 @@ class TestStockReportTour(HttpCase):
     def test_context_from_warehouse_filter(self):
         """
         Check that the warehouse context key added from the product search warehouse filter
-        is correctly parsed when used. 
+        is correctly parsed when used.
         """
         self.env['product.product'].create({
             'name': 'Lovely Product',

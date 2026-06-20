@@ -1,34 +1,35 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # 	* stock_landed_costs
-# 
+#
 # Translators:
-# Hongu Cosmin <cosmin513@gmail.com>, 2022
-# Foldi Robert <foldirobert@nexterp.ro>, 2022
-# Martin Trigaux, 2022
-# Cozmin Candea <office@terrabit.ro>, 2023
+# Claudia Baisan, 2024
+# Hongu Cosmin <cosmin513@gmail.com>, 2024
+# Cozmin Candea <office@terrabit.ro>, 2024
+# Foldi Robert <foldirobert@nexterp.ro>, 2024
+# Vacaru Adrian <adrian.vacaru@gmail.com>, 2024
+# Martin Trigaux, 2024
 # Dorin Hongu <dhongu@gmail.com>, 2024
+# Lyall Kindmurr, 2024
 # Larisa_nexterp, 2025
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 08:26+0000\n"
-"PO-Revision-Date: 2022-09-22 05:55+0000\n"
+"POT-Creation-Date: 2025-12-29 18:37+0000\n"
+"PO-Revision-Date: 2023-10-26 23:09+0000\n"
 "Last-Translator: Larisa_nexterp, 2025\n"
 "Language-Team: Romanian (https://app.transifex.com/odoo/teams/41243/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 #. module: stock_landed_costs
 #. odoo-python
-#: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
-#: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
-#: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
 #: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
 #, python-format
 msgid " already out"
@@ -36,18 +37,28 @@ msgstr "deja ieșit"
 
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.stock_landed_cost_view_kanban
-msgid "<i class=\"fa fa-clock-o\" title=\"Date\" role=\"img\" aria-label=\"Date\"/>"
-msgstr "<i class=\"fa fa-clock-o\" title=\"Data\" role=\"img\" aria-label=\"Data\"/>"
+msgid ""
+"<i class=\"fa fa-clock-o\" title=\"Date\" role=\"img\" aria-label=\"Date\"/>"
+msgstr ""
+"<i class=\"fa fa-clock-o\" title=\"Data\" role=\"img\" aria-label=\"Data\"/>"
+
+#. module: stock_landed_costs
+#: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_form
+msgid "<span class=\"o_stat_text\">Valuation</span>"
+msgstr "<span class=\"o_stat_text\">Evaluare</span>"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,help:stock_landed_costs.field_account_move_line__product_type
 msgid ""
-"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A storable product is a product for which you manage stock. The Inventory "
+"app has to be installed.\n"
 "A consumable product is a product for which stock is not managed.\n"
 "A service is a non-material product you provide."
 msgstr ""
-"Un produs stocabil este un produs pentru care gestionați stocul. Aplicația \"Inventar\" trebuie instalată.\n"
-"Un produs consumabil, pe de altă parte, este un produs pentru care nu este gestionat stocul.\n"
+"Un produs stocabil este un produs pentru care gestionați stocul. Aplicația "
+"\"Inventar\" trebuie instalată.\n"
+"Un produs consumabil, pe de altă parte, este un produs pentru care nu este "
+"gestionat stocul.\n"
 "Un serviciu este un produs nematerial pe care îl oferiți."
 
 #. module: stock_landed_costs
@@ -150,11 +161,6 @@ msgid "Company"
 msgstr "Companie"
 
 #. module: stock_landed_costs
-#: model:ir.model.fields,help:stock_landed_costs.field_stock_landed_cost__company_id
-msgid "Company related to this journal"
-msgstr "Compania asociată acestui jurnal"
-
-#. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_form
 msgid "Compute"
 msgstr "Calculează"
@@ -213,14 +219,14 @@ msgstr "Creat de"
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_lines__create_date
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_valuation_adjustment_lines__create_date
 msgid "Created on"
-msgstr "Creat în"
+msgstr "Creat pe"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__currency_id
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_lines__currency_id
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_valuation_adjustment_lines__currency_id
 msgid "Currency"
-msgstr "Moneda"
+msgstr "Monedă"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__date
@@ -281,17 +287,18 @@ msgstr "Egal"
 #. module: stock_landed_costs
 #: model:ir.model.fields,help:stock_landed_costs.field_stock_landed_cost_lines__split_method
 msgid ""
-"Equal : Cost will be equally divided.\n"
-"By Quantity : Cost will be divided according to product's quantity.\n"
-"By Current cost : Cost will be divided according to product's current cost.\n"
-"By Weight : Cost will be divided depending on its weight.\n"
-"By Volume : Cost will be divided depending on its volume."
+"Equal: Cost will be equally divided.\n"
+"By Quantity: Cost will be divided according to product's quantity.\n"
+"By Current cost: Cost will be divided according to product's current cost.\n"
+"By Weight: Cost will be divided depending on its weight.\n"
+"By Volume: Cost will be divided depending on its volume."
 msgstr ""
-"Egal: Costul va fi egal împărțit\n"
-"Cantitate: Costul va fi împărțit în funcție de cantitatea produsului\n"
-"Cost: Costul va fi împărțit în funcție de costul curent al produsului\n"
-"Masă: Costul va fi împărțit în funcție de masa sa\n"
-"Volum: Costul va fi împărțit în funcție de volumul său."
+"Egal: Costul va fi împărțit în mod egal.\n"
+"După cantitate: Costul va fi împărțit în funcție de cantitatea produsului.\n"
+"După costul curent: Costul va fi împărțit în funcție de costul curent al "
+"produsului.\n"
+"După masă: Costul va fi împărțit în funcție de greutatea produsului.\n"
+"După volum: Costul va fi împărțit în funcție de volumul produsului."
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_follower_ids
@@ -391,7 +398,7 @@ msgstr "Jurnal"
 #: model:ir.model,name:stock_landed_costs.model_account_move
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__account_move_id
 msgid "Journal Entry"
-msgstr "Notă contabilă"
+msgstr "Înregistrare jurnal "
 
 #. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_account_move_line
@@ -433,11 +440,13 @@ msgid "Landed cost validated"
 msgstr "Costuri adiționale validate"
 
 #. module: stock_landed_costs
-#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost____last_update
-#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_lines____last_update
-#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_valuation_adjustment_lines____last_update
-msgid "Last Modified on"
-msgstr "Ultima modificare la"
+#: model_terms:ir.actions.act_window,help:stock_landed_costs.action_stock_landed_cost
+msgid ""
+"Landed costs allow you to include additional costs (shipment, insurance, "
+"customs duties, etc) into the cost of the product."
+msgstr ""
+"Costurile adiționale vă permit să includeți costuri suplimentare (transport, "
+"asigurare, taxe vamale etc.) în costul produsului."
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__write_uid
@@ -464,11 +473,6 @@ msgid "Lc Journal"
 msgstr "Jurnal Lc"
 
 #. module: stock_landed_costs
-#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Atașament principal"
-
-#. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_has_error
 msgid "Message Delivery error"
 msgstr "Eroare livrare mesaj"
@@ -491,8 +495,6 @@ msgstr "Nume"
 
 #. module: stock_landed_costs
 #. odoo-python
-#: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
-#: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
 #: code:addons/stock_landed_costs/models/stock_landed_cost.py:0
 #, python-format
 msgid "New"
@@ -521,7 +523,7 @@ msgstr "Sumarul următoarei activități"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_type_id
 msgid "Next Activity Type"
-msgstr "Tip de activitate urmatoare"
+msgstr "Tip de activitate următoare"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_needaction_counter
@@ -531,7 +533,7 @@ msgstr "Număr de acțiuni"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__message_has_error_counter
 msgid "Number of errors"
-msgstr "Numărul de erori"
+msgstr "Număr de erori"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,help:stock_landed_costs.field_stock_landed_cost__message_needaction_counter
@@ -604,6 +606,11 @@ msgid "Quantity"
 msgstr "Cantitate"
 
 #. module: stock_landed_costs
+#: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__rating_ids
+msgid "Ratings"
+msgstr "Evaluări"
+
+#. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost__activity_user_id
 msgid "Responsible User"
 msgstr "Utilizator responsabil"
@@ -616,8 +623,7 @@ msgstr "Eroare livrare SMS"
 #. module: stock_landed_costs
 #: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_search
 msgid "Show all records which has next action date is before today"
-msgstr ""
-"Afișați toate înregistrările care au data următoarei acțiuni în trecut"
+msgstr "Afișați toate înregistrările care au data următoarei acțiuni în trecut"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_lines__split_method
@@ -706,11 +712,6 @@ msgstr ""
 "adiționale negative pentru a le inversa"
 
 #. module: stock_landed_costs
-#: model_terms:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_form
-msgid "Valuation"
-msgstr "Evaluare"
-
-#. module: stock_landed_costs
 #: model:ir.model,name:stock_landed_costs.model_stock_valuation_adjustment_lines
 msgid "Valuation Adjustment Lines"
 msgstr "Linii de ajustare evaluare"
@@ -744,7 +745,7 @@ msgstr "Istoric comunicare website"
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_valuation_adjustment_lines__weight
 msgid "Weight"
-msgstr "Masă"
+msgstr "Greutate"
 
 #. module: stock_landed_costs
 #. odoo-python
@@ -763,8 +764,8 @@ msgstr ""
 #: code:addons/stock_landed_costs/models/product.py:0
 #, python-format
 msgid ""
-"You cannot change the product type or disable landed cost option because the"
-" product is used in an account move line."
+"You cannot change the product type or disable landed cost option because the "
+"product is used in an account move line."
 msgstr ""
 "Nu puteți schimba tipul produsului sau dezactiva opțiunea de cost adițional "
 "deoarece produsul este folosit într-o linie de mișcare contabilă."
